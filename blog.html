@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | ViralAuthority SEO & Growth Insights</title>
+    <meta name="description"
+        content="Read our latest insights, strategies, and algorithm breakdowns for YouTube, TikTok, and Instagram growth.">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .blog-header {
+            padding: 10rem 0 4rem;
+            text-align: center;
+            background: radial-gradient(circle at top, rgba(139, 92, 246, 0.1) 0%, rgba(5, 5, 5, 1) 70%);
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+            margin-bottom: 6rem;
+        }
+
+        .blog-card {
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(139, 92, 246, 0.4);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 200px;
+            background: var(--gradient-neon);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+            opacity: 0.9;
+        }
+
+        .blog-content {
+            padding: 2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-category {
+            color: var(--accent-pink);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .blog-title:hover {
+            color: var(--accent-blue);
+        }
+
+        .blog-excerpt {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .read-more {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.2s;
+        }
+
+        .read-more:hover {
+            gap: 0.8rem;
+            color: var(--accent-blue);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><i class="fas fa-bolt text-white"></i></div>
+                ViralAuthority
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="en/ai-tools.html" class="nav-link">AI Tools</a>
+                <a href="/en/academy.html" class="nav-link">Academy</a>
+                <a href="blog.html" class="nav-link text-white">Blog</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="https://www.qqtube.com/?ref=2315017" target="_blank" class="btn btn-primary"
+                    style="padding: 0.5rem 1.5rem; font-size: 0.95rem;">Join Elite</a>
+            </nav>
+
+            <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <main>
+        <section class="blog-header">
+            <div class="container reveal">
+                <h1 class="hero-h1">Growth <span class="text-gradient">Insights</span></h1>
+                <p class="hero-subtitle">Algorithm breakdowns, viral strategies, and exclusive social media growth
+                    content.</p>
+            </div>
+        </section>
+
+        <section class="section pt-0">
+            <div class="container reveal">
+                <div class="blog-grid">
+
+                    <!-- Article 1 -->
+                    <article class="blog-card">
+                        <div class="blog-image">
+                            <i class="fab fa-tiktok"></i>
+                        </div>
+                        <div class="blog-content">
+                            <span class="blog-category">Marketing Digital</span>
+                            <a href="blog/ganar-dinero-con-redes-sociales.html" class="blog-title">Ganar Dinero con
+                                Redes Sociales en 2026</a>
+                            <p class="blog-excerpt">El ecosistema ha cambiado profundamente. Descubre las metodologías
+                                avanzadas para rentabilizar la atención global y dominar la economía digital.</p>
+                            <a href="blog/ganar-dinero-con-redes-sociales.html" class="read-more">Leer Artículo <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- Article 2 -->
+                    <article class="blog-card" style="transition-delay: 100ms;">
+                        <div class="blog-image" style="background: linear-gradient(135deg, #00f2fe, #4facfe);">
+                            <i class="fab fa-tiktok"></i>
+                        </div>
+                        <div class="blog-content">
+                            <span class="blog-category">Crecimiento Rápido</span>
+                            <a href="blog/monetizar-tiktok.html" class="blog-title">Cómo Monetizar TikTok y el
+                                Algoritmo</a>
+                            <p class="blog-excerpt">El manual operativo y los secretos avanzados de la retención
+                                algorítmica vital para dominar TikTok y escalar en mercados Tier 1.</p>
+                            <a href="blog/monetizar-tiktok.html" class="read-more">Leer Artículo <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- Article 3 -->
+                    <article class="blog-card" style="transition-delay: 200ms;">
+                        <div class="blog-image" style="background: linear-gradient(45deg, #ff0000, #cc0000);">
+                            <i class="fab fa-youtube"></i>
+                        </div>
+                        <div class="blog-content">
+                            <span class="blog-category">Ingresos Pasivos</span>
+                            <a href="blog/monetizacion-youtube.html" class="blog-title">Monetización YouTube y
+                                Embudos</a>
+                            <p class="blog-excerpt">Aprende a aplicar embudos de crecimiento, retención profunda y
+                                monetización a largo plazo con el motor de búsqueda más imperecedero.</p>
+                            <a href="blog/monetizacion-youtube.html" class="read-more">Leer Artículo <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- Article 4 -->
+                    <article class="blog-card"
+                        style="transition-delay: 300ms; border-color: rgba(29, 185, 84, 0.3); box-shadow: 0 5px 15px rgba(29, 185, 84, 0.1);">
+                        <div class="blog-image spotify-gradient"
+                            style="background: linear-gradient(135deg, #1DB954, #0f0f0f);">
+                            <i class="fab fa-spotify"></i>
+                        </div>
+                        <div class="blog-content">
+                            <span class="blog-category" style="color: #1DB954;">PROMOCIÓN MUSICAL</span>
+                            <a href="blog/crecer-en-spotify.html" class="blog-title">Cómo Crecer en Spotify
+                                Sosteniblemente</a>
+                            <p class="blog-excerpt">Desbloquea el Release Radar. Tácticas de curación y algoritmo
+                                neuronal para potenciar tu música y aprovechar el Save Rate.</p>
+                            <a href="blog/crecer-en-spotify.html" class="read-more" style="color: #1DB954;">Leer
+                                Artículo <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- Article 5 -->
+                    <article class="blog-card" style="transition-delay: 400ms;">
+                        <div class="blog-image" style="background: linear-gradient(135deg, #f6d365, #fda085);">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="blog-content">
+                            <span class="blog-category">Estrategia 2026</span>
+                            <a href="blog/ingresos-digitales-2026.html" class="blog-title">Generando Ingresos Digitales
+                                2026</a>
+                            <p class="blog-excerpt">Análisis avanzado arquitectónico y proyección financiera táctica
+                                orientada a consolidar activos y diversificar tus fuentes de rentabilidad.</p>
+                            <a href="blog/ingresos-digitales-2026.html" class="read-more">Leer Artículo <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" style="margin-top: 0; border-top: none;">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col" style="grid-column: span 1;">
+                    <a href="index.html" class="logo" style="margin-bottom: 1.5rem;">
+                        <div class="logo-icon"><i class="fas fa-bolt text-white"></i></div>
+                        ViralAuthority
+                    </a>
+                    <p>The premium growth partner for serious digital creators and forward-thinking brands.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <!-- Other footer columns omitted for brevity -->
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 ViralAuthority. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>

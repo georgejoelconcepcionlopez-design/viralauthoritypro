@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Tools for Creators | ViralAuthority</title>
+    <meta name="description"
+        content="Free suite of AI tools for creators. Generate SEO titles, viral ideas, thumbnail prompts, and YouTube descriptions instantly.">
+    <meta name="keywords"
+        content="ai tools, youtube title generator, viral idea generator, youtube description generator, thumbnail prompt generator">
+
+    <link rel="canonical" href="https://viralauthority.com/en/ai-tools.html">
+    <link rel="alternate" hreflang="en" href="https://viralauthority.com/en/ai-tools.html">
+    <link rel="alternate" hreflang="es" href="https://viralauthority.com/es/ai-tools.html">
+    <link rel="alternate" hreflang="x-default" href="https://viralauthority.com/ai-tools.html">
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Shared Styles + Language Switcher */
+        .lang-switcher {
+            position: absolute;
+            top: 1.5rem;
+            right: 2rem;
+            color: white;
+            font-size: 0.85rem;
+            font-weight: 600;
+            z-index: 1001;
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .lang-switcher a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.5;
+            transition: var(--transition-smooth);
+        }
+
+        .lang-switcher a.active,
+        .lang-switcher a:hover {
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .lang-switcher {
+                right: 5rem;
+            }
+        }
+
+        /* ChatGPT Style UI */
+        .chat-ui-container {
+            max-width: 800px;
+            margin: -2rem auto 6rem auto;
+            position: relative;
+            z-index: 10;
+        }
+
+        .chat-input-wrapper {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 50px;
+            padding: 0.5rem 0.5rem 0.5rem 1.5rem;
+            display: flex;
+            align-items: center;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(139, 92, 246, 0.1);
+            transition: var(--transition-smooth);
+            position: relative;
+        }
+
+        .chat-input-wrapper:focus-within {
+            border-color: rgba(139, 92, 246, 0.8);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(139, 92, 246, 0.2);
+        }
+
+        .chat-input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 1.1rem;
+            font-family: var(--font-body);
+            padding: 1rem 0;
+        }
+
+        .chat-input:focus {
+            outline: none;
+        }
+
+        .chat-input::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .chat-btn {
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            color: white;
+            border: none;
+            border-radius: 40px;
+            padding: 0.8rem 1.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .chat-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(139, 92, 246, 0.4);
+        }
+
+        .mode-toggles {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .mode-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: var(--transition-smooth);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .mode-btn.active {
+            background: rgba(139, 92, 246, 0.15);
+            border-color: var(--accent-purple);
+            color: white;
+        }
+
+        .chat-results {
+            margin-top: 3rem;
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 2.5rem;
+            display: none;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .chat-results.show {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .result-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .result-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .result-section h3 {
+            color: var(--accent-purple);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .result-content {
+            color: #e5e7eb;
+            font-size: 1rem;
+            line-height: 1.6;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .result-content ol,
+        .result-content ul {
+            padding-left: 1.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .result-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .prompt-tools {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .tool-link-btn {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            transition: var(--transition-smooth);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .tool-link-btn:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .typing-indicator {
+            display: inline-block;
+            width: 3px;
+            height: 15px;
+            background-color: var(--accent-purple);
+            animation: blink 1s step-end infinite;
+            vertical-align: middle;
+            margin-left: 2px;
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+        }
+
+        .cta-bottom {
+            margin-top: 3rem;
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px dashed rgba(139, 92, 246, 0.3);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="lang-switcher">
+            <a href="../es/ai-tools.html">ES</a> |
+            <a href="../en/ai-tools.html" class="active">EN</a>
+        </div>
+
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><i class="fas fa-bolt text-white"></i></div>
+                ViralAuthority
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="../services.html" class="nav-link">Services</a>
+                <a href="ai-tools.html" class="nav-link text-white">AI Tools</a>
+                <a href="/en/academy.html" class="nav-link">Academy</a>
+                <a href="../blog.html" class="nav-link">Blog</a>
+                <a href="../contact.html" class="nav-link">Contact</a>
+                <a href="https://www.qqtube.com/?ref=2315017" target="_blank" class="btn btn-primary"
+                    style="padding: 0.5rem 1.5rem; font-size: 0.95rem;">Join Elite</a>
+            </nav>
+
+            <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <main>
+        <section class="tools-header"
+            style="padding: 12rem 0 6rem; text-align: center; background: radial-gradient(circle at top, rgba(139, 92, 246, 0.15) 0%, rgba(5, 5, 5, 1) 70%);">
+            <div class="container reveal">
+                <h1 class="hero-h1">AI Creator <span class="text-gradient">Studio</span></h1>
+                <p class="hero-subtitle">Describe your niche or video idea, and let our intelligence engine craft your
+                    titles, descriptions, viral hooks, and image prompts instantly.</p>
+            </div>
+        </section>
+
+        <section class="section pt-0">
+            <div class="container pb-6">
+
+                <div class="chat-ui-container reveal">
+
+                    <div class="mode-toggles">
+                        <button class="mode-btn active" id="btnTextMode" onclick="setMode('text')"><i
+                                class="fas fa-align-left"></i> Generate Text</button>
+                        <button class="mode-btn" id="btnImageMode" onclick="setMode('image')"><i
+                                class="fas fa-image"></i> Generate Image</button>
+                    </div>
+
+                    <div class="chat-input-wrapper">
+                        <input type="text" id="mainInput" class="chat-input"
+                            placeholder="Describe what you want to create (e.g. A review of the new iPhone)..."
+                            onkeypress="handleEnter(event)">
+                        <button class="chat-btn" onclick="generateAI()"><i class="fas fa-magic"></i> Generate</button>
+                    </div>
+
+                    <!-- Dynamic Results Container -->
+                    <div id="resultsContainer" class="chat-results">
+                        <div id="outputArea"></div>
+
+                        <div class="cta-bottom" id="ctaBlock" style="display:none;">
+                            <p class="text-muted" style="margin-bottom: 1rem;">Ready to push this content to the
+                                algorithm?</p>
+                            <a href="https://www.qqtube.com/?ref=2315017" target="_blank" class="btn btn-primary"
+                                style="padding: 0.8rem 2rem; font-size: 1.1rem;">Boost This Content Now</a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <!-- Reusing standard footer structure -->
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col" style="grid-column: span 1;">
+                    <a href="index.html" class="logo" style="margin-bottom: 1.5rem;">
+                        <div class="logo-icon"><i class="fas fa-bolt text-white"></i></div>
+                        ViralAuthority
+                    </a>
+                    <p>The premium growth partner for serious digital creators and forward-thinking brands.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="../services.html">Services</a></li>
+                        <li><a href="ai-tools.html">AI Tools</a>
+                <a href="/en/academy.html" class="nav-link">Academy</a></li>
+                        <li><a href="../blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <!-- ... other columns omitted for brevity ... -->
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 ViralAuthority. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/app.js"></script>
+    <script>
+        // AI Studio Logic
+        let currentMode = 'text';
+        let isTyping = false;
+
+        function setMode(mode) {
+            currentMode = mode;
+            document.getElementById('btnTextMode').classList.remove('active');
+            document.getElementById('btnImageMode').classList.remove('active');
+
+            if (mode === 'text') {
+                document.getElementById('btnTextMode').classList.add('active');
+                document.getElementById('mainInput').placeholder = "Describe what you want to create (e.g. A review of the new iPhone)...";
+            } else {
+                document.getElementById('btnImageMode').classList.add('active');
+                document.getElementById('mainInput').placeholder = "Describe an image idea (e.g. A cybernetic tiger in neon Tokyo)...";
+            }
+        }
+
+        function handleEnter(e) {
+            if (e.key === 'Enter') {
+                generateAI();
+            }
+        }
+
+        async function generateAI() {
+            if (isTyping) return;
+            const input = document.getElementById('mainInput').value.trim() || (currentMode === 'text' ? 'My Content Idea' : 'A cinematic scene');
+
+            const resultsContainer = document.getElementById('resultsContainer');
+            const outputArea = document.getElementById('outputArea');
+            const ctaBlock = document.getElementById('ctaBlock');
+
+            // Reset state
+            resultsContainer.classList.remove('show');
+            ctaBlock.style.display = 'none';
+            outputArea.innerHTML = '';
+
+            // Brief pause for animation reset
+            await new Promise(r => setTimeout(r, 300));
+            resultsContainer.classList.add('show');
+            isTyping = true;
+
+            const contentHTML = currentMode === 'text' ? getTextPayload(input) : getImagePayload(input);
+
+            await typeEffect(outputArea, contentHTML);
+
+            updateDynamicCTA(input);
+            ctaBlock.style.display = 'block';
+            isTyping = false;
+        }
+
+        function updateDynamicCTA(input) {
+            const inputLower = input.toLowerCase();
+            const ctaBlock = document.getElementById('ctaBlock');
+
+            let ctaText = "Boost This Content Now";
+            let ctaLink = "https://www.qqtube.com/?ref=2315017";
+            let ctaTarget = "_blank";
+
+            if (inputLower.includes('spotify') || inputLower.includes('song') || inputLower.includes('music') || inputLower.includes('artist')) {
+                ctaText = "Promote My Song Now";
+                ctaLink = "/es/spotify-streams.html";
+                ctaTarget = "_self";
+            } else if (inputLower.includes('youtube')) {
+                ctaText = "Boost This on YouTube";
+            } else if (inputLower.includes('tiktok')) {
+                ctaText = "Boost This on TikTok";
+            } else if (inputLower.includes('instagram')) {
+                ctaText = "Boost This on Instagram";
+            }
+
+            ctaBlock.innerHTML = `
+                <p class="text-muted" style="margin-bottom: 1rem;">Ready to push this content to the algorithm?</p>
+                <a href="${ctaLink}" target="${ctaTarget}" class="btn btn-primary" style="padding: 0.8rem 2rem; font-size: 1.1rem;">${ctaText}</a>
+            `;
+        }
+
+        function getTextPayload(topic) {
+            return `
+                <div class="result-section">
+                    <h3><i class="fas fa-heading"></i> 5 SEO Viral Titles</h3>
+                    <div class="result-content">
+                        <ol>
+                            <li>I Tried [Action] for 30 Days (${topic})</li>
+                            <li>The ONLY ${topic} Guide You Will Ever Need</li>
+                            <li>Why Your ${topic} Strategy is Failing (And How to Fix It)</li>
+                            <li>Master ${topic} in Under 10 Minutes</li>
+                            <li>The Truth About ${topic} Nobody Tells You</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="result-section">
+                    <h3><i class="fas fa-lightbulb"></i> 5 Video/Content Ideas</h3>
+                    <div class="result-content">
+                        <ul>
+                            <li><strong>The Extreme Challenge:</strong> I survived 24 hours only using ${topic}.</li>
+                            <li><strong>The Expert Breakdown:</strong> Reacting to the WORST ${topic} mistakes online.</li>
+                            <li><strong>The Transformation:</strong> Zero to Hero: 30 days of ${topic} progression.</li>
+                            <li><strong>The Hidden Routine:</strong> A day in the life of a ${topic} professional.</li>
+                            <li><strong>The Tier List:</strong> Ranking every ${topic} strategy from S to F Tier.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="result-section">
+                    <h3><i class="fab fa-youtube"></i> YouTube Description Box</h3>
+                    <div class="result-content">
+                        In this video, we break down everything you need to know about ${topic}. If you've been struggling with ${topic}, this complete guide will show you the exact step-by-step framework to succeed.<br><br>
+                        📌 Timestamps:<br>
+                        0:00 - The Secret to ${topic}<br>
+                        2:15 - Biggest Mistakes to Avoid<br>
+                        5:30 - The Proven Formula<br><br>
+                        ✅ Subscribe for more daily growth tips!
+                    </div>
+                </div>
+
+                <div class="result-section">
+                    <h3><i class="fab fa-facebook"></i> Engaging Facebook Caption</h3>
+                    <div class="result-content">
+                        I almost didn't post this, but someone needs to hear it today. 🛑<br><br>
+                        When it comes to ${topic}, 90% of people are doing it completely wrong. I spent the last few months testing what actually works, and the result shocked me.<br><br>
+                        If you want the full breakdown, drop a "YES" in the comments and I'll send you the exact blueprint I used. 👇👇
+                    </div>
+                </div>
+            `;
+        }
+
+        function getImagePayload(topic) {
+            const googPrompt = `High contrast, ultra-realistic photography, ${topic}, expressive, dynamic lighting, cinematic depth of field, vibrant colors, viral aesthetic, 8k resolution`;
+            const bingPrompt = `Masterpiece, best quality, ultra detailed, ${topic}, neon rim lighting, aesthetic, dramatic composition`;
+
+            return `
+                <div class="result-section">
+                    <h3><i class="fab fa-google"></i> Google ImageFX Prompt</h3>
+                    <div class="result-content" id="imgfx-copy">
+                        ${googPrompt}
+                    </div>
+                    <div class="prompt-tools">
+                        <button class="tool-link-btn" onclick="copyText('${googPrompt}')"><i class="far fa-copy"></i> Copy Prompt</button>
+                        <a href="https://aitestkitchen.withgoogle.com/tools/image-fx" target="_blank" class="tool-link-btn"><i class="fas fa-external-link-alt"></i> Open ImageFX</a>
+                    </div>
+                </div>
+
+                <div class="result-section">
+                    <h3><i class="fab fa-microsoft"></i> Bing Image Creator Prompt</h3>
+                    <div class="result-content" id="bing-copy">
+                        ${bingPrompt}
+                    </div>
+                    <div class="prompt-tools">
+                        <button class="tool-link-btn" onclick="copyText('${bingPrompt}')"><i class="far fa-copy"></i> Copy Prompt</button>
+                        <a href="https://www.bing.com/images/create" target="_blank" class="tool-link-btn"><i class="fas fa-external-link-alt"></i> Open Bing</a>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Extremely fast simulated typing (just dumps block by block to not bore the user, but adds visual flair)
+        async function typeEffect(element, html) {
+            // Because innerHTML parsing letter by letter breaks tags, we fake the loading by simply injecting the HTML directly, 
+            // but hiding sections initially and sliding them in.
+
+            element.innerHTML = html;
+            const sections = element.querySelectorAll('.result-section');
+
+            for (let i = 0; i < sections.length; i++) {
+                sections[i].style.opacity = '0';
+                sections[i].style.transform = 'translateY(10px)';
+                sections[i].style.transition = 'all 0.4s ease';
+            }
+
+            for (let i = 0; i < sections.length; i++) {
+                // Add a small delay between each block appearing
+                await new Promise(r => setTimeout(r, 200));
+                sections[i].style.opacity = '1';
+                sections[i].style.transform = 'translateY(0)';
+            }
+        }
+
+        function copyText(val) {
+            navigator.clipboard.writeText(val);
+            alert("Prompt copied to clipboard!");
+        }
+
+    </script>
+</body>
+
+</html>

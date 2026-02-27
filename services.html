@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | ViralAuthority Elite Growth Profiles</title>
+    <meta name="description"
+        content="Explore our premium tier social media growth solutions for YouTube, TikTok, Instagram, and Spotify. Unmatched quality and algorithm safety.">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .page-header {
+            padding: 12rem 0 6rem;
+            text-align: center;
+            background: radial-gradient(circle at top, rgba(139, 92, 246, 0.1) 0%, rgba(5, 5, 5, 1) 70%);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 3rem 2rem;
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-neon);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(139, 92, 246, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+
+        .ic-youtube {
+            color: #ff0000;
+        }
+
+        .ic-tiktok {
+            color: #00f2fe;
+        }
+
+        .ic-instagram {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .ic-spotify {
+            color: #1db954;
+        }
+
+        .ic-facebook {
+            color: #1877f2;
+        }
+
+        .service-title {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-desc {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            flex-grow: 1;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-bottom: 2.5rem;
+        }
+
+        .service-features li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .service-features li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: var(--accent-blue);
+        }
+
+        .service-card .btn {
+            width: 100%;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 8rem 0;
+            background: rgba(255, 255, 255, 0.01);
+            border-top: 1px solid var(--border-color);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            background: var(--surface-color);
+            overflow: hidden;
+            transition: var(--transition-smooth);
+        }
+
+        .faq-item:hover {
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .faq-question {
+            padding: 1.5rem 2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .faq-answer {
+            padding: 0 2rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            color: var(--text-muted);
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 2rem 1.5rem;
+            max-height: 300px;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><i class="fas fa-bolt text-white"></i></div>
+                ViralAuthority
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="services.html" class="nav-link text-white">Services</a>
+                <a href="en/ai-tools.html" class="nav-link">AI Tools</a>
+                <a href="/en/academy.html" class="nav-link">Academy</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="https://www.qqtube.com/?ref=2315017" target="_blank" class="btn btn-primary"
+                    style="padding: 0.5rem 1.5rem; font-size: 0.95rem;">Join Elite</a>
+            </nav>
+
+            <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container reveal">
+                <h1 class="hero-h1">Elite Growth <span class="text-gradient">Engine</span></h1>
+                <p class="hero-subtitle">Select your platform and ignite the algorithm. Our proprietary delivery network
+                    ensures instant, safe, and massive scaling.</p>
+            </div>
+        </section>
+
+        <section class="section pt-0">
+            <div class="container">
+                <div class="services-grid">
+
+                    <!-- YouTube -->
+                    <div class="service-card reveal" style="transition-delay: 100ms;">
+                        <i class="fab fa-youtube service-icon ic-youtube"></i>
+                        <h3 class="service-title">YouTube Authority Boost</h3>
+                        <p class="service-desc">Trigger the YouTube recommendation engine with targeted high-retention
+                            views, algorithmic likes, and active channel subscribers.</p>
+                        <ul class="service-features">
+                            <li>High-retention premium views</li>
+                            <li>Real user engagement signals</li>
+                            <li>Algorithm-safe delivery speed</li>
+                            <li>Monetization compliant</li>
+                        </ul>
+                        <a href="https://www.qqtube.com/?ref=2315017" target="_blank" class="btn btn-primary">Activate
+                            Growth</a>
+                    </div>
+
+                    <!-- TikTok -->
+                    <div class="service-card reveal" style="transition-delay: 200ms;">
+                        <i class="fab fa-tiktok service-icon ic-tiktok"></i>
+                        <h3 class="service-title">TikTok Viral Boost</h3>
+                        <p class="service-desc">Push your content straight to the FYP (For You Page) with explosive
+                            initial engagement loops that signal viral potential.</p>
+                        <ul class="service-features">
+                            <li>Instant FYP algorithmic push</li>
+                            <li>Massive view velocity</li>
+                            <li>Profile authority amplification</li>
+                            <li>Trend-jacking acceleration</li>
+                        </ul>
+                        <a href="https://www.qqtube.com/?ref=2315017" target="_blank" class="btn btn-primary">Activate
+                            Growth</a>
+                    </div>
+
+                    <!-- Instagram -->
+                    <div class="service-card reveal" style="transition-delay: 300ms;">
+                        <i class="fab fa-instagram service-icon ic-instagram"></i>
+                        <h3 class="service-title">Instagram Influence Boost</h3>
+                        <p class="service-desc">Dominate the Explore page and Reels feed. Elevate your brand credibility
+                            with a prestigious, highly-engaged follower base.</p>
+                        <ul class="service-features">
+                            <li>Explore page optimization</li>
+                            <li>Reels viral momentum</li>
+                            <li>Blue-check credibility aesthetics</li>
+                            <li>Targeted niche engagement</li>
+                        </ul>
+                        <a href="https://www.qqtube.com/?ref=2315017" target="_blank" class="btn btn-primary">Activate
+                            Growth</a>
+                    </div>
+
+                    <!-- Spotify -->
+                    <div class="service-card reveal" style="transition-delay: 400ms;">
+                        <i class="fab fa-spotify service-icon ic-spotify"></i>
+                        <h3 class="service-title">Spotify Growth Boost</h3>
+                        <p class="service-desc">Get discovered by A&Rs and land on algorithmic playlists (Release Radar,
+                            Discover Weekly) through strategic stream volume.</p>
+                        <ul class="service-features">
+                            <li>Algorithmic playlist triggers</li>
+                            <li>Premium tier artist streams</li>
+                            <li>Monthly listener scaling</li>
+                            <li>Global chart positioning</li>
+                        </ul>
+                        <button onclick="redirectToSpotify()" class="btn btn-primary">Buy Now</button>
+                    </div>
+
+                    <!-- Facebook -->
+                    <div class="service-card reveal" style="transition-delay: 500ms;">
+                        <i class="fab fa-facebook service-icon ic-facebook"></i>
+                        <h3 class="service-title">Facebook Authority Boost</h3>
+                        <p class="service-desc">Accelerate page growth, increase engagement, and boost reach for
+                            Facebook posts and Reels.</p>
+                        <ul class="service-features">
+                            <li>Explosive organic reach signals</li>
+                            <li>High-engagement video metrics</li>
+                            <li>Targeted demographic delivery</li>
+                            <li>Reels monetization momentum</li>
+                        </ul>
+                        <a href="https://www.qqtube.com/?ref=2315017" target="_blank" class="btn btn-primary">Activate
+                            Growth</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="container faq-container reveal">
+                <h2 class="text-center" style="font-size: 2.5rem; margin-bottom: 3rem; text-align: center;">Frequently
+                    Asked Questions</h2>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Is this safe for my account?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely. We use proprietary delivery methods designed to mimic organic algorithmic spikes.
+                            We never ever ask for your password, and our services are 100% compliant with platform terms
+                            of service regarding external promotion.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How fast are the results?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>In most cases, you will begin seeing the metrics update within 1 to 12 hours of placing an
+                            order. However, to ensure algorithmic safety, large volumes are drip-fed dynamically based
+                            on your account's current velocity.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Is my payment secure?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes. All transactions are securely processed through encrypted, industry-standard gateways.
+                            We support major credit cards, PayPal, and select cryptocurrencies for global anonymous
+                            scalability.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do you offer customer support?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our dedicated elite support team is available 24/7. Whether you need a custom growth strategy
+                            or have questions regarding an active campaign, we are here to ensure your complete
+                            dominance.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" style="margin-top: 0; border-top: none;">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col" style="grid-column: span 1;">
+                    <a href="index.html" class="logo" style="margin-bottom: 1.5rem;">
+                        <div class="logo-icon"><i class="fas fa-bolt text-white"></i></div>
+                        ViralAuthority
+                    </a>
+                    <p>The premium growth partner for serious digital creators and forward-thinking brands.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://www.qqtube.com/?ref=2315017" target="_blank">YouTube Boost</a></li>
+                        <li><a href="https://www.qqtube.com/?ref=2315017" target="_blank">TikTok Viral</a></li>
+                        <li><a href="https://www.qqtube.com/?ref=2315017" target="_blank">Instagram Authority</a></li>
+                        <li><a href="https://www.qqtube.com/?ref=2315017" target="_blank">Spotify Growth</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="legal/terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="legal/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="legal/disclaimer.html">Disclaimer</a></li>
+                        <li><a href="legal/affiliate-disclosure.html">Affiliate Disclosure</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 ViralAuthority. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating CTA -->
+    <a href="https://www.qqtube.com/?ref=2315017" target="_blank" class="floating-cta" aria-label="Start Growing">
+        <i class="fas fa-rocket text-white" style="font-size: 1.5rem;"></i>
+    </a>
+
+    <!-- Email Capture Popup -->
+    <div class="popup-overlay" id="emailPopup">
+        <div class="popup-content">
+            <button class="popup-close"><i class="fas fa-times"></i></button>
+            <i class="fas fa-envelope-open-text"
+                style="font-size: 3rem; color: var(--accent-purple); margin-bottom: 1rem;"></i>
+            <h3>Get Free Growth Tips</h3>
+            <p>Join 15,000+ creators receiving our weekly algorithm breakdown.</p>
+            <form id="popupForm" class="popup-form">
+                <input type="email" class="popup-input" placeholder="Join the elite (Email)" required>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Unlock Secrets</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Spotify Purchase Modal -->
+    <div class="popup-overlay" id="spotifyModal">
+        <div class="popup-content" style="max-width: 500px;">
+            <button class="popup-close" onclick="closeSpotifyModal()"><i class="fas fa-times"></i></button>
+            <i class="fab fa-spotify" style="font-size: 3rem; color: #1db954; margin-bottom: 1rem;"></i>
+            <h3>Secure Your Campaign</h3>
+            <p style="margin-bottom: 1.5rem; color: var(--text-muted); font-size: 0.95rem;">Enter your release details
+                to initiate the algorithmic push.</p>
+
+            <form id="spotifyForm" class="popup-form" onsubmit="handleSpotifySubmit(event)">
+                <input type="text" class="popup-input" id="spoName" placeholder="Full Name *" required>
+                <input type="email" class="popup-input" id="spoEmail" placeholder="Email Address *" required>
+                <input type="text" class="popup-input" id="spoArtist" placeholder="Artist Name *" required>
+                <input type="url" class="popup-input" id="spoLink" placeholder="Spotify Song Link *" required>
+
+                <div style="text-align: left; margin-bottom: 0.5rem; font-size: 0.85rem; color: var(--text-muted);">
+                    Selected Package:</div>
+                <input type="text" class="popup-input" id="spoPackage" value="" readonly
+                    style="opacity: 0.7; cursor: not-allowed; background: rgba(0,0,0,0.3);">
+
+                <textarea class="popup-input" id="spoNotes" placeholder="Optional Notes (e.g., target demographic)"
+                    rows="2" style="resize: none;"></textarea>
+
+                <label
+                    style="display: flex; align-items: flex-start; gap: 0.75rem; text-align: left; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem; cursor: pointer; padding: 0.5rem; background: rgba(255,255,255,0.02); border-radius: 8px; border: 1px solid rgba(255,255,255,0.05);">
+                    <input type="checkbox" required style="margin-top: 0.2rem; cursor: pointer;">
+                    <span style="line-height: 1.4;">I understand delivery is progressive and no exact completion date is
+                        guaranteed.</span>
+                </label>
+
+                <button type="submit" class="btn btn-primary"
+                    style="width: 100%; display: flex; justify-content: center; align-items: center; gap: 0.5rem;">
+                    <i class="fab fa-paypal"></i> Proceed to Payment
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script>
+        // Redirect Logic for Spotify Services
+        function redirectToSpotify() {
+            var userLang = navigator.language || navigator.userLanguage;
+            if (userLang && userLang.toLowerCase().startsWith('es')) {
+                window.location.href = '/es/spotify-streams.html';
+            } else {
+                window.location.href = '/en/spotify-streams.html';
+            }
+        }
+
+
+        function closeSpotifyModal() {
+            const modal = document.getElementById('spotifyModal');
+            modal.classList.remove('active');
+            setTimeout(() => {
+                modal.style.display = 'none';
+            }, 300);
+        }
+
+        function handleSpotifySubmit(e) {
+            e.preventDefault();
+            // In a real scenario, we might save form data to a DB here.
+            // For now, redirect to PayPal.
+            const pkg = encodeURIComponent(document.getElementById('spoPackage').value);
+            const artist = encodeURIComponent(document.getElementById('spoArtist').value);
+            const itemName = `${pkg} for ${artist}`;
+
+            // Redirecting to standard PayPal checkout with return tracking
+            const returnUrl = encodeURIComponent("https://viralauthority.com/thank-you-spotify.html");
+            const paypalUrl = `https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=payments@viralauthority.com&item_name=${itemName}&currency_code=USD&return=${returnUrl}`;
+            window.location.href = paypalUrl;
+        }
+
+        // Close modal on outside click
+        window.addEventListener('click', (e) => {
+            const modal = document.getElementById('spotifyModal');
+            if (e.target === modal) {
+                closeSpotifyModal();
+            }
+        });
+
+        // FAQ Accordion Logics
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const parent = item.parentElement;
+                // Close others
+                document.querySelectorAll('.faq-item').forEach(faq => {
+                    if (faq !== parent) faq.classList.remove('active');
+                });
+                parent.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+
+</html>

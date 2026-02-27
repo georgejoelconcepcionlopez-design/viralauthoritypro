@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmed | ViralAuthority</title>
+    <meta name="description" content="Your promotional campaign has been activated.">
+    <meta name="robots" content="noindex, nofollow"> <!-- Prevent indexing of thank you pages -->
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        .thank-you-section {
+            padding: 10rem 0 6rem;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(circle at top, rgba(29, 185, 84, 0.15) 0%, rgba(5, 5, 5, 1) 70%);
+        }
+
+        .confirmation-card {
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 4rem 3rem;
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .confirmation-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #1db954, var(--accent-blue));
+        }
+
+        .success-icon-wrapper {
+            width: 80px;
+            height: 80px;
+            background: rgba(29, 185, 84, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            color: #1db954;
+            font-size: 2.5rem;
+            animation: pulse-green 2s infinite;
+        }
+
+        @keyframes pulse-green {
+            0% {
+                box-shadow: 0 0 0 0 rgba(29, 185, 84, 0.4);
+            }
+
+            70% {
+                box-shadow: 0 0 0 20px rgba(29, 185, 84, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(29, 185, 84, 0);
+            }
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+            text-align: left;
+        }
+
+        .info-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 16px;
+        }
+
+        .info-card h4 {
+            color: white;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .info-card h4 i {
+            color: var(--accent-blue);
+        }
+
+        .info-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .cta-container {
+            margin-top: 3rem;
+            padding-top: 3rem;
+            border-top: 1px dashed rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><i class="fas fa-bolt text-white"></i></div>
+                ViralAuthority
+            </a>
+
+            <nav class="nav-links">
+                <a href="en/index.html" class="nav-link">Home</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="en/academy.html" class="nav-link">Academy</a>
+            </nav>
+
+            <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <main>
+        <section class="thank-you-section">
+            <div class="container">
+                <div class="confirmation-card reveal">
+
+                    <div class="success-icon-wrapper">
+                        <i class="fas fa-check"></i>
+                    </div>
+
+                    <h1 class="hero-h1" style="font-size: 2.5rem; margin-bottom: 1rem;">Your Promotion Campaign Has Been
+                        <span class="text-gradient"
+                            style="background: linear-gradient(135deg, #1db954, #00f2fe); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Activated</span>
+                    </h1>
+                    <p class="hero-subtitle" style="font-size: 1.1rem; margin-bottom: 0;">Thank you for your business.
+                        The algorithmic push will commence shortly.</p>
+
+                    <div class="info-grid">
+                        <div class="info-card reveal" style="transition-delay: 100ms;">
+                            <h4><i class="fas fa-receipt"></i> Order Verification</h4>
+                            <p>We have successfully received your PayPal confirmation. Your Spotify track link and
+                                artist targeting notes are currently securely logged in our delivery network pipeline.
+                            </p>
+                        </div>
+
+                        <div class="info-card reveal" style="transition-delay: 200ms;">
+                            <h4><i class="fas fa-bolt"></i> Campaign Activation</h4>
+                            <p>Initial seeding begins within 12-24 hours. You will begin to see preliminary
+                                organic-style traction appearing in your Spotify for Artists dashboard shortly
+                                thereafter.</p>
+                        </div>
+
+                        <div class="info-card reveal" style="transition-delay: 300ms;">
+                            <h4><i class="fas fa-chart-line"></i> Progressive Delivery</h4>
+                            <p>To ensure absolute safety and compliance with Spotify's algorithm, all engagement is
+                                drip-fed. We mimic viral velocity organically, meaning exact completion dates vary.</p>
+                        </div>
+
+                        <div class="info-card reveal" style="transition-delay: 400ms;">
+                            <h4><i class="fas fa-headset"></i> Support Contact</h4>
+                            <p>For urgent questions regarding your active campaign, reach out to our elite priority team
+                                at <strong>support@viralauthority.com</strong>. Include your PayPal email.</p>
+                        </div>
+                    </div>
+
+                    <div class="cta-container reveal" style="transition-delay: 500ms;">
+                        <h3 style="margin-bottom: 1rem; color: white;">While You Wait...</h3>
+                        <p style="color: var(--text-muted); margin-bottom: 2rem;">Ensure your account is primed for
+                            monetization and understand exactly how the viral recommendation engine works.</p>
+                        <a href="en/academy.html" class="btn btn-primary"
+                            style="font-size: 1.1rem; padding: 1rem 2.5rem;">
+                            Learn How to Maximize Your Promotion <i class="fas fa-arrow-right"
+                                style="margin-left: 0.5rem;"></i>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" style="margin-top: 0; border-top: none;">
+        <div class="container">
+            <div class="footer-bottom"
+                style="border-top: 1px solid var(--border-color); padding-top: 2rem; margin-top: 0;">
+                <p>&copy; 2026 ViralAuthority. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>

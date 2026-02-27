@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Implementation -->
+    <title>ViralAuthority | Domina las Redes Sociales y Construye Autoridad Instantánea</title>
+    <meta name="description"
+        content="Soluciones estratégicas de crecimiento para creadores, influencers y marcas listos para escalar rápido. Impulsa tu visibilidad en YouTube, TikTok, Instagram y Spotify.">
+    <meta name="keywords"
+        content="crecimiento en redes sociales, comprar seguidores, impulso youtube, vistas tiktok, autoridad instagram, reproducciones spotify">
+
+    <link rel="canonical" href="https://viralauthority.com/es/">
+    <link rel="alternate" hreflang="es" href="https://viralauthority.com/es/">
+    <link rel="alternate" hreflang="en" href="https://viralauthority.com/en/">
+    <link rel="alternate" hreflang="x-default" href="https://viralauthority.com/">
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Lang Switcher */
+        .lang-switcher {
+            position: absolute;
+            top: 1.5rem;
+            right: 2rem;
+            color: white;
+            font-size: 0.85rem;
+            font-weight: 600;
+            z-index: 1001;
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .lang-switcher a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.5;
+            transition: var(--transition-smooth);
+        }
+
+        .lang-switcher a.active,
+        .lang-switcher a:hover {
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .lang-switcher {
+                right: 5rem;
+            }
+        }
+
+        /* Home Page Specific Styles */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            padding-top: 80px;
+            background: radial-gradient(circle at center, rgba(139, 92, 246, 0.15) 0%, rgba(5, 5, 5, 1) 70%);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            z-index: 10;
+        }
+
+        .hero-h1 {
+            font-size: 4.5rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-inline: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+
+        .stat-item p {
+            color: var(--accent-blue);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .feature-card {
+            background: var(--surface-color);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            transition: var(--transition-smooth);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(139, 92, 246, 0.5);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--accent-pink);
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            background: var(--gradient-neon);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .feature-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .platforms-section {
+            background: var(--surface-color);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .platform-logos {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+            opacity: 0.7;
+            font-size: 3rem;
+        }
+
+        .platform-logos i {
+            transition: var(--transition-smooth);
+        }
+
+        .platform-logos i:hover {
+            color: var(--accent-blue);
+            transform: scale(1.1);
+            opacity: 1;
+        }
+
+        .final-cta {
+            text-align: center;
+            padding: 8rem 0;
+            background: linear-gradient(180deg, var(--bg-color) 0%, rgba(139, 92, 246, 0.1) 100%);
+        }
+
+        .final-cta h2 {
+            font-size: 3.5rem;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <!-- Language Switcher -->
+        <div class="lang-switcher">
+            <a href="../es/index.html" class="active">ES</a> |
+            <a href="../en/index.html">EN</a>
+        </div>
+
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><i class="fas fa-bolt text-white"></i></div>
+                ViralAuthority
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link text-white">Inicio</a>
+                <a href="../services.html" class="nav-link">Servicios</a>
+                <a href="ai-tools.html" class="nav-link">Herramientas IA</a>
+                <a href="/es/academia.html" class="nav-link">Academia</a>
+                <a href="../blog.html" class="nav-link">Blog</a>
+                <a href="../contact.html" class="nav-link">Contacto</a>
+                <a href="https://www.qqtube.com/?ref=2315017" target="_blank" class="btn btn-primary"
+                    style="padding: 0.5rem 1.5rem; font-size: 0.95rem;">Únete a la Élite</a>
+            </nav>
+
+            <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content reveal">
+                <h1 class="hero-h1">Domina las Redes Sociales.<br><span class="text-gradient">Construye Autoridad
+                        Instantánea.</span></h1>
+                <p class="hero-subtitle">Soluciones estratégicas de crecimiento para creadores, influencers y marcas
+                    listos para escalar rápido. Aceleración algorítmica para la web moderna.</p>
+
+                <div class="hero-buttons">
+                    <a href="https://www.qqtube.com/?ref=2315017" target="_blank" class="btn btn-primary">Empieza a
+                        Crecer Ahora</a>
+                    <a href="#services" class="btn btn-secondary">Explorar Servicios</a>
+                </div>
+
+                <!-- Social Proof Stats -->
+                <div class="stats-grid reveal" style="transition-delay: 200ms;">
+                    <div class="stat-item">
+                        <h3>50K+</h3>
+                        <p>Cuentas Impulsadas</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>1M+</h3>
+                        <p>Interacciones Entregadas</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>99%</h3>
+                        <p>Satisfacción del Cliente</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>24/7</h3>
+                        <p>Soporte de Crecimiento</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section id="services" class="section">
+            <div class="container">
+                <div class="text-center reveal" style="text-align: center; max-width: 600px; margin: 0 auto;">
+                    <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Por Qué Elegirnos</h2>
+                    <p class="text-muted">La ventaja injusta definitiva. Proveemos la palanca que necesitas para superar
+                        al algoritmo.</p>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature-card reveal" style="transition-delay: 100ms;">
+                        <i class="fas fa-rocket feature-icon"></i>
+                        <h3>Impulso de Visibilidad Instantáneo</h3>
+                        <p class="text-muted">Salta la rutina interminable. Activa tus métricas de interacción
+                            inmediatamente y desencadena recomendaciones algorítmicas.</p>
+                    </div>
+                    <div class="feature-card reveal" style="transition-delay: 200ms;">
+                        <i class="fas fa-microchip feature-icon"></i>
+                        <h3>Aceleración Algorítmica</h3>
+                        <p class="text-muted">Nuestras estrategias están diseñadas con precisión para señalar alta
+                            retención y viralidad a los algoritmos sociales modernos.</p>
+                    </div>
+                    <div class="feature-card reveal" style="transition-delay: 300ms;">
+                        <i class="fas fa-shield-alt feature-icon"></i>
+                        <h3>Mejora de Credibilidad</h3>
+                        <p class="text-muted">Los números importan. Construye confianza inmediata con tu audiencia a
+                            través de una presencia establecida con muchos seguidores.</p>
+                    </div>
+                    <div class="feature-card reveal" style="transition-delay: 400ms;">
+                        <i class="fas fa-share-nodes feature-icon"></i>
+                        <h3>Crecimiento Multi-Plataforma</h3>
+                        <p class="text-muted">Escala simultáneamente en YouTube, TikTok, Instagram y Spotify con nuestro
+                            panel de crecimiento unificado.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Platforms Section -->
+        <section class="section platforms-section">
+            <div class="container reveal text-center" style="text-align: center;">
+                <h2 style="font-size: 2.5rem;">Domina Cada Red</h2>
+                <div class="platform-logos">
+                    <i class="fab fa-youtube"></i>
+                    <i class="fab fa-tiktok"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-spotify"></i>
+                    <i class="fab fa-x-twitter"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="final-cta">
+            <div class="container reveal">
+                <h2>Tu Crecimiento Empieza Hoy.</h2>
+                <p class="text-muted" style="max-width: 600px; margin: 0 auto 2.5rem auto; font-size: 1.2rem;">No dejes
+                    que el algoritmo te detenga. Reclama tu autoridad y alcanza a la audiencia que mereces.</p>
+                <a href="https://www.qqtube.com/?ref=2315017" target="_blank" class="btn btn-primary"
+                    style="font-size: 1.25rem; padding: 1.1rem 3rem;">Comienza tu Viaje</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col" style="grid-column: span 1;">
+                    <a href="index.html" class="logo" style="margin-bottom: 1.5rem;">
+                        <div class="logo-icon"><i class="fas fa-bolt text-white"></i></div>
+                        ViralAuthority
+                    </a>
+                    <p>El socio de crecimiento premium para creadores digitales serios y marcas innovadoras.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Empresa</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="../services.html">Servicios</a></li>
+                        <li><a href="../blog.html">Blog</a></li>
+                        <li><a href="../contact.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Servicios</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://www.qqtube.com/?ref=2315017" target="_blank">Impulso YouTube</a></li>
+                        <li><a href="https://www.qqtube.com/?ref=2315017" target="_blank">Viral TikTok</a></li>
+                        <li><a href="https://www.qqtube.com/?ref=2315017" target="_blank">Autoridad Instagram</a></li>
+                        <li><a href="https://www.qqtube.com/?ref=2315017" target="_blank">Crecimiento Spotify</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="../legal/terms-of-service.html">Términos de Servicio</a></li>
+                        <li><a href="../legal/privacy-policy.html">Política de Privacidad</a></li>
+                        <li><a href="../legal/disclaimer.html">Descargo de Responsabilidad</a></li>
+                        <li><a href="../legal/affiliate-disclosure.html">Divulgación de Afiliados</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 ViralAuthority. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating CTA -->
+    <a href="https://www.qqtube.com/?ref=2315017" target="_blank" class="floating-cta" aria-label="Start Growing">
+        <i class="fas fa-rocket text-white" style="font-size: 1.5rem;"></i>
+    </a>
+
+    <!-- Email Capture Popup -->
+    <div class="popup-overlay" id="emailPopup">
+        <div class="popup-content">
+            <button class="popup-close"><i class="fas fa-times"></i></button>
+            <i class="fas fa-envelope-open-text"
+                style="font-size: 3rem; color: var(--accent-purple); margin-bottom: 1rem;"></i>
+            <h3>Obtén Consejos de Crecimiento Gratis</h3>
+            <p>Únete a más de 15,000 creadores que reciben nuestro desglose semanal del algoritmo.</p>
+            <form id="popupForm" class="popup-form">
+                <input type="email" class="popup-input" placeholder="Tu correo electrónico" required>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Desbloquear Secretos</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../js/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creator Academy | Cómo Ganar Dinero con Redes Sociales en 2026</title>
+    <meta name="description"
+        content="Mini-curso gratuito: Descubre modelos de monetización reales, mecánica de algoritmos y estrategias de lanzamiento para maximizar tus ingresos en redes sociales.">
+    <link rel="canonical" href="https://viralauthority.com/es/academia-monetizacion.html">
+    <link rel="alternate" hreflang="es" href="https://viralauthority.com/es/academia-monetizacion.html">
+    <link rel="alternate" hreflang="en" href="https://viralauthority.com/en/academy-monetization.html">
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        .lang-switcher {
+            position: absolute;
+            top: 1.5rem;
+            right: 2rem;
+            color: white;
+            font-size: 0.85rem;
+            font-weight: 600;
+            z-index: 1001;
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .lang-switcher a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.5;
+            transition: var(--transition-smooth);
+        }
+
+        .lang-switcher a.active,
+        .lang-switcher a:hover {
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .lang-switcher {
+                right: 5rem;
+            }
+        }
+
+        /* Course Styles */
+        .academy-header {
+            padding: 10rem 0 4rem;
+            text-align: center;
+            background: radial-gradient(circle at top, rgba(139, 92, 246, 0.15) 0%, rgba(5, 5, 5, 1) 70%);
+        }
+
+        .course-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 3rem;
+            margin-bottom: 6rem;
+            position: relative;
+        }
+
+        .progress-wrapper {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .progress-bar-container {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: var(--gradient-neon);
+            width: 20%;
+            transition: width 0.4s ease;
+        }
+
+        .progress-text {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .module-content {
+            display: none;
+            animation: fadeIn 0.4s ease forwards;
+        }
+
+        .module-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .module-content h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .module-content h3 {
+            font-size: 1.3rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: var(--accent-blue);
+        }
+
+        .module-content p {
+            color: #d1d5db;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .module-content ul {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+            color: #d1d5db;
+        }
+
+        .module-content li {
+            margin-bottom: 0.8rem;
+            line-height: 1.6;
+        }
+
+        .module-actions {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .btn-prev {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .btn-prev:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-next {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-next:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateX(3px);
+        }
+
+        /* Locked Premium Module Styles */
+        .locked-content-container {
+            position: relative;
+            margin-top: 1.5rem;
+            min-height: 400px;
+        }
+
+        .blur-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(to bottom, rgba(15, 15, 15, 0.4), rgba(15, 15, 15, 0.95) 50%, var(--surface-color) 100%);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: 12px;
+            padding: 2rem;
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            box-shadow: 0 0 30px rgba(139, 92, 246, 0.1) inset;
+        }
+
+        .premium-lock {
+            font-size: 3rem;
+            color: var(--accent-pink);
+            margin-bottom: 1rem;
+            text-shadow: 0 0 20px rgba(236, 72, 153, 0.4);
+        }
+
+        .premium-text {
+            color: var(--accent-pink);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .blurred-text {
+            filter: blur(8px);
+            opacity: 0.2;
+            user-select: none;
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="lang-switcher">
+            <a href="academia-monetizacion.html" class="active">ES</a> |
+            <a href="../en/academy-monetization.html">EN</a>
+        </div>
+
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><i class="fas fa-bolt text-white"></i></div>
+                ViralAuthority
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link">Inicio</a>
+                <a href="../services.html" class="nav-link">Servicios</a>
+                <a href="ai-tools.html" class="nav-link">Herramientas IA</a>
+                <a href="academia.html" class="nav-link text-white">Academia</a>
+                <a href="../contact.html" class="nav-link">Contacto</a>
+                <a href="https://www.qqtube.com/?ref=2315017" target="_blank" class="btn btn-primary"
+                    style="padding: 0.5rem 1.5rem; font-size: 0.95rem;">Únete a la Élite</a>
+            </nav>
+
+            <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <main>
+        <section class="academy-header">
+            <div class="container reveal">
+                <div
+                    style="font-size: 0.9rem; color: var(--accent-pink); font-weight: 600; text-transform: uppercase; margin-bottom: 1rem; letter-spacing: 2px;">
+                    Mini-Curso</div>
+                <h1 class="hero-h1">Cómo Ganar Dinero con las <span class="text-gradient">Redes Sociales en 2026</span>
+                </h1>
+                <p class="hero-subtitle">El plan maestro definitivo para desbloquear los límites de interacción, dominar
+                    múltiples vías de monetización y convertir visualizaciones en activos digitales rentables.</p>
+            </div>
+        </section>
+
+        <section class="section pt-0">
+            <div class="container">
+                <div class="course-container reveal" style="transition-delay: 200ms;">
+
+                    <div class="progress-wrapper">
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" id="progressBar"></div>
+                        </div>
+                        <div class="progress-text">
+                            <span id="moduleText">Módulo 1 de 5</span>
+                            <span id="percentageText">20% Completado</span>
+                        </div>
+                    </div>
+
+                    <!-- MODULE 1 -->
+                    <div class="module-content active" id="mod-1">
+                        <h2>1. Modelos Reales de Monetización</h2>
+                        <p>En 2026, depender únicamente de los pagos por ingresos publicitarios directos de las
+                            plataformas como YouTube o X es el camino más lento para obtener ingresos sostenibles. La
+                            economía moderna de creadores exige un enfoque de ingresos en múltiples capas. Entender la
+                            diferencia entre los pagos nativos y la conversión externa es crucial para escalar tu
+                            negocio digital.</p>
+
+                        <h3>Pagos Nativos de la Plataforma (La Base)</h3>
+                        <p>La monetización nativa ocurre cuando la plataforma te paga directamente por la atención que
+                            capturas. Programas como el Programa de Socios de YouTube, el Creativity Program de TikTok y
+                            Bonificaciones por Rendimiento de Facebook entran en esta categoría. A nivel escala es
+                            lucrativo, pero quedas atado a RPMs inestables fluctuando con los cambios de política de la
+                            plataforma. Esto debe ser tratado solo como el piso de tus ingresos, no tu límite.</p>
+
+                        <h3>Asociaciones de Marca (Patrocinios)</h3>
+                        <p>La capa secundaria implica alquilar tu audiencia establecida a marcas terceras. La clave aquí
+                            es la autoridad en tú nicho. Un creador altamente interactivo con 50,000 seguidores en un
+                            nicho como "Teclados Mecánicos" puede exigir tarifas de patrocinio más altas que un creador
+                            de entretenimiento general con 500,000 seguidores. Las marcas pagan por altas conversiones
+                            hacia audiencias dirigidas, no solo por impresiones de vanidad.</p>
+
+                        <h3>Propiedad de Infraestructura Digital (Fase Final)</h3>
+                        <p>El nivel más alto de monetización es trasladar la red social variable a un activo controlado
+                            o de tu propiedad. Esto implica canalizar el alcance de las plataformas como un mecanismo en
+                            la "parte superior del embudo" para redirigir tráfico directamente a tus productos,
+                            herramientas SaaS, comunidades privadas de pago o enlaces de afiliados rentables de tickets
+                            altos.</p>
+
+                        <div class="module-actions">
+                            <div></div>
+                            <button class="btn-next" onclick="nextMod()">Siguiente Módulo <i
+                                    class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- MODULE 2 -->
+                    <div class="module-content" id="mod-2">
+                        <h2>2. Cómo Funcionan los Algoritmos de Redes Sociales</h2>
+                        <p>Las redes sociales son recolecciones de datos diseñados con un propósito fisiológico
+                            singular: maximizar la duración de la sesión del usuario. No valoran la calidad subjetiva de
+                            tus contenidos, solo se enfocan en cuán eficientemente tu contenido retiene la atención
+                            humana visual en la pantalla. El algoritmo ejecuta esta métrica y propósito rígidamente.</p>
+
+                        <h3>El Entorno de Pruebas Algorítmico</h3>
+                        <p>Al oprimir 'Publicar', tu video no se proyecta a todo el mundo. Es liberado a una audiencia
+                            microscópica selecta (con base a veces geográfica y alrededor de 200 a 500 seguidores
+                            locales). El algoritmo observa estadísticamente este período de demostración. Lograr altos
+                            resultados iniciales (particularmente el Tiempo Medio de Retención / Average Watch Time), te
+                            aprueba esta etapa.</p>
+
+                        <h3>Avanzando entre Capas de Prueba (Tiers)</h3>
+                        <p>Tras una rápida validación positiva, tu vídeo atraviesa un grupo muestral mayor (por ejemplo:
+                            cohort de 5,000 visualizadores); la métrica es nuevamente puesta a prueba aquí
+                            limitadamente. Los escalamientos repiten hasta romper masivamente la barrera. Un material
+                            "Viral" es sencillamente aquel que pasa entre diez a quince de estas fases exitosamente de
+                            modo continuo.</p>
+
+                        <h3>El Fenómeno "Feed Muerto" (Shadowbanning Leve)</h3>
+                        <p>Cuando un perfil consistentemente fracasa la prueba central de las 200 visitas de validación,
+                            la plataforma agrupa ese perfil entero en formato "audiencia de baja retención",
+                            disminuyendo enormemente sus posteriores envíos nativos. Rescatar un entorno muerto requiere
+                            inyectarse brutal momento inicial artificialmente para arrancar, u alterar radicalmente el
+                            paradigma de formato.</p>
+
+                        <div class="module-actions">
+                            <button class="btn-prev" onclick="prevMod()"><i class="fas fa-arrow-left"></i>
+                                Anterior</button>
+                            <button class="btn-next" onclick="nextMod()">Siguiente Módulo <i
+                                    class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- MODULE 3 -->
+                    <div class="module-content" id="mod-3">
+                        <h2>3. Requisitos para la Monetización de Plataformas</h2>
+                        <p>Para acceder a la nómina de pagos nativa en grandes plataformas, necesitas pasar hitos
+                            operacionales numéricos definidos por cada empresa. Un perfil con estadísticas firmes
+                            consigue ser aprobado comercialmente casi de manera automática, sin barreras pesadas.</p>
+
+                        <h3>Programa de Socios de YouTube (YPP)</h3>
+                        <p>El estándar base indiscutido para los pagos a los creadores de vídeo extendido. Logra tu
+                            monetización estándar acumulando 1,000 Suscriptores junto con 4,000 Horas Totales Públicas a
+                            lo largo de 12 meses. Una vía alternativa son las Shorts con requisitos de 1K suscriptores
+                            superando las 10 millones de reproducciones. Aconsejamos exprimir tracción con las shorts,
+                            para asentar los suscriptores requeridos, pero canalizarse hacia la creación duradera de
+                            valor (Long Form) sobre videos de 10-15 minutos.</p>
+
+                        <h3>Programa de Beta en TikTok (TikTok Creativity Program)</h3>
+                        <p>Centrada hacia los formatos modernos extendidos en dispositivos móviles (vídeos estrictamente
+                            por arriba de 60 segundos). La cuenta requiere acceso/creación verificada proveniente de
+                            zonas geográficas comerciales maduras (UK, US, BR), poseer los legendarios 10,000
+                            suscriptores reales mínimos y haber obtenido 100K impresiones visuales (video views) los
+                            últimos 30 días para empezar el sistema base de RPM monetario.</p>
+
+                        <h3>Módulos de Patrocinio y Suscripción (Instagram)</h3>
+                        <p>Con menos fiabilidad constante que YouTube sobre los "pagos al visualizar la pestaña
+                            (Bonuses)", el gigante Meta liderado por Instagram pone alto valor numérico en monetizar
+                            grupos íntimos. Programas integrados de Suscripción te dejan cobrar un pago periódico
+                            mensual garantizado por un acceso profundo, historias reservadas y badges a tus mayores
+                            fanáticos — pero demanda 10,000 suscriptores previos válidos para empezar a usar la
+                            herramienta formalmente.</p>
+
+                        <div class="module-actions">
+                            <button class="btn-prev" onclick="prevMod()"><i class="fas fa-arrow-left"></i>
+                                Anterior</button>
+                            <button class="btn-next" onclick="nextMod()">Siguiente Módulo <i
+                                    class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- MODULE 4 -->
+                    <div class="module-content" id="mod-4">
+                        <h2>4. Lanzamiento Estratégico de un Perfil Nuevo</h2>
+                        <p>Semanas 1 y 2. Esto es vida o muerte. En los primeros días de la existencia en internet un
+                            algoritmo define el mapa categórico ("Cluster de Audiencia Base") del perfil entero. Entrar
+                            en juego lanzando experimentos fallidos confunde masivamente la Inteligencia Artificial a la
+                            hora de localizar tu nicho nativo.</p>
+
+                        <h3>Método 'Batch and Blast'</h3>
+                        <p>Evite lanzarse teniendo una sola píldora de vídeo suelta con la base vacía. Ensaye hasta
+                            grabar, componer visual y emocionalmente la edición, teniendo un arsenal crudo de 10 a 12
+                            vídeos robustos previos al inicio. Sube masificando; hasta unos 3 clips por 24 horas
+                            iniciales para establecer la dirección general del material. Este sobre-surgente flujo
+                            domina el test de retención al bombardear las analíticas con puntos viables.</p>
+
+                        <h3>Consistencia de Ecosistema en la Presentación (Grid Visually)</h3>
+                        <p>El espectador atrapado en tu éxito regresará visualmente a examinar si te otorga o no el
+                            preciado "Botón de Seguimiento/Sub". Para aprobar este chequeo microscópico mental
+                            instantáneo: Utiliza combinaciones previsorias e identificables en miniaturas de alto
+                            contraste o letras (Bold Fonts), una bio corta optimizada y un vídeo principal de anclaje
+                            (Pinned-Post) resumiendo brutalmente toda tu proposición.</p>
+
+                        <h3>Proteger las Estadísticas y Eliminar Fugas</h3>
+                        <p>Si durante estas primeras etapas sueles "Borrar y Re-subir" contenido de pobres vistas el
+                            algoritmo de protección interpretará fuertemente inestabilidad o un posible bot in-house
+                            frenando todo. Relegar material malo únicamente al archivo interno con privacidad (Only Me)
+                            preservará el flujo métrico general estable. Todo fallo bajo un alcance de menos de 20%
+                            retentivo se debió únicamente al fracaso de generar la premisa (Hook de los primeros 3
+                            segundos).</p>
+
+                        <div class="module-actions">
+                            <button class="btn-prev" onclick="prevMod()"><i class="fas fa-arrow-left"></i>
+                                Anterior</button>
+                            <button class="btn-next" onclick="nextMod()">Siguiente Módulo <i
+                                    class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- MODULE 5 -->
+                    <div class="module-content" id="mod-5">
+                        <h2>5. Estrategia Avanzada de Aceleración de Crecimiento</h2>
+                        <p>Ya conoces la estructura basal analítica, la monetización a seguir de los formatos modernos y
+                            un sólido plan inaugural de tu red. Aunque para saltar directamente sobre la barrera
+                            "Sandbox inicial de estagnación" algorítmica de manera masiva, requerirás fuerzas
+                            artificiales precisas y estratégicas insertables al instante ideal de tu desarrollo como
+                            perfil matriz.</p>
+
+                        <div class="locked-content-container">
+                            <!-- Overlay -->
+                            <div class="blur-overlay">
+                                <i class="fas fa-lock premium-lock"></i>
+                                <div class="premium-text">Estrategia Avanzada de Crecimiento</div>
+                                <h3 style="color: white; font-size: 1.8rem; margin: 0 0 2rem 0;">¿Listo para Dominar el
+                                    Algoritmo?</h3>
+                                <a href="https://www.qqtube.com/?ref=2315017" target="_blank" class="btn btn-primary"
+                                    style="font-size: 1.25rem; padding: 1.1rem 3rem; display: inline-block; box-shadow: 0 10px 25px rgba(139, 92, 246, 0.3); transition: transform 0.3s ease;">
+                                    Activar mi Crecimiento
+                                </a>
+                                <p style="margin-top: 1rem; color: var(--text-muted); font-size: 0.9rem;">Disponible
+                                    para servicios de YouTube, TikTok, Instagram y Spotify.</p>
+                            </div>
+
+                            <!-- Blurred background dummy content -->
+                            <div class="blurred-text">
+                                <h3>Mecanismo de Multiplicador de Autoridad</h3>
+                                <p>Un número monumental de geniales creativos y analistas son relegados a un bajo nivel
+                                    y purgados del crecimiento sencillamente por falta de velocidad basal ("Score de
+                                    Legitimidad Visual") impuesta artificialmente como techo. Construir esta validación
+                                    puede hacerse colapsando enormes cantidades calculadas precisas de empuje externo
+                                    masivo controlando orgánicamente las fases tempranas test de visualización
+                                    impuestas.</p>
+
+                                <h3>Asegurando la Barrera de la Confianza Psicológica</h3>
+                                <p>Ingresar o localizar material proveniente de una fuente con estadísticas de 18
+                                    suscriptores pre-codificara subconscientemente en el observador a omitir y deslizar
+                                    sin retener interés asimilándolo todo instantáneamente hacia el "Material novato,
+                                    omitible". Si el usuario enmarca las analíticas basales en escalas pesadas (por
+                                    encima de los 25,000 en validaciones pre-establecidas interactivas completas) se
+                                    detona en el cerebro del visor que la cuenta representa formal "Liderazgo Temático
+                                    de Autoridad". Elevando su retención del visionado significando que finalizara tu
+                                    material y apoyará exponencialmente más por la pura y dura prueba de legitimidad
+                                    inicial inyectada.</p>
+                            </div>
+                        </div>
+
+                        <div class="module-actions" style="margin-top: 1rem;">
+                            <button class="btn-prev" onclick="prevMod()"><i class="fas fa-arrow-left"></i>
+                                Anterior</button>
+                            <div></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col" style="grid-column: span 1;">
+                    <a href="index.html" class="logo" style="margin-bottom: 1.5rem;">
+                        <div class="logo-icon"><i class="fas fa-bolt text-white"></i></div>
+                        ViralAuthority
+                    </a>
+                    <p>El socio de crecimiento premium para creadores digitales serios y marcas innovadoras.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Empresa</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="../services.html">Servicios</a></li>
+                        <li><a href="ai-tools.html">AI Tools</a>
+                            <a href="/en/academy.html" class="nav-link">Academy</a>
+                        </li>
+                        <li><a href="academia.html">Academia</a></li>
+                        <li><a href="../contact.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Servicios</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://www.qqtube.com/?ref=2315017" target="_blank">Impulso YouTube</a></li>
+                        <li><a href="https://www.qqtube.com/?ref=2315017" target="_blank">Viral TikTok</a></li>
+                        <li><a href="https://www.qqtube.com/?ref=2315017" target="_blank">Autoridad Instagram</a></li>
+                        <li><a href="spotify-streams.html">Crecimiento Spotify</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="../legal/terms-of-service.html">Términos de Servicio</a></li>
+                        <li><a href="../legal/privacy-policy.html">Política de Privacidad</a></li>
+                        <li><a href="../legal/disclaimer.html">Descargo de Responsabilidad</a></li>
+                        <li><a href="../legal/affiliate-disclosure.html">Divulgación de Afiliados</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 ViralAuthority. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/app.js"></script>
+    <script>
+        // Mini Course Logic
+        let currentMod = 1;
+        const totalMods = 5;
+
+        function updateUI() {
+            // Hide all
+            document.querySelectorAll('.module-content').forEach(el => {
+                el.classList.remove('active');
+            });
+            // Show current
+            document.getElementById('mod-' + currentMod).classList.add('active');
+
+            // Update Progress
+            const pct = (currentMod / totalMods) * 100;
+            document.getElementById('progressBar').style.width = pct + '%';
+            document.getElementById('moduleText').innerText = `Módulo ${currentMod} de ${totalMods}`;
+            document.getElementById('percentageText').innerText = `${Math.round(pct)}% Completado`;
+
+            // Scroll to top of course
+            window.scrollTo({
+                top: document.querySelector('.course-container').offsetTop - 100,
+                behavior: 'smooth'
+            });
+        }
+
+        function nextMod() {
+            if (currentMod < totalMods) {
+                currentMod++;
+                updateUI();
+            }
+        }
+
+        function prevMod() {
+            if (currentMod > 1) {
+                currentMod--;
+                updateUI();
+            }
+        }
+    </script>
+</body>
+
+</html>

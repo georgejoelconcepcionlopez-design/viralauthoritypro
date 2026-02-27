@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Spotify Streams Promotion | ViralAuthority</title>
+    <meta name="description"
+        content="Boost your music on Spotify with strategic campaigns. 100% real streams, progressive delivery, and algorithm-activating retention.">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .page-header {
+            padding: 12rem 0 6rem;
+            text-align: center;
+            background: radial-gradient(circle at top, rgba(29, 185, 84, 0.15) 0%, rgba(5, 5, 5, 1) 70%);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .pricing-card {
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(29, 185, 84, 0.4);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+        }
+
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #1db954, #1ed760);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .pricing-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: 1.25rem;
+            right: -2.75rem;
+            background: linear-gradient(90deg, #1db954, #1ed760);
+            color: #000;
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            padding: 0.35rem 3rem;
+            transform: rotate(45deg);
+            letter-spacing: 1px;
+            box-shadow: 0 4px 10px rgba(29, 185, 84, 0.3);
+        }
+
+        .pricing-card.popular {
+            border-color: rgba(29, 185, 84, 0.3);
+            box-shadow: 0 0 30px rgba(29, 185, 84, 0.05);
+        }
+
+        .package-volume {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0.3rem;
+        }
+
+        .package-price {
+            font-size: 1.15rem;
+            color: var(--accent-pink);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .package-features {
+            text-align: left;
+            margin-bottom: 2rem;
+            flex-grow: 1;
+        }
+
+        .package-features li {
+            position: relative;
+            padding-left: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .package-features li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: #1ed760;
+        }
+
+        .important-info-section {
+            margin-top: 6rem;
+            padding: 4rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .important-info-section h3 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .info-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .info-list li {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 3px solid #1db954;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .info-list li i {
+            color: #1db954;
+            margin-top: 0.2rem;
+        }
+
+        /* FAQ Accordion Styles */
+        .faq-section {
+            margin-top: 6rem;
+            margin-bottom: 6rem;
+        }
+
+        .accordion {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .accordion-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: var(--transition-smooth);
+        }
+
+        .accordion-item:hover {
+            border-color: rgba(29, 185, 84, 0.3);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .accordion-header {
+            width: 100%;
+            text-align: left;
+            padding: 1.5rem;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: var(--font-display);
+        }
+
+        .accordion-header i {
+            color: #1db954;
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-item.active .accordion-header i {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .accordion-body {
+            padding: 0 1.5rem 1.5rem;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Conversion Enhancements */
+        .pulse-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: rgba(29, 185, 84, 0.1);
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #fff;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(29, 185, 84, 0.2);
+        }
+
+        .pulse-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #1db954;
+            border-radius: 50%;
+            box-shadow: 0 0 0 0 rgba(29, 185, 84, 0.7);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(29, 185, 84, 0.7);
+            }
+
+            70% {
+                transform: scale(1);
+                box-shadow: 0 0 0 6px rgba(29, 185, 84, 0);
+            }
+
+            100% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(29, 185, 84, 0);
+            }
+        }
+
+        .pricing-card.popular {
+            border: 2px solid #1db954;
+            box-shadow: 0 0 20px rgba(29, 185, 84, 0.2);
+            position: relative;
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #1db954, #1ed760);
+            color: #000;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            z-index: 10;
+        }
+
+        /* Simple Animated Growth Chart */
+        .growth-chart-container {
+            width: 100%;
+            height: 200px;
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+            margin-top: 2rem;
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+        }
+
+        .chart-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: 1;
+        }
+
+        .chart-line {
+            width: 100%;
+            height: 80%;
+            border-bottom: 3px solid #1db954;
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            transform-origin: bottom left;
+            z-index: 2;
+            box-shadow: 0 10px 20px -10px #1db954;
+            /* Simple SVG data URI for curvy line approach */
+            background: url('data:image/svg+xml;utf8,<svg preserveAspectRatio="none" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M0 100 Q 20 80, 50 50 T 100 0 L 100 100 Z" fill="rgba(29,185,84,0.1)" stroke="%231db954" stroke-width="2" /></svg>') no-repeat;
+            background-size: 100% 100%;
+            border: none;
+            box-shadow: none;
+            clip-path: polygon(0 0, 0 100%, 0 100%, 0 0);
+            animation: drawLine 3s ease-out forwards;
+            animation-delay: 0.5s;
+        }
+
+        @keyframes drawLine {
+            to {
+                clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0);
+            }
+        }
+
+        .chart-labels {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            padding: 0 20px;
+            z-index: 3;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.75rem;
+        }
+
+        .chart-tooltips .tooltip {
+            position: absolute;
+            background: #fff;
+            color: #000;
+            font-size: 0.75rem;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            z-index: 4;
+            opacity: 0;
+            animation: fadeInTooltip 0.5s ease forwards;
+        }
+
+        .tooltip-1 {
+            left: 20%;
+            bottom: 40%;
+            animation-delay: 1.5s;
+        }
+
+        .tooltip-2 {
+            left: 50%;
+            bottom: 65%;
+            animation-delay: 2s;
+        }
+
+        .tooltip-3 {
+            right: 5%;
+            bottom: 90%;
+            animation-delay: 2.5s;
+        }
+
+        @keyframes fadeInTooltip {
+            to {
+                opacity: 1;
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Countdown Styles */
+        .promo-countdown-wrapper {
+            background: rgba(29, 185, 84, 0.05);
+            border: 1px solid rgba(29, 185, 84, 0.2);
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            max-width: 800px;
+            margin: 0 auto 4rem auto;
+            text-align: center;
+            box-shadow: 0 0 30px rgba(29, 185, 84, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .promo-countdown-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #1ed760, transparent);
+        }
+
+        .countdown-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .countdown-text {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .countdown-box {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: inset 0 0 15px rgba(29, 185, 84, 0.1);
+        }
+
+        .countdown-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1ed760;
+            font-family: var(--font-display);
+            text-shadow: 0 0 10px rgba(30, 215, 96, 0.4);
+            line-height: 1;
+        }
+
+        .countdown-label {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.5);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <!-- Language Switcher -->
+        <div class="lang-switcher"
+            style="position: absolute; top: 1.5rem; right: 2rem; color: white; font-size: 0.85rem; font-weight: 600; z-index: 1001; display: flex; gap: 0.5rem;">
+            <a href="../es/spotify-streams.html"
+                style="color: white; text-decoration: none; opacity: 0.5; transition: opacity 0.3s;"
+                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.5'">ES</a> |
+            <a href="spotify-streams.html" class="active"
+                style="color: white; text-decoration: none; transition: opacity 0.3s;">EN</a>
+        </div>
+
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><i class="fas fa-bolt text-white"></i></div>
+                ViralAuthority
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="../services.html" class="nav-link">Services</a>
+                <a href="ai-tools.html" class="nav-link">AI Tools</a>
+                <a href="/en/academy.html" class="nav-link">Academy</a>
+                <a href="../blog.html" class="nav-link">Blog</a>
+                <a href="../contact.html" class="nav-link">Contact</a>
+            </nav>
+
+            <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Header -->
+        <section class="page-header">
+            <div class="container reveal">
+                <i class="fab fa-spotify" style="font-size: 4rem; color: #1db954; margin-bottom: 1.5rem;"></i>
+                <h1 class="hero-h1">Promotional Campaigns <span class="text-gradient"
+                        style="background: linear-gradient(135deg, #1db954, #00f2fe); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Spotify</span>
+                </h1>
+                <p class="hero-subtitle">Impacta el algoritmo. Obtén streams reales con una estrategia de entrega
+                    natural
+                    diseñada para activar el Discover Weekly y Release Radar.</p>
+            </div>
+        </section>
+
+        <section class="section" id="servicios">
+            <div class="container relative">
+                <div class="text-center" style="margin-bottom: 4rem;">
+                    <h2 class="section-title reveal" style="font-size: 2.8rem; margin-bottom: 1rem;">Boost Your <span
+                            class="text-gradient"
+                            style="background: linear-gradient(135deg, #1db954, #1ed760); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Music</span>
+                    </h2>
+                    <p class="text-muted reveal" style="font-size: 1.1rem; max-width: 600px; margin: 0 auto;">
+                        Organic growth, real retention, and algorithmic activation for committed artists.</p>
+                </div>
+
+                <!-- Promotional Countdown Section -->
+                <div class="promo-countdown-wrapper reveal" id="promoCountdown">
+                    <h3 class="countdown-title">🎧 Special Launch Window</h3>
+                    <p class="countdown-text">Durante esta fase promocional ofrecemos activación prioritaria para nuevas
+                        campañas.</p>
+
+                    <div class="countdown-timer" id="timerDisplay">
+                        <div class="countdown-box">
+                            <span class="countdown-number" id="cdDays">02</span>
+                            <span class="countdown-label">Days</span>
+                        </div>
+                        <div class="countdown-box">
+                            <span class="countdown-number" id="cdHours">00</span>
+                            <span class="countdown-label">Hours</span>
+                        </div>
+                        <div class="countdown-box">
+                            <span class="countdown-number" id="cdMinss">00</span>
+                            <span class="countdown-label">Mins</span>
+                        </div>
+                        <div class="countdown-box">
+                            <span class="countdown-number" id="cdSecs">00</span>
+                            <span class="countdown-label">Secs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Growth Simulation Section -->
+                <div class="reveal" style="max-width: 800px; margin: 0 auto 4rem auto; text-align: center;">
+                    <h3 style="font-size: 1.8rem; margin-bottom: 1rem;">Progressive Growth Simulation</h3>
+                    <p class="text-muted" style="margin-bottom: 2rem;">Así es como estructuramos tu campaña para evitar
+                        penalizaciones y maximizar el <br>Discover Weekly y Release Radar.</p>
+                    <div class="growth-chart-container">
+                        <div class="chart-grid"></div>
+                        <div class="chart-line"></div>
+                        <div class="chart-tooltips">
+                            <div class="tooltip tooltip-1">Campaign Start</div>
+                            <div class="tooltip tooltip-2">Indexing</div>
+                            <div class="tooltip tooltip-3">Organic Peak</div>
+                        </div>
+                        <div class="chart-labels">
+                            <span>Day 1</span>
+                            <span>Day 7</span>
+                            <span>Day 14+</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center reveal">
+                    <div class="pulse-indicator">
+                        <div class="pulse-dot"></div>
+                        <span>🟢 3 active campaigns in the last 24 hours</span>
+                    </div>
+                </div>
+
+                <!-- Pricing Grid -->
+                <section class="section pt-0">
+                    <div class="container reveal">
+                        <div class="text-center" style="margin-bottom: 3rem;">
+                            <h2 style="font-size: 2.5rem;">Available Packages</h2>
+                            <p class="text-muted">Choose the stream volume that best suits your retention and reach
+                                goals.</p>
+                        </div>
+
+                        <div class="pricing-grid">
+
+                            <!-- 5K -->
+                            <div class="pricing-card">
+                                <div class="package-volume">5k</div>
+                                <div class="package-price">$75 USD</div>
+                                <ul class="package-features">
+                                    <li>High-retention real streams</li>
+                                    <li>Undetectable progressive delivery</li>
+                                    <li>Monthly listener increase</li>
+                                    <li>Full algorithmic protection</li>
+                                </ul>
+                                <button onclick="openPromoModal('5000 Streams', 75)" class="btn btn-secondary"
+                                    style="border-color: #1db954; color: #fff;">Buy Now</button>
+                            </div>
+
+                            <!-- 10K (Popular) -->
+                            <div class="pricing-card popular"
+                                style="border-color: rgba(29, 185, 84, 0.4); transform: scale(1.02); z-index: 1;">
+                                <div class="popular-badge">MOST POPULAR</div>
+                                <div class="pricing-header" style="margin-bottom: 1rem;">
+                                    <h3 style="color: #1db954; font-size: 1.1rem; margin-bottom: 0.3rem;">10,000 Streams
+                                    </h3>
+                                    <div style="font-size: 2.2rem; font-weight: 700; color: #fff;">$100</div>
+                                    <p style="color: #1db954; font-size: 0.8rem; font-weight: 600; margin-top: 0.5rem;">
+                                        <i class="fas fa-fire"></i> Recommended for releases
+                                    </p>
+                                </div>
+                                <ul class="info-list"
+                                    style="margin-bottom: 1.5rem; color: var(--text-muted); font-size: 0.9rem; text-align: left; opacity: 0.9;">
+                                    <li style="margin-bottom: 0.5rem; display: flex; gap: 10px;"><i
+                                            class="fas fa-check"></i> Progressive Distribution</li>
+                                    <li style="margin-bottom: 0.5rem; display: flex; gap: 10px;"><i
+                                            class="fas fa-check"></i> 100% Algorithm Safe</li>
+                                    <li style="margin-bottom: 0.5rem; display: flex; gap: 10px;"><i
+                                            class="fas fa-check"></i> High Retention</li>
+                                    <li style="margin-bottom: 0.5rem; display: flex; gap: 10px;"><i
+                                            class="fas fa-check"></i> Priority Support</li>
+                                </ul>
+                                <div style="margin-top: auto;">
+                                    <button class="btn btn-outline"
+                                        style="width: 100%; border-color: #1db954; color: #fff; background: rgba(29, 185, 84, 0.1);"
+                                        onclick="openPromoModal('10000 Streams', 100)">Buy Now</button>
+                                </div>
+                            </div>
+
+                            <!-- 20K -->
+                            <div class="pricing-card">
+                                <div class="package-volume">20k</div>
+                                <div class="package-price">$150 USD</div>
+                                <ul class="package-features">
+                                    <li>High-retention real streams</li>
+                                    <li>Natural progressive delivery</li>
+                                    <li>Organic Monthly Listener boost</li>
+                                    <li>Authority Scaling</li>
+                                </ul>
+                                <button onclick="openPromoModal('20000 Streams', 150)" class="btn btn-secondary"
+                                    style="border-color: #1db954; color: #fff;">Buy Now</button>
+                            </div>
+
+                            <!-- 30K -->
+                            <div class="pricing-card">
+                                <div class="package-volume">30k</div>
+                                <div class="package-price">$200 USD</div>
+                                <ul class="package-features">
+                                    <li>Moderate-high algorithmic impact</li>
+                                    <li>Ideal for triggering Discover Weekly</li>
+                                    <li>Varied geographical distribution</li>
+                                </ul>
+                                <button onclick="openPromoModal('30000 Streams', 200)" class="btn btn-secondary"
+                                    style="border-color: #1db954; color: #fff;">Buy Now</button>
+                            </div>
+
+                            <!-- 50K -->
+                            <div class="pricing-card">
+                                <div class="package-volume">50k</div>
+                                <div class="package-price">$300 USD</div>
+                                <ul class="package-features">
+                                    <li>Artist brand positioning</li>
+                                    <li>Sustained engagement</li>
+                                    <li>Advanced campaign volume</li>
+                                </ul>
+                                <button onclick="openPromoModal('50000 Streams', 300)" class="btn btn-secondary"
+                                    style="border-color: #1db954; color: #fff;">Buy Now</button>
+                            </div>
+
+                            <!-- 100K -->
+                            <div class="pricing-card">
+                                <div class="package-volume">100k</div>
+                                <div class="package-price">$600 USD</div>
+                                <ul class="package-features">
+                                    <li>Indie label level</li>
+                                    <li>Impact over 45+ days</li>
+                                    <li>Exponential listener growth</li>
+                                </ul>
+                                <button onclick="openPromoModal('100000 Streams', 600)" class="btn btn-secondary"
+                                    style="border-color: #1db954; color: #fff;">Buy Now</button>
+                            </div>
+
+                            <!-- 200K -->
+                            <div class="pricing-card">
+                                <div class="package-volume">200k</div>
+                                <div class="package-price">$1200 USD</div>
+                                <ul class="package-features">
+                                    <li>Record label level campaign</li>
+                                    <li>Massive progressive distribution</li>
+                                    <li>Elite Chartable volume</li>
+                                    <li>Top-Tier Priority</li>
+                                </ul>
+                                <button onclick="openPromoModal('200000 Streams', 1200)" class="btn btn-secondary"
+                                    style="border-color: #1db954; color: #fff;">Buy Now</button>
+                            </div>
+                        </div>
+
+                        <!-- Trust & Transparency Section -->
+                        <div class="text-center" style="margin: 6rem 0 3rem;">
+                            <h2 style="font-size: 2.2rem; margin-bottom: 1rem;"><span class="text-gradient"
+                                    style="background: linear-gradient(135deg, #1db954, #1ed760); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">¿Por
+                                    qué esta estrategia es viable y segura?</span></h2>
+                            <p class="text-muted" style="max-width: 800px; margin: 0 auto;">Transparencia y
+                                expectativas: cómo
+                                protegemos tu lanzamiento y aseguramos un crecimiento orgánico a largo plazo.</p>
+                        </div>
+
+                        <div class="pricing-grid" style="margin-top: 2rem;">
+                            <!-- Mechanism -->
+                            <div class="pricing-card"
+                                style="padding: 2.5rem 2rem; border-color: rgba(29, 185, 84, 0.2); box-shadow: 0 4px 20px rgba(0,0,0,0.3);">
+                                <i class="fas fa-project-diagram"
+                                    style="font-size: 2.5rem; color: #1db954; margin-bottom: 1.5rem;"></i>
+                                <h3 style="font-size: 1.3rem; margin-bottom: 1rem; color: #fff;">Organic Distribution
+                                </h3>
+                                <p
+                                    style="color: var(--text-muted); font-size: 0.95rem; text-align: left; line-height: 1.6;">
+                                    Nuestro sistema no utiliza bots de inyección rápida. Distribuimos tu canción a
+                                    través de
+                                    redes de usuarios reales que generan escuchas válidas, imitando a la perfección el
+                                    comportamiento de descubrimiento humano.</p>
+                            </div>
+
+                            <!-- Safety -->
+                            <div class="pricing-card"
+                                style="padding: 2.5rem 2rem; border-color: rgba(29, 185, 84, 0.2); box-shadow: 0 4px 20px rgba(0,0,0,0.3);">
+                                <i class="fas fa-shield-virus"
+                                    style="font-size: 2.5rem; color: #1db954; margin-bottom: 1.5rem;"></i>
+                                <h3 style="font-size: 1.3rem; margin-bottom: 1rem; color: #fff;">Secsuridad de la
+                                    Plataforma</h3>
+                                <p
+                                    style="color: var(--text-muted); font-size: 0.95rem; text-align: left; line-height: 1.6;">
+                                    Al
+                                    adherirnos a una metodología de "goteo" lento, garantizamos la seguridad total de tu
+                                    catálogo. Evitamos los picos masivos de streams artificiales que activan los
+                                    sistemas
+                                    antifraude y resultan en baneos.</p>
+                            </div>
+
+                            <!-- Timeline -->
+                            <div class="pricing-card"
+                                style="padding: 2.5rem 2rem; border-color: rgba(29, 185, 84, 0.2); box-shadow: 0 4px 20px rgba(0,0,0,0.3);">
+                                <i class="fas fa-hourglass-half"
+                                    style="font-size: 2.5rem; color: #1db954; margin-bottom: 1.5rem;"></i>
+                                <h3 style="font-size: 1.3rem; margin-bottom: 1rem; color: #fff;">No Fixed Timelines</h3>
+                                <p
+                                    style="color: var(--text-muted); font-size: 0.95rem; text-align: left; line-height: 1.6;">
+                                    La
+                                    entrega progresiva significa que tu campaña tomará el tiempo necesario para parecer
+                                    100%
+                                    natural. <strong>No prometemos resultados en 24 horas</strong>, prometemos
+                                    resultados
+                                    permanentes e indetectables.</p>
+                            </div>
+
+                            <!-- Audience -->
+                            <div class="pricing-card"
+                                style="padding: 2.5rem 2rem; border-color: rgba(29, 185, 84, 0.2); box-shadow: 0 4px 20px rgba(0,0,0,0.3);">
+                                <i class="fas fa-user-astronaut"
+                                    style="font-size: 2.5rem; color: #1db954; margin-bottom: 1.5rem;"></i>
+                                <h3 style="font-size: 1.3rem; margin-bottom: 1rem; color: #fff;">Who is this for?
+                                </h3>
+                                <p
+                                    style="color: var(--text-muted); font-size: 0.95rem; text-align: left; line-height: 1.6;">
+                                    Ideal para artistas comprometidos con construir autoridad. Si buscas inflar métricas
+                                    rápidamente sin importar los riesgos, este servicio no es para ti. Diseñamos esto
+                                    para
+                                    carreras sostenibles.</p>
+                            </div>
+                        </div>
+
+                        <!-- Disclaimer Info -->
+                        <div class="important-info-section reveal">
+                            <h3>Important Information About Our Service</h3>
+                            <ul class="info-list" style="list-style:none; padding: 0; margin: 0;">
+                                <li>
+                                    <i class="fas fa-users"></i>
+                                    <span>Nuestras redes generan reproducciones a partir de <strong>usuarios 100%
+                                            reales</strong>. No utilizamos bots.</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-chart-line"></i>
+                                    <span>La entrega es <strong>gradual y natural</strong> (progresiva). Nunca enviamos
+                                        todo el
+                                        tráfico el mismo día.</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span>Debido al goteo algorítmico seguro, <strong>no podemos garantizar una fecha
+                                            exacta de
+                                            finalización</strong> de la campaña.</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span>Este modelo de crecimiento progresivo es lo único que <strong>protege la
+                                            integridad de
+                                            tu canción</strong> ante los filtros antifraude de Spotify.</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-undo-alt"></i>
+                                    <span>Por la naturaleza intangible y los costos operativos de la promoción,
+                                        <strong>no
+                                            existen reembolsos</strong> una vez la campaña se ha activado en la
+                                        red.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- FAQ Accordion Section -->
+                        <div class="faq-section reveal">
+                            <div class="text-center" style="margin-bottom: 3rem;">
+                                <h2 style="font-size: 2.2rem; margin-bottom: 1rem;"><span class="text-gradient"
+                                        style="background: linear-gradient(135deg, #1db954, #1ed760); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Preguntas
+                                        Frecuentes</span></h2>
+                                <p class="text-muted">Resuelve tus dudas antes de iniciar tu campaña de posicionamiento.
+                                </p>
+                            </div>
+
+                            <div class="accordion">
+                                <div class="accordion-item">
+                                    <button class="accordion-header">
+                                        ¿Los streams son de usuarios reales? <i class="fas fa-chevron-down"></i>
+                                    </button>
+                                    <div class="accordion-content">
+                                        <p class="accordion-body">
+                                            Absolutamente. No utilizamos granjas de bots ni tráfico automatizado.
+                                            Proveemos
+                                            streams provenientes de redes de usuarios orgánicos y campañas dirigidas,
+                                            asegurando
+                                            retención alta y previniendo penalizaciones algorítmicas de Spotify.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <button class="accordion-header">
+                                        ¿Cuánto tiempo dura la entrega? <i class="fas fa-chevron-down"></i>
+                                    </button>
+                                    <div class="accordion-content">
+                                        <p class="accordion-body">
+                                            Para proteger tu catálogo, implementamos un sistema de <strong>entrega
+                                                progresiva</strong>. Un paquete de 10k streams puede distribuirse a lo
+                                            largo de
+                                            7 a 15 días, dependiendo de la fluctuación natural de tráfico de la red en
+                                            ese
+                                            momento. Nunca inyectamos todo el volumen de golpe.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <button class="accordion-header">
+                                        Is it safe for my artist account? <i class="fas fa-chevron-down"></i>
+                                    </button>
+                                    <div class="accordion-content">
+                                        <p class="accordion-body">
+                                            100% seguro. Entendemos los filtros antifraude de Spotify detalladamente.
+                                            Nuestra
+                                            metodología se basa en crear "señales de descubrimiento" orgánicas. Tu
+                                            música nunca
+                                            correrá riesgo de eliminación por strikes de tráfico artificial.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <button class="accordion-header">
+                                        ¿Garantizan entrar a playlists editoriales? <i class="fas fa-chevron-down"></i>
+                                    </button>
+                                    <div class="accordion-content">
+                                        <p class="accordion-body">
+                                            No, y nadie que entienda el algoritmo puede garantizártelo directamente. Lo
+                                            que
+                                            hacemos es <strong>optimizar tu posición algorítmica</strong> (activando
+                                            Release
+                                            Radar y Discover Weekly) al enviarte tráfico premium. Estas señales
+                                            algorítmicas son
+                                            el factor #1 que los editores revisan antes de agregarte.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <button class="accordion-header">
+                                        ¿Puedo combinar esto con mis propios Ads? <i class="fas fa-chevron-down"></i>
+                                    </button>
+                                    <div class="accordion-content">
+                                        <p class="accordion-body">
+                                            Sí. De hecho, lo recomendamos ampliamente. Mezclar nuestra promoción de
+                                            autoridad
+                                            algorítmica con Facebook/Instagram/TikTok ads dirigidos (tráfico en frío)
+                                            crea un
+                                            efecto compuesto masivo en tu Spotify for Artists.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <button class="accordion-header">
+                                        ¿Cuál es la política de reembolsos? <i class="fas fa-chevron-down"></i>
+                                    </button>
+                                    <div class="accordion-content">
+                                        <p class="accordion-body">
+                                            Una vez que la red comienza la distribución hacia tu enlace, el costo
+                                            operativo se
+                                            activa y no podemos emitir reembolsos por arrepentimiento o demoras causadas
+                                            por la
+                                            naturaleza de la entrega progresiva.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Final Trust Statement -->
+                        <div class="text-center reveal"
+                            style="padding: 3rem; background: rgba(29, 185, 84, 0.05); border-radius: 20px; border: 1px dashed rgba(29, 185, 84, 0.3); max-width: 900px; margin: 0 auto 3rem auto;">
+                            <i class="fas fa-gem" style="color: #1ed760; font-size: 2rem; margin-bottom: 1rem;"></i>
+                            <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Our Approach</h3>
+                            <p style="color: var(--text-muted); line-height: 1.7;">
+                                No vendemos "números mágicos", vendemos apalancamiento algorítmico. ViralAuthority es el
+                                puente para artistas independientes que necesitan desencadenar el potencial orgánico de
+                                Spotify utilizando la misma táctica estructural que manejan las agencias de alto nivel.
+                            </p>
+                        </div>
+
+                        <div class="text-center reveal" style="max-width: 800px; margin: 0 auto; padding-top: 1rem;">
+                            <p style="color: #fff; font-size: 1.1rem; font-weight: 500; letter-spacing: 0.5px;">
+                                <i class="fas fa-check-circle" style="color: #1db954; margin-right: 8px;"></i> Artistas
+                                independientes utilizan esta estrategia como parte de su campaña de lanzamiento y
+                                visibilidad digital.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+    </main>
+
+    <!-- Modal Form (Payment Pipeline) -->
+    <div class="popup-overlay" id="checkoutModal">
+        <div class="popup-content" style="max-width: 500px;">
+            <button class="popup-close" onclick="closePromoModal()"><i class="fas fa-times"></i></button>
+            <i class="fab fa-spotify" style="font-size: 3rem; color: #1db954; margin-bottom: 1rem;"></i>
+            <h3>Detalles de tu Campaña</h3>
+            <p style="margin-bottom: 1.5rem; color: var(--text-muted); font-size: 0.95rem;">Ingresa la información de tu
+                lanzamiento para conectarla con nuestra red de promoción.</p>
+
+            <form id="promoForm" class="popup-form" onsubmit="processPayPalCheckout(event)">
+                <input type="text" class="popup-input" id="clientName" placeholder="Full Name *" required>
+                <input type="email" class="popup-input" id="clientEmail" placeholder="Email Address *" required>
+                <input type="text" class="popup-input" id="artistName" placeholder="Artist Name *" required>
+                <input type="url" class="popup-input" id="songLink" placeholder="Link de la Canción en Spotify *"
+                    required>
+
+                <!-- Visual feedback only, read-only display -->
+                <div style="text-align: left; margin-bottom: 0.5rem; font-size: 0.85rem; color: var(--text-muted);">
+                    Selected Package:</div>
+                <input type="text" class="popup-input" id="displayPackage" value="" readonly
+                    style="opacity: 0.7; cursor: not-allowed; background: rgba(0,0,0,0.3); border-color: rgba(29, 185, 84, 0.3);">
+
+                <!-- Hidden data fields for the JS redirect logic -->
+                <input type="hidden" id="selectedPrice" value="">
+
+                <label
+                    style="display: flex; align-items: flex-start; gap: 0.75rem; text-align: left; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem; cursor: pointer; padding: 0.5rem; background: rgba(255,255,255,0.02); border-radius: 8px; border: 1px solid rgba(255,255,255,0.05);">
+                    <input type="checkbox" required id="consentCheck" style="margin-top: 0.2rem; cursor: pointer;">
+                    <span style="line-height: 1.4;">Comprendo y acepto que la entrega es progresiva, sin una fecha
+                        exacta de finalización garantizada.</span>
+                </label>
+
+                <button type="submit" class="btn btn-primary"
+                    style="width: 100%; display: flex; justify-content: center; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #1db954, #128c3c);">
+                    <i class="fab fa-paypal"></i> Proceed to Payment
+                </button>
+            </form>
+        </div>
+    </div>
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 ViralAuthority. All rights reserved. <a href="../legal/terms-of-service.html"
+                        class="text-muted">Términos</a> | <a href="../legal/privacy-policy.html"
+                        class="text-muted">Privacidad</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/app.js"></script>
+    <script>
+        // Spotify Pricing Modal Logic
+        function openPromoModal(packageName, priceValue) {
+            document.getElementById('displayPackage').value = packageName + ' - $' + priceValue + ' USD';
+            document.getElementById('selectedPrice').value = priceValue;
+
+            const modal = document.getElementById('checkoutModal');
+            modal.style.display = 'flex';
+            setTimeout(() => {
+                modal.classList.add('active');
+            }, 10);
+        }
+
+        function closePromoModal() {
+            const modal = document.getElementById('checkoutModal');
+            modal.classList.remove('active');
+            setTimeout(() => {
+                modal.style.display = 'none';
+            }, 300);
+        }
+
+        function processPayPalCheckout(e) {
+            e.preventDefault();
+
+            // At this point, HTML5 required validation has passed
+            const price = document.getElementById('selectedPrice').value;
+
+            if (!price) {
+                alert("Error intentando registrar el paquete. Por favor, reintente.");
+                closePromoModal();
+                return;
+            }
+
+            // Close the visual modal
+            closePromoModal();
+
+            // Redirect dynamically to predefined PayPal.Me URL injected with the price variable
+            const targetUrl = `https://paypal.me/pagosparapaypal809/${price}`;
+
+            // Optionally, you could use session storage to remember they bought something before redirecting,
+            // but for a pure JS redirect to an external checkout, direct swap is safest:
+            window.location.href = targetUrl;
+        }
+
+        // Close modal on outside click
+        window.addEventListener('click', (e) => {
+            const modal = document.getElementById('checkoutModal');
+            if (e.target === modal) {
+                closePromoModal();
+            }
+        });
+
+        // FAQ Accordion Logic
+        document.querySelectorAll('.accordion-header').forEach(button => {
+            button.addEventListener('click', () => {
+                const accordionItem = button.parentElement;
+                const accordionContent = button.nextElementSibling;
+
+                // Toggle current item
+                accordionItem.classList.toggle('active');
+
+                if (accordionItem.classList.contains('active')) {
+                    accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
+                } else {
+                    accordionContent.style.maxHeight = null;
+                }
+            });
+        });
+
+        // 48-Hour Promotional Countdown Logic
+        function initCountdown() {
+            const countdownKey = 'spotify_promo_end_time';
+            let endTime = localStorage.getItem(countdownKey);
+            const durationMs = 48 * 60 * 60 * 1000; // 48 hours
+
+            if (!endTime) {
+                endTime = new Date().getTime() + durationMs;
+                localStorage.setItem(countdownKey, endTime);
+            }
+
+            const timerInterval = setInterval(() => {
+                const now = new Date().getTime();
+                const distance = endTime - now;
+
+                if (distance < 0) {
+                    clearInterval(timerInterval);
+                    document.getElementById('promoCountdown').innerHTML = `
+                        <h3 class="countdown-title" style="color: var(--text-muted); margin: 0;">The promotional window has ended.</h3>
+                    `;
+                    return;
+                }
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById('cdDays').textContent = days.toString().padStart(2, '0');
+                document.getElementById('cdHours').textContent = hours.toString().padStart(2, '0');
+                document.getElementById('cdMinss').textContent = minutes.toString().padStart(2, '0');
+                document.getElementById('cdSecs').textContent = seconds.toString().padStart(2, '0');
+            }, 1000);
+        }
+
+        // Initialize Countdown on load
+        document.addEventListener('DOMContentLoaded', initCountdown);
+    </script>
+</body>
+
+</html>

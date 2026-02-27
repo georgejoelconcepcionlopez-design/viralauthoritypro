@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | ViralAuthority</title>
+    <meta name="description"
+        content="Get in touch with the ViralAuthority growth team. We are ready to help you dominate social media algorithms.">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .contact-header {
+            padding: 10rem 0 4rem;
+            text-align: center;
+            background: radial-gradient(circle at top, rgba(236, 72, 153, 0.15) 0%, rgba(5, 5, 5, 1) 70%);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            max-width: 1000px;
+            margin: 0 auto 8rem auto;
+            background: var(--surface-color);
+            padding: 4rem;
+            border-radius: 24px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-neon);
+        }
+
+        .contact-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            color: white;
+            font-size: 1.1rem;
+        }
+
+        .info-item i {
+            color: var(--accent-pink);
+            font-size: 1.5rem;
+            width: 30px;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-label {
+            font-weight: 500;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .form-input,
+        .form-textarea {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1rem 1.25rem;
+            color: white;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            transition: var(--transition-smooth);
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--accent-blue);
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .form-textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        @media (max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+                padding: 2.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><i class="fas fa-bolt text-white"></i></div>
+                ViralAuthority
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="en/ai-tools.html" class="nav-link">AI Tools</a>
+                <a href="/en/academy.html" class="nav-link">Academy</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="contact.html" class="nav-link text-white">Contact</a>
+                <a href="https://www.qqtube.com/?ref=2315017" target="_blank" class="btn btn-primary"
+                    style="padding: 0.5rem 1.5rem; font-size: 0.95rem;">Join Elite</a>
+            </nav>
+
+            <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <main>
+        <section class="contact-header">
+            <div class="container reveal">
+                <h1 class="hero-h1">Let's <span class="text-gradient">Connect</span></h1>
+                <p class="hero-subtitle">Have questions about scaling your digital presence? Our elite growth team is
+                    standing by.</p>
+            </div>
+        </section>
+
+        <section class="section pt-0">
+            <div class="container reveal">
+                <div class="contact-container">
+
+                    <div class="contact-info">
+                        <h2>Get in Touch</h2>
+                        <p>Whether you need a custom enterprise growth package or have a quick question about our
+                            services, we're here to help you dominate your niche.</p>
+
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>support@viralauthority.com</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-globe"></i>
+                            <span>Global Delivery Network</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-clock"></i>
+                            <span>24/7 Premium Support Response</span>
+                        </div>
+                    </div>
+
+                    <form action="#" class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label class="form-label">Name</label>
+                            <input type="text" class="form-input" placeholder="Your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-input" placeholder="you@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Priority Message</label>
+                            <textarea class="form-textarea" placeholder="How can we help scale your authority?"
+                                required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message <i class="fas fa-paper-plane"
+                                style="margin-left: 0.5rem;"></i></button>
+                    </form>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" style="margin-top: 0; border-top: none;">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col" style="grid-column: span 1;">
+                    <a href="index.html" class="logo" style="margin-bottom: 1.5rem;">
+                        <div class="logo-icon"><i class="fas fa-bolt text-white"></i></div>
+                        ViralAuthority
+                    </a>
+                    <p>The premium growth partner for serious digital creators and forward-thinking brands.</p>
+                </div>
+                <!-- Other footer columns omitted for brevity -->
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 ViralAuthority. All rights reserved. <a href="legal/terms-of-service.html"
+                        class="text-muted">Terms</a> | <a href="legal/privacy-policy.html"
+                        class="text-muted">Privacy</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating CTA -->
+    <a href="https://www.qqtube.com/?ref=2315017" target="_blank" class="floating-cta" aria-label="Start Growing">
+        <i class="fas fa-rocket text-white" style="font-size: 1.5rem;"></i>
+    </a>
+
+    <!-- Email Capture Popup -->
+    <div class="popup-overlay" id="emailPopup">
+        <!-- Re-using the same popup HTML from snippet -->
+        <div class="popup-content">
+            <button class="popup-close"><i class="fas fa-times"></i></button>
+            <i class="fas fa-envelope-open-text"
+                style="font-size: 3rem; color: var(--accent-purple); margin-bottom: 1rem;"></i>
+            <h3>Get Free Growth Tips</h3>
+            <p>Join 15,000+ creators receiving our weekly algorithm breakdown.</p>
+            <form id="popupForm" class="popup-form">
+                <input type="email" class="popup-input" placeholder="Join the elite (Email)" required>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Unlock Secrets</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const btn = this.querySelector('button');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = 'Message Sent! <i class="fas fa-check" style="margin-left: 0.5rem;"></i>';
+            btn.style.background = '#22c55e';
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+                btn.style.background = '';
+                this.reset();
+            }, 3000);
+        });
+    </script>
+</body>
+
+</html>

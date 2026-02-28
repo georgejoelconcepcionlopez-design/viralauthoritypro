@@ -182,6 +182,94 @@ class AcademyHub {
             maximumFractionDigits: 0
         });
     }
+
+    // New: Path Selection Logic
+    displayPath(goalId) {
+        const container = document.getElementById('path-recommendation');
+        const contentArea = document.getElementById('path-content');
+        const goalCards = document.querySelectorAll('.goal-card');
+
+        if (!container || !contentArea) return;
+
+        // Update cards UI
+        goalCards.forEach(card => {
+            card.classList.remove('active');
+            if (card.getAttribute('onclick').includes(goalId)) {
+                card.classList.add('active');
+            }
+        });
+
+        const paths = {
+            'followers': {
+                title: 'Ruta: Crecimiento Explosivo',
+                desc: 'Esta ruta está diseñada para maximizar tu visibilidad en todas las plataformas.',
+                steps: [
+                    { platform: 'Instagram', lesson: 'Perfil Magnético', url: '/academy/instagram.html' },
+                    { platform: 'TikTok', lesson: 'Algoritmo TikTok', url: '/academy/tiktok.html' },
+                    { platform: 'YouTube', lesson: 'Retención Avanzada', url: '/academy/youtube.html' }
+                ]
+            },
+            'income': {
+                title: 'Ruta: Monetización Pro',
+                desc: 'Aprende a convertir tu audiencia en un negocio real de altos ingresos.',
+                steps: [
+                    { platform: 'Multi', lesson: 'Calculadora de Ingresos', url: '/academy/monetization.html' },
+                    { platform: 'Instagram', lesson: 'Brand Deals & Sales', url: '/academy/instagram.html' },
+                    { platform: 'YouTube', lesson: 'AdSense & Patrocinios', url: '/academy/youtube.html' },
+                    { platform: 'Spotify', lesson: 'Royalties & Sincro', url: '/academy/spotify.html' }
+                ]
+            },
+            'brand': {
+                title: 'Ruta: Autoridad Digital',
+                desc: 'Construye un legado y conviértete en la cara de tu industria.',
+                steps: [
+                    { platform: 'General', lesson: 'Branding Estratégico', url: '/academy/instagram.html' },
+                    { platform: 'Visual', lesson: 'Storytelling de Impacto', url: '/academy/instagram.html' },
+                    { platform: 'X', lesson: 'Contenido de Autoridad', url: '/academy/x.html' }
+                ]
+            }
+        };
+
+        const path = paths[goalId];
+        let html = `
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <h3 style="font-size: 2rem; margin-bottom: 0.5rem;" class="text-gradient">${path.title}</h3>
+                <p class="text-muted">${path.desc}</p>
+            </div>
+            <div class="path-steps-grid">
+        `;
+
+        path.steps.forEach((step, index) => {
+            html += `
+                <div class="path-step-card">
+                    <div class="step-number">${index + 1}</div>
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--academy-accent); text-transform: uppercase;">${step.platform}</span>
+                    <h4 style="margin: 0.5rem 0;">${step.lesson}</h4>
+                    <a href="${step.url}" class="btn btn-secondary" style="padding: 0.4rem 1rem; font-size: 0.8rem; margin-top: 1rem;">Ir a Clase</a>
+                </div>
+            `;
+        });
+
+        html += `</div>`;
+        contentArea.innerHTML = html;
+        container.classList.add('active');
+
+        // Scroll to container
+        container.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+        // Update CTA button link to first step
+        const cta = document.getElementById('start-path-btn');
+        if (cta) {
+            cta.onclick = () => window.location.href = path.steps[0].url;
+        }
+    }
+}
+
+// Global accessor for path selection
+function selectPath(goal) {
+    if (window.academyHub) {
+        window.academyHub.displayPath(goal);
+    }
 }
 
 // Initialize on DOM load

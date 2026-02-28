@@ -1,0 +1,479 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link rel="icon" type="image/png" href="/assets/logo.png?v=2">
+    <link rel="shortcut icon" href="/favicon.ico?v=2">
+    <meta name="theme-color" content="#0f0f0f">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ViralAuthority Academy | Centro de Aprendizaje Premium</title>
+    <meta name="description"
+        content="Domina Instagram, TikTok, YouTube, Facebook y X. Cursos premium para dominar algoritmos y escalar tu autoridad digital.">
+    <meta name="keywords"
+        content="cursos redes sociales, crecer en instagram, maestria tiktok, seo youtube, monetizacion facebook, autoridad en x">
+
+    <link rel="canonical" href="https://viralauthority.com/academy/">
+    <link rel="alternate" hreflang="es" href="https://viralauthority.com/academy/">
+    <link rel="alternate" hreflang="en" href="https://viralauthority.com/en/academy/">
+
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        .lang-switcher {
+            position: absolute;
+            top: 1.5rem;
+            right: 2rem;
+            color: white;
+            font-size: 0.85rem;
+            font-weight: 600;
+            z-index: 1001;
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .lang-switcher a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.5;
+            transition: var(--transition-smooth);
+        }
+
+        .lang-switcher a.active,
+        .lang-switcher a:hover {
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .lang-switcher {
+                right: 5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="lang-switcher">
+            <a href="/academy/" class="active">ES</a> |
+            <a href="/en/academy/">EN</a>
+        </div>
+
+        <div class="container nav-container">
+            <a href="/" class="logo">
+                <div class="logo-icon"><i class="fas fa-bolt text-white"></i></div>
+                ViralAuthority
+            </a>
+
+            <nav class="nav-links">
+                <a href="/" class="nav-link">Inicio</a>
+                <a href="/services.html" class="nav-link">Servicios</a>
+                <a href="/ai-tools.html" class="nav-link">Herramientas IA</a>
+                <a href="/academy/" class="nav-link text-white">Academia</a>
+                <a href="/blog/" class="nav-link">Blog</a>
+                <a href="/contact.html" class="nav-link">Contacto</a>
+                <a href="https://www.qqtube.com/?ref=2315017" target="_blank" class="btn btn-primary"
+                    style="padding: 0.5rem 1.5rem; font-size: 0.95rem;">Unirse a Elite</a>
+            </nav>
+
+            <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <main>
+        <section class="academy-hub-header">
+            <div class="container reveal">
+                <div
+                    style="font-size: 0.9rem; color: var(--accent-pink); font-weight: 600; text-transform: uppercase; margin-bottom: 1rem; letter-spacing: 2px;">
+                    ViralAuthority Academy
+                </div>
+                <h1 class="hero-h1">Centro de <span class="text-gradient">Aprendizaje Premium</span></h1>
+                <p class="hero-subtitle">Selecciona una plataforma para desbloquear estrategias especializadas diseñadas
+                    para dominar los algoritmos modernos y escalar tu influencia digital.</p>
+            </div>
+        </section>
+
+        <!-- Recommended Learning Path Section -->
+        <section class="learning-path-section">
+            <div class="container">
+                <div style="text-align: center;" class="reveal">
+                    <h2 class="hero-h1" style="font-size: 2.5rem; margin-bottom: 1rem;">Camino <span
+                            class="text-gradient">recomendado</span> para empezar</h2>
+                    <p class="text-muted">Elige tu meta y te mostraremos la ruta ideal</p>
+                </div>
+
+                <div class="goal-selection-grid reveal">
+                    <div class="goal-card" onclick="selectPath('followers')">
+                        <div class="goal-icon-circle"><i class="fas fa-users"></i></div>
+                        <h3>Crecer seguidores</h3>
+                        <p class="text-muted">Aumenta tu alcance y construye una audiencia masiva.</p>
+                    </div>
+                    <div class="goal-card" onclick="selectPath('income')">
+                        <div class="goal-icon-circle"><i class="fas fa-dollar-sign"></i></div>
+                        <h3>Generar ingresos</h3>
+                        <p class="text-muted">Maximiza tus ganancias con estrategias de monetización.</p>
+                    </div>
+                    <div class="goal-card" onclick="selectPath('brand')">
+                        <div class="goal-icon-circle"><i class="fas fa-crown"></i></div>
+                        <h3>Marca personal</h3>
+                        <p class="text-muted">Conviértete en una autoridad respetada en tu nicho.</p>
+                    </div>
+                </div>
+
+                <div id="path-recommendation" class="path-display-container">
+                    <!-- Path items injected via JS -->
+                    <div id="path-content"></div>
+                    <div style="text-align: center; margin-top: 3rem;">
+                        <button id="start-path-btn" class="btn btn-primary" style="padding: 1rem 3rem;">Comenzar Ruta <i
+                                class="fas fa-rocket" style="margin-left: 0.5rem;"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section pt-0">
+            <div class="container">
+                <!-- Filtros de Plataforma -->
+                <div class="platform-filters reveal">
+                    <button class="filter-btn active" onclick="filterPlatform('instagram')">
+                        <i class="fab fa-instagram"></i> Instagram
+                    </button>
+                    <button class="filter-btn" onclick="filterPlatform('tiktok')">
+                        <i class="fab fa-tiktok"></i> TikTok
+                    </button>
+                    <button class="filter-btn" onclick="filterPlatform('youtube')">
+                        <i class="fab fa-youtube"></i> YouTube
+                    </button>
+                    <button class="filter-btn" onclick="filterPlatform('facebook')">
+                        <i class="fab fa-facebook"></i> Facebook
+                    </button>
+                    <button class="filter-btn" onclick="filterPlatform('x')">
+                        <i class="fab fa-x-twitter"></i> Twitter (X)
+                    </button>
+                </div>
+
+                <!-- SECCIÓN INSTAGRAM -->
+                <div id="instagram" class="platform-section active">
+                    <div class="platform-intro reveal">
+                        <h2>Autoridad en Instagram</h2>
+                        <p class="text-muted">Domina el storytelling visual y la estética. Convierte tu perfil en una
+                            máquina de autoridad de alta conversión.</p>
+                    </div>
+                    <div class="course-grid">
+                        <div class="course-card reveal">
+                            <span class="level-badge level-beginner">Principiante</span>
+                            <h3>Optimización de Perfil</h3>
+                            <p>Pasos fundamentales para auditar y optimizar tu bio, historias destacadas y feed para
+                                generar confianza instantánea.</p>
+                            <button onclick="toggleLesson(this)" class="btn btn-secondary">Ver Clase</button>
+                            <div class="lesson-content">
+                                <ul class="lesson-features">
+                                    <li><i class="fas fa-check-circle"></i> Auditoría completa de biografía</li>
+                                    <li><i class="fas fa-check-circle"></i> Diseño de estética de Highlights</li>
+                                    <li><i class="fas fa-check-circle"></i> Estrategia de palabras clave en nombre</li>
+                                </ul>
+                                <a href="https://www.qqtube.com/?ref=2315017" target="_blank"
+                                    class="btn btn-boost">Impulsar mi cuenta</a>
+                            </div>
+                        </div>
+                        <div class="course-card reveal">
+                            <span class="level-badge level-intermediate">Intermedio</span>
+                            <h3>Maestría en Reels</h3>
+                            <p>Inmersión profunda en la mecánica de la viralidad. Aprende a guionizar ya editar para
+                                disparar la retención masiva.</p>
+                            <button onclick="toggleLesson(this)" class="btn btn-secondary">Ver Clase</button>
+                            <div class="lesson-content">
+                                <ul class="lesson-features">
+                                    <li><i class="fas fa-check-circle"></i> Estructura de ganchos (hooks) visuales</li>
+                                    <li><i class="fas fa-check-circle"></i> Uso de audios en tendencia estratégica</li>
+                                    <li><i class="fas fa-check-circle"></i> Edición para retención máxima</li>
+                                </ul>
+                                <a href="https://www.qqtube.com/?ref=2315017" target="_blank"
+                                    class="btn btn-boost">Impulsar mi cuenta</a>
+                            </div>
+                        </div>
+                        <div class="course-card reveal">
+                            <span class="level-badge level-intermediate">Intermedio</span>
+                            <h3>Storytelling Visual Estético</h3>
+                            <p>Domina el arte de un feed cohesivo e historias de alta retención que convierten
+                                seguidores en fans leales.</p>
+                            <a href="../academy/instagram.html" class="btn btn-secondary">Ver Clase</a>
+                        </div>
+                        <div class="course-card reveal">
+                            <span class="level-badge level-advanced">Avanzado</span>
+                            <h3>Escalamiento de Marcas</h3>
+                            <p>Estrategias pro para atraer y negociar acuerdos de patrocinio de alto valor con marcas
+                                internacionales de élite.</p>
+                            <a href="../academy/instagram.html" class="btn btn-secondary">Ver Clase</a>
+                        </div>
+                        <div class="course-card reveal">
+                            <span class="level-badge level-advanced">Avanzado</span>
+                            <h3>Automatización de Embudos</h3>
+                            <p>Convierte seguidores en clientes con embudos de DM automatizados y estructuras de landing
+                                page de alta conversión.</p>
+                            <a href="../academy/instagram.html" class="btn btn-secondary">Ver Clase</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECCIÓN TIKTOK -->
+                <div id="tiktok" class="platform-section">
+                    <div class="platform-intro reveal">
+                        <h2>Motor Viral de TikTok</h2>
+                        <p class="text-muted">Aprovecha el poder del algoritmo más explosivo de la web. Salta el
+                            esfuerzo innecesario y dispara tu viralidad hoy.</p>
+                    </div>
+                    <div class="course-grid">
+                        <div class="course-card">
+                            <span class="level-badge level-beginner">Principiante</span>
+                            <h3>TikTok de Cero a Héroe</h3>
+                            <p>Guía de inicio rápido para entender la dinámica del FYP y publicar tu primer contenido
+                                con ganchos que atrapan miradas.</p>
+                            <a href="../academy/tiktok.html" class="btn btn-secondary">Ver Clase</a>
+                        </div>
+                        <div class="course-card">
+                            <span class="level-badge level-intermediate">Intermedio</span>
+                            <h3>Dominación del Mercado USA</h3>
+                            <p>Guía técnica para entrar en el algoritmo de EE. UU. desde cualquier parte del mundo para
+                                acceder a los CPM más altos.</p>
+                            <a href="../academy/tiktok.html" class="btn btn-secondary">Ver Clase</a>
+                        </div>
+                        <div class="course-card">
+                            <span class="level-badge level-intermediate">Intermedio</span>
+                            <h3>Psicología del Gancho Viral</h3>
+                            <p>La ciencia detrás de los primeros 3 segundos. Aprende cómo detener el scroll y forzar la
+                                interacción en cada post.</p>
+                            <a href="../academy/tiktok.html" class="btn btn-secondary">Ver Clase</a>
+                        </div>
+                        <div class="course-card">
+                            <span class="level-badge level-advanced">Avanzado</span>
+                            <h3>Maximización de Recompensas</h3>
+                            <p>Cómo estructurar videos de más de 60s para obtener el máximo RPM y pagos constantes del
+                                programa TikTok Creator Rewards.</p>
+                            <a href="../academy/tiktok.html" class="btn btn-secondary">Ver Clase</a>
+                        </div>
+                        <div class="course-card">
+                            <span class="level-badge level-advanced">Avanzado</span>
+                            <h3>Ventas de Afiliados de Alto Ticket</h3>
+                            <p>Uso de TikTok como una máquina de generación de leads para promover productos digitales
+                                premium y ofertas de afiliados.</p>
+                            <a href="../academy/tiktok.html" class="btn btn-secondary">Ver Clase</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECCIÓN YOUTUBE -->
+                <div id="youtube" class="platform-section">
+                    <div class="platform-intro reveal">
+                        <h2>Ecosistema de YouTube</h2>
+                        <p class="text-muted">Construye un imperio digital sostenible. Enfócate en activos a largo plazo
+                            y dominio de búsqueda.</p>
+                    </div>
+                    <div class="course-grid">
+                        <div class="course-card">
+                            <span class="level-badge level-beginner">Principiante</span>
+                            <h3>Ciencia de SEO y Miniaturas</h3>
+                            <p>Aprende la psicología del clic y cómo aparecer consistentemente en las búsquedas y
+                                recomendaciones globales.</p>
+                            <a href="../academy/youtube.html" class="btn btn-secondary">Ver Clase</a>
+                        </div>
+                        <div class="course-card">
+                            <span class="level-badge level-intermediate">Intermedio</span>
+                            <h3>Estrategia de Canal Híbrido</h3>
+                            <p>Uso de YouTube Shorts como embudo de alta velocidad para generar tráfico hacia tus videos
+                                largos de alto RPM.</p>
+                            <a href="../academy/youtube.html" class="btn btn-secondary">Ver Clase</a>
+                        </div>
+                        <div class="course-card">
+                            <span class="level-badge level-intermediate">Intermedio</span>
+                            <h3>Guionización para Retención</h3>
+                            <p>Estrategias avanzadas de guion para mantener a los espectadores viendo hasta el final y
+                                disparar el algoritmo de YouTube.</p>
+                            <a href="../academy/youtube.html" class="btn btn-secondary">Ver Clase</a>
+                        </div>
+                        <div class="course-card">
+                            <span class="level-badge level-advanced">Avanzado</span>
+                            <h3>Automatización y Escala</h3>
+                            <p>Creación de un equipo y sistema de trabajo para gestionar canales "sin rostro" que
+                                generen ingresos pasivos constantes.</p>
+                            <a href="../academy/youtube.html" class="btn btn-secondary">Ver Clase</a>
+                        </div>
+                        <div class="course-card">
+                            <span class="level-badge level-advanced">Avanzado</span>
+                            <h3>Selección de Nichos de Alto RPM</h3>
+                            <p>Encuentra y domina las categorías más rentables de YouTube donde los anunciantes pagan 10
+                                veces más por vista.</p>
+                            <a href="../academy/youtube.html" class="btn btn-secondary">Ver Clase</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECCIÓN FACEBOOK -->
+                <div id="facebook" class="platform-section">
+                    <div class="platform-intro reveal">
+                        <h2>Facebook Reels y Comunidad</h2>
+                        <p class="text-muted">Accede a una audiencia masiva de alta conversión. Une lo social de los
+                            reels con la creación de comunidad.</p>
+                    </div>
+                    <div class="course-grid">
+                        <div class="course-card">
+                            <span class="level-badge level-beginner">Principiante</span>
+                            <h3>Cimientos de Páginas</h3>
+                            <p>Configuración de tu presencia para monetización profesional y dominio del tablero Meta
+                                Business Suite.</p>
+                            <a href="../academy/facebook.html" class="btn btn-secondary">Ver Clase</a>
+                        </div>
+                        <div class="course-card">
+                            <span class="level-badge level-intermediate">Intermedio</span>
+                            <h3>Catalizadores de Conversación</h3>
+                            <p>Cómo disparar hilos de comentarios masivos que la IA de Facebook ama promocionar a
+                                audiencias más amplias.</p>
+                            <a href="../academy/facebook.html" class="btn btn-secondary">Ver Clase</a>
+                        </div>
+                        <div class="course-card">
+                            <span class="level-badge level-intermediate">Intermedio</span>
+                            <h3>Distribución de Video Viral</h3>
+                            <p>Uso de Grupos de Facebook y posteo colaborativo para amplificar el alcance de tu video y
+                                ganar seguidores gratis.</p>
+                            <a href="../academy/facebook.html" class="btn btn-secondary">Ver Clase</a>
+                        </div>
+                        <div class="course-card">
+                            <span class="level-badge level-advanced">Avanzado</span>
+                            <h3>Secretos del Performance Bonus</h3>
+                            <p>Maximiza tu alcance para ser invitado a los programas exclusivos de Meta Performance
+                                Bonus para creadores.</p>
+                            <a href="../academy/facebook.html" class="btn btn-secondary">Ver Clase</a>
+                        </div>
+                        <div class="course-card">
+                            <span class="level-badge level-advanced">Avanzado</span>
+                            <h3>Arquitectura de Campañas de Ads</h3>
+                            <p>Estrategias de compra de medios para escalar productos y servicios digitales usando el
+                                potente motor de anuncios de Meta.</p>
+                            <a href="../academy/facebook.html" class="btn btn-secondary">Ver Clase</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECCIÓN X -->
+                <div id="x" class="platform-section">
+                    <div class="platform-intro reveal">
+                        <h2>Autoridad en X y Networking</h2>
+                        <p class="text-muted">Domina la conversación global. Usa la autoridad escrita y el networking
+                            para construir conexiones de alto nivel.</p>
+                    </div>
+                    <div class="course-grid">
+                        <div class="course-card">
+                            <span class="level-badge level-beginner">Principiante</span>
+                            <h3>El Arte del Hilo Viral</h3>
+                            <p>Cómo escribir hilos convincentes que conviertan lectores casuales en seguidores leales a
+                                largo plazo.</p>
+                            <a href="../academy/x.html" class="btn btn-secondary">Ver Clase</a>
+                        </div>
+                        <div class="course-card">
+                            <span class="level-badge level-intermediate">Intermedio</span>
+                            <h3>Analítica y Alcance en X</h3>
+                            <p>Uso de datos nativos para encontrar a tu audiencia objetivo y construir rapport
+                                profesional mediante interacción estratégica.</p>
+                            <a href="../academy/x.html" class="btn btn-secondary">Ver Clase</a>
+                        </div>
+                        <div class="course-card">
+                            <span class="level-badge level-intermediate">Intermedio</span>
+                            <h3>Maestría en Ghostwriting</h3>
+                            <p>Construye una habilidad digital de altos ingresos escribiendo contenido de autoridad para
+                                otros emprendedores top en X.</p>
+                            <a href="../academy/x.html" class="btn btn-secondary">Ver Clase</a>
+                        </div>
+                        <div class="course-card">
+                            <span class="level-badge level-advanced">Avanzado</span>
+                            <h3>Networking de Alto Nivel</h3>
+                            <p>Uso del acceso único de X para conectar con emprendedores de clase mundial, líderes del
+                                sector e inversores.</p>
+                            <a href="../academy/x.html" class="btn btn-secondary">Ver Clase</a>
+                        </div>
+                        <div class="course-card">
+                            <span class="level-badge level-advanced">Avanzado</span>
+                            <h3>Optimización de Ingresos Publi</h3>
+                            <p>Posicionamiento estratégico para tu cuenta para maximizar los pagos mensuales del sistema
+                                de reparto de ingresos de X.</p>
+                            <a href="../academy/x.html" class="btn btn-secondary">Ver Clase</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col" style="grid-column: span 1;">
+                    <a href="/index.html" class="logo" style="margin-bottom: 1.5rem;">
+                        <div class="logo-icon"><i class="fas fa-bolt text-white"></i></div>
+                        ViralAuthority
+                    </a>
+                    <p>El socio de crecimiento premium para creadores digitales serios y marcas con visión de futuro.
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>Compañía</h4>
+                    <ul class="footer-links">
+                        <li><a href="/index.html">Inicio</a></li>
+                        <li><a href="/services.html">Servicios</a></li>
+                        <li><a href="/es/ai-tools.html">AI Tools</a></li>
+                        <li><a href="/academy.html">Academia</a></li>
+                        <li><a href="/contact.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Servicios</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://www.qqtube.com/?ref=2315017" target="_blank">YouTube Boost</a></li>
+                        <li><a href="https://www.qqtube.com/?ref=2315017" target="_blank">TikTok Viral</a></li>
+                        <li><a href="https://www.qqtube.com/?ref=2315017" target="_blank">Instagram Authority</a></li>
+                        <li><a href="https://www.qqtube.com/?ref=2315017" target="_blank">Spotify Growth</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="../legal/terms-of-service.html">Términos de Servicio</a></li>
+                        <li><a href="../legal/privacy-policy.html">Política de Privacidad</a></li>
+                        <li><a href="../legal/disclaimer.html">Descargo de Responsabilidad</a></li>
+                        <li><a href="../legal/affiliate-disclosure.html">Divulgación de Afiliados</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 ViralAuthority. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/app.js"></script>
+    <script>
+        function filterPlatform(platform) {
+            // Update buttons
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.textContent.toLowerCase().includes(platform)) {
+                    btn.classList.add('active');
+                }
+            });
+
+            // Update sections
+            document.querySelectorAll('.platform-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(platform).classList.add('active');
+
+            // Trigger animations
+            const activeReveal = document.getElementById(platform).querySelectorAll('.reveal');
+            activeReveal.forEach(el => el.classList.add('active'));
+        }
+    </script>
+</body>
+
+</html>

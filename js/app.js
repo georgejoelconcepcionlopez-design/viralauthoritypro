@@ -118,34 +118,7 @@ function filterPlatform(platformId) {
     });
 }
 
-// Academy Lesson Expansion
-function toggleLesson(button) {
-    const card = button.closest('.course-card');
-    const isExpanded = card.classList.contains('expanded');
 
-    // Close other expanded cards (optional but recommended for cleaner UI)
-    document.querySelectorAll('.course-card.expanded').forEach(otherCard => {
-        if (otherCard !== card) {
-            otherCard.classList.remove('expanded');
-            const otherBtn = otherCard.querySelector('.btn-secondary');
-            if (otherBtn) {
-                const lang = document.documentElement.lang;
-                otherBtn.innerText = lang === 'es' ? 'Ver Clase' : 'Watch Class';
-            }
-        }
-    });
-
-    // Toggle current card
-    card.classList.toggle('expanded');
-
-    // Update button text
-    const lang = document.documentElement.lang;
-    if (card.classList.contains('expanded')) {
-        button.innerText = lang === 'es' ? 'Cerrar Detalles' : 'Close Details';
-    } else {
-        button.innerText = lang === 'es' ? 'Ver Clase' : 'Watch Class';
-    }
-}
 // 5. Growth Diagnosis Modal Logic
 class DiagnosisModal {
     constructor() {

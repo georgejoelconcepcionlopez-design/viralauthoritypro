@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TikTok Viral Engine Mastery | ViralAuthority Academy</title>
+    <meta name="description"
+        content="Master TikTok hooks, FYP algorithms, and creator rewards. Exclusive ViralAuthority training.">
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        .class-hero {
+            padding: 8rem 0 4rem;
+            background: radial-gradient(circle at top right, rgba(236, 72, 153, 0.1), transparent),
+                radial-gradient(circle at bottom left, rgba(0, 242, 255, 0.05), transparent);
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+        }
+
+        .video-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(10, 10, 15, 0.8), transparent);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .video-overlay:hover {
+            background: linear-gradient(to top, rgba(10, 10, 15, 0.6), rgba(236, 72, 153, 0.1));
+        }
+
+        .play-btn {
+            width: 80px;
+            height: 80px;
+            background: var(--accent-pink);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 0 30px rgba(236, 72, 153, 0.5);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .video-overlay:hover .play-btn {
+            transform: scale(1.1);
+        }
+
+        .curriculum-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 992px) {
+            .curriculum-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .module-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .module-item {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            transition: var(--transition-smooth);
+        }
+
+        .module-item:hover {
+            border-color: var(--accent-pink);
+            background: rgba(255, 0, 255, 0.01);
+            transform: translateX(10px);
+        }
+
+        .module-number {
+            width: 40px;
+            height: 40px;
+            background: rgba(236, 72, 153, 0.1);
+            color: var(--accent-pink);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .module-info h4 {
+            margin-bottom: 0.25rem;
+            font-size: 1.1rem;
+        }
+
+        .module-info p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        .sidebar-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+            backdrop-filter: blur(10px);
+        }
+
+        .sidebar-card h3 {
+            margin-bottom: 1.5rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .benefit-item i {
+            color: var(--accent-pink);
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">
+                <div class="logo-icon"><i class="fas fa-bolt text-white"></i></div>
+                ViralAuthority
+            </a>
+            <nav class="nav-links">
+                <a href="../index.html" class="nav-link">Inicio</a>
+                <a href="../services.html" class="nav-link">Servicios</a>
+                <a href="../es/academia.html" class="nav-link">Academia</a>
+                <a href="/blog.html" class="nav-link">Blog</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="class-hero">
+            <div class="container reveal">
+                <div
+                    style="font-size: 0.9rem; color: var(--accent-blue); font-weight: 600; text-transform: uppercase; margin-bottom: 1rem; letter-spacing: 2px;">
+                    Academy | Masterclass</div>
+                <h1 class="hero-h1">TikTok <span class="text-gradient">Viral Engine Mastery</span></h1>
+
+                <div class="video-container">
+                    <div class="video-overlay">
+                        <div class="play-btn"><i class="fas fa-play"></i></div>
+                        <p style="font-weight: 600; letter-spacing: 1px; text-transform: uppercase;">Desbloquear Clase
+                            Magistral</p>
+                    </div>
+                </div>
+
+                <div class="curriculum-grid">
+                    <div class="module-list">
+                        <h3>Módulos de Aprendizaje</h3>
+                        <div class="module-item">
+                            <div class="module-number">01</div>
+                            <div class="module-info">
+                                <h4>Psicología del Primer Hook</h4>
+                                <p>Cómo retener la atención en los primeros 1.5 segundos para forzar el FYP.</p>
+                            </div>
+                        </div>
+                        <div class="module-item">
+                            <div class="module-number">02</div>
+                            <div class="module-info">
+                                <h4>Dominación USA/Global</h4>
+                                <p>Estrategia técnica para posicionar tu contenido en mercados de alto CPM.</p>
+                            </div>
+                        </div>
+                        <div class="module-item">
+                            <div class="module-number">03</div>
+                            <div class="module-info">
+                                <h4>Creator Rewards Alpha</h4>
+                                <p>Estructuración de videos de +1 min para maximizar el RPM y ganancias pasivas.</p>
+                            </div>
+                        </div>
+                        <div class="module-item">
+                            <div class="module-number">04</div>
+                            <div class="module-info">
+                                <h4>Cierre de Ventas en TikTok</h4>
+                                <p>Uso de TikTok Shop y Affiliate Marketing para monetización explosiva.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h3>Derrumba los Obstáculos</h3>
+                        <p style="margin-bottom: 2rem; font-size: 0.95rem; color: var(--text-muted);">
+                            No esperes a que el algoritmo decida. Activa las señales de confianza que disparan la
+                            distribución masiva.
+                        </p>
+                        <div class="benefit-item"><i class="fas fa-check-circle"></i> Tracción Algorítmica Inmediata
+                        </div>
+                        <div class="benefit-item"><i class="fas fa-check-circle"></i> Desbloqueo de Live Stream</div>
+                        <div class="benefit-item"><i class="fas fa-check-circle"></i> Dominio de Nicho</div>
+                        <a href="https://www.qqtube.com/?ref=2315017" target="_blank" class="btn btn-primary"
+                            style="width: 100%; margin-top: 2rem; background: var(--accent-pink);">Obtener Impulso <i
+                                class="fas fa-bolt" style="margin-left: 0.5rem;"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="../index.html" class="logo" style="margin-bottom: 1.5rem;">ViralAuthority</a>
+                    <p>Haciendo que la viralidad sea una ciencia, no un azar.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Clases</h4>
+                    <ul class="footer-links">
+                        <li><a href="instagram.html">Instagram</a></li>
+                        <li><a href="tiktok.html">TikTok</a></li>
+                        <li><a href="youtube.html">YouTube</a></li>
+                        <li><a href="spotify.html">Spotify</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../js/app.js"></script>
+</body>
+
+</html>

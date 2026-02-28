@@ -6,158 +6,234 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Instagram Authority Mastery | ViralAuthority Academy</title>
     <meta name="description"
-        content="Master Instagram storytelling, Reels algorithms, and profile optimization. Exclusive ViralAuthority training.">
+        content="Domina el algoritmo de Instagram, crece tu audiencia y monetiza tu influencia con estrategias probadas.">
 
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
+        :root {
+            --accent-insta: #E1306C;
+            --accent-insta-grad: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        }
+
         .class-hero {
-            padding: 8rem 0 4rem;
-            background: radial-gradient(circle at top right, rgba(138, 43, 226, 0.1), transparent),
-                radial-gradient(circle at bottom left, rgba(0, 242, 255, 0.05), transparent);
+            padding: 10rem 0 6rem;
+            background: radial-gradient(circle at top right, rgba(225, 48, 108, 0.15), transparent),
+                radial-gradient(circle at bottom left, rgba(59, 130, 246, 0.1), transparent);
+            text-align: center;
         }
 
-        .video-container {
-            position: relative;
-            width: 100%;
-            aspect-ratio: 16 / 9;
+        .hero-h1 {
+            font-size: clamp(3rem, 8vw, 5rem);
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 3rem;
+        }
+
+        .module-section {
+            padding: 6rem 0;
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .module-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .module-card {
             background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 24px;
+            padding: 2.5rem;
+            transition: var(--transition-smooth);
+            position: relative;
             overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 2rem;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(10px);
         }
 
-        .video-overlay {
+        .module-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-insta);
+            background: rgba(225, 48, 108, 0.02);
+        }
+
+        .module-card::before {
+            content: '';
             position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(10, 10, 15, 0.8), transparent);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--accent-insta-grad);
+            opacity: 0;
             transition: var(--transition-smooth);
         }
 
-        .video-overlay:hover {
-            background: linear-gradient(to top, rgba(10, 10, 15, 0.6), rgba(138, 43, 226, 0.1));
+        .module-card:hover::before {
+            opacity: 1;
         }
 
-        .play-btn {
-            width: 80px;
-            height: 80px;
-            background: var(--accent-purple);
-            border-radius: 50%;
+        .module-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(225, 48, 108, 0.1);
+            color: var(--accent-insta);
+            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.5rem;
-            color: white;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 0 30px rgba(138, 43, 226, 0.5);
-            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            margin-bottom: 2rem;
         }
 
-        .video-overlay:hover .play-btn {
-            transform: scale(1.1);
+        .module-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
         }
 
-        .curriculum-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 3rem;
-            margin-top: 4rem;
-        }
-
-        @media (max-width: 992px) {
-            .curriculum-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .module-list {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .module-item {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 16px;
-            padding: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-            transition: var(--transition-smooth);
-        }
-
-        .module-item:hover {
-            border-color: var(--accent-blue);
-            background: rgba(255, 0, 255, 0.01);
-            transform: translateX(10px);
-        }
-
-        .module-number {
-            width: 40px;
-            height: 40px;
-            background: rgba(0, 242, 255, 0.1);
-            color: var(--accent-blue);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            flex-shrink: 0;
-        }
-
-        .module-info h4 {
-            margin-bottom: 0.25rem;
-            font-size: 1.1rem;
-        }
-
-        .module-info p {
-            font-size: 0.9rem;
+        .module-content p {
             color: var(--text-muted);
-            margin: 0;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
         }
 
-        .sidebar-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        .learn-list,
+        .action-steps {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .learn-list li,
+        .action-steps li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.9rem;
+        }
+
+        .learn-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent-blue);
+        }
+
+        .action-steps li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-insta);
+            font-weight: bold;
+        }
+
+        .action-steps-title {
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+            display: block;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .monetization-section {
+            padding: 8rem 0;
+        }
+
+        .monetization-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .strategy-card {
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
             border-radius: 20px;
             padding: 2rem;
-            height: fit-content;
-            position: sticky;
-            top: 100px;
-            backdrop-filter: blur(10px);
+            text-align: center;
         }
 
-        .sidebar-card h3 {
+        .strategy-card i {
+            font-size: 2.5rem;
             margin-bottom: 1.5rem;
-            background: var(--gradient-primary);
+            display: block;
+            background: var(--gradient-neon);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .benefit-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
-            font-size: 0.95rem;
+        .income-potential-section {
+            padding: 8rem 0;
+            background: linear-gradient(to bottom, transparent, rgba(139, 92, 246, 0.05));
         }
 
-        .benefit-item i {
+        .income-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .income-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 3rem 2rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            transition: var(--transition-smooth);
+        }
+
+        .income-card:hover {
+            border-color: var(--accent-purple);
+            transform: scale(1.05);
+        }
+
+        .income-card .followers {
+            font-size: 1rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .income-card .amount {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .income-card .period {
             color: var(--accent-blue);
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .hero-h1 {
+                font-size: 3rem;
+            }
+
+            .module-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -179,68 +255,223 @@
     </header>
 
     <main>
+        <!-- 1. Hero Section -->
         <section class="class-hero">
             <div class="container reveal">
-                <div
-                    style="font-size: 0.9rem; color: var(--accent-pink); font-weight: 600; text-transform: uppercase; margin-bottom: 1rem; letter-spacing: 2px;">
-                    Academy | Masterclass</div>
-                <h1 class="hero-h1">Instagram <span class="text-gradient">Authority Mastery</span></h1>
+                <h1 class="hero-h1"><span class="text-gradient">Instagram</span><br>Authority Mastery</h1>
+                <p class="hero-subtitle">Domina el algoritmo, crece tu audiencia y convierte seguidores en ingresos
+                    reales con estrategias de élite.</p>
+                <div class="hero-ctas">
+                    <a href="#modules" class="btn btn-primary">Empezar Ahora <i class="fas fa-arrow-right"
+                            style="margin-left: 0.5rem;"></i></a>
+                    <a href="monetization.html" class="btn btn-secondary" style="margin-left: 1rem;">Calculadora de
+                        Ingresos</a>
+                </div>
+            </div>
+        </section>
 
-                <div class="video-container">
-                    <div class="video-overlay">
-                        <div class="play-btn"><i class="fas fa-play"></i></div>
-                        <p style="font-weight: 600; letter-spacing: 1px; text-transform: uppercase;">Desbloquear Clase
-                            Magistral</p>
-                    </div>
+        <!-- 2. Learning Modules Section -->
+        <section id="modules" class="module-section">
+            <div class="container">
+                <div class="section-title reveal">
+                    <h2 class="hero-h1" style="font-size: 3rem;">Programa de <span class="text-gradient">Estudios</span>
+                    </h2>
+                    <p style="color: var(--text-muted);">Un camino paso a paso desde cero hasta la autoridad total.</p>
                 </div>
 
-                <div class="curriculum-grid">
-                    <div class="module-list">
-                        <h3>Módulos de Aprendizaje</h3>
-                        <div class="module-item">
-                            <div class="module-number">01</div>
-                            <div class="module-info">
-                                <h4>Arquitectura de Perfil</h4>
-                                <p>Optimización bio-estratégica para maximizar la retención de seguidores.</p>
-                            </div>
-                        </div>
-                        <div class="module-item">
-                            <div class="module-number">02</div>
-                            <div class="module-info">
-                                <h4>Viralidad en Reels</h4>
-                                <p>Ingeniería de ganchos visuales y psicología de retención para el algoritmo.</p>
-                            </div>
-                        </div>
-                        <div class="module-item">
-                            <div class="module-number">03</div>
-                            <div class="module-info">
-                                <h4>Storytelling Visual</h4>
-                                <p>Narrativa de historias diarias que convierten audiencia en comunidad.</p>
-                            </div>
-                        </div>
-                        <div class="module-item">
-                            <div class="module-number">04</div>
-                            <div class="module-info">
-                                <h4>Monetización Directa</h4>
-                                <p>Embudos de venta en DMs y negociación con marcas de alto nivel.</p>
-                            </div>
+                <div class="module-grid">
+                    <!-- Module 1 -->
+                    <div class="module-card reveal">
+                        <div class="module-icon"><i class="fas fa-user-circle"></i></div>
+                        <h3>Módulo 1: Optimización del Perfil</h3>
+                        <div class="module-content">
+                            <p>Tu biografía es tu carta de presentación. Aprende a convertir visitas en seguidores en
+                                menos de 3 segundos.</p>
+                            <span class="action-steps-title">Lo que aprenderás:</span>
+                            <ul class="learn-list">
+                                <li>Ingeniería de nombres de usuario y SEO en Instagram.</li>
+                                <li>Diseño de biografía de alta conversión (Estructura ganadora).</li>
+                                <li>Estrategia de destacados (Highlights) para retención.</li>
+                            </ul>
+                            <span class="action-steps-title">Pasos prácticos:</span>
+                            <ul class="action-steps">
+                                <li>Auditoría completa de tu perfil actual.</li>
+                                <li>Definición de tu propuesta de valor única.</li>
+                                <li>Configuración de botones de contacto y enlaces bio.</li>
+                            </ul>
                         </div>
                     </div>
 
-                    <div class="sidebar-card">
-                        <h3>Impulsa tus Resultados</h3>
-                        <p style="margin-bottom: 2rem; font-size: 0.95rem; color: var(--text-muted);">
-                            Acelera tu crecimiento con nuestras señales de autoridad de alta calidad diseñadas para
-                            activar el algoritmo.
-                        </p>
-                        <div class="benefit-item"><i class="fas fa-check-circle"></i> Crecimiento Orgánico Priorizado
+                    <!-- Module 2 -->
+                    <div class="module-card reveal">
+                        <div class="module-icon"><i class="fas fa-fire"></i></div>
+                        <h3>Módulo 2: Estrategia de Contenido Viral</h3>
+                        <div class="module-content">
+                            <p>Deja de publicar al azar. Crea contenido que el algoritmo se sienta obligado a
+                                promocionar.</p>
+                            <span class="action-steps-title">Lo que aprenderás:</span>
+                            <ul class="learn-list">
+                                <li>Psicología del contenido compartible.</li>
+                                <li>Uso de tendencias (sin perder tu esencia).</li>
+                                <li>Calendario de contenidos para crecimiento sostenido.</li>
+                            </ul>
+                            <span class="action-steps-title">Pasos prácticos:</span>
+                            <ul class="action-steps">
+                                <li>Creación de tus 3 "pilares de contenido".</li>
+                                <li>Investigación de hashtags y palabras clave SEO.</li>
+                                <li>Scripting para posts de alta interacción.</li>
+                            </ul>
                         </div>
-                        <div class="benefit-item"><i class="fas fa-check-circle"></i> Social Proof Instantáneo</div>
-                        <div class="benefit-item"><i class="fas fa-check-circle"></i> Soporte Estratégico 24/7</div>
-                        <a href="https://www.qqtube.com/?ref=2315017" target="_blank" class="btn btn-primary"
-                            style="width: 100%; margin-top: 2rem;">Obtener Impulso <i class="fas fa-bolt"
-                                style="margin-left: 0.5rem;"></i></a>
                     </div>
+
+                    <!-- Module 3 -->
+                    <div class="module-card reveal">
+                        <div class="module-icon"><i class="fas fa-video"></i></div>
+                        <h3>Módulo 3: Reels de Alto Impacto</h3>
+                        <div class="module-content">
+                            <p>El formato rey. Domina el arte del video corto para alcanzar a millones de personas
+                                gratis.</p>
+                            <span class="action-steps-title">Lo que aprenderás:</span>
+                            <ul class="learn-list">
+                                <li>Ganchos (Hooks) visuales y auditivos irresistibles.</li>
+                                <li>Edición profesional rápida con herramientas móviles.</li>
+                                <li>Estrategia de "Watch Time" para viralizar.</li>
+                            </ul>
+                            <span class="action-steps-title">Pasos prácticos:</span>
+                            <ul class="action-steps">
+                                <li>Grabación de tus primeros 5 reels estratégicos.</li>
+                                <li>Uso de audios en tendencia corregidos.</li>
+                                <li>Análisis de métricas para iteración rápida.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Module 4 -->
+                    <div class="module-card reveal">
+                        <div class="module-icon"><i class="fas fa-handshake"></i></div>
+                        <h3>Módulo 4: Monetización con Marcas</h3>
+                        <div class="module-content">
+                            <p>Aprende a negociar y cerrar tratos con marcas, incluso con una audiencia pequeña
+                                (Micro-influencer).</p>
+                            <span class="action-steps-title">Lo que aprenderás:</span>
+                            <ul class="learn-list">
+                                <li>Creación de tu Media Kit profesional.</li>
+                                <li>Cómo contactar marcas de forma efectiva (Scripts de DM).</li>
+                                <li>Modelos de precios y contratos básicos.</li>
+                            </ul>
+                            <span class="action-steps-title">Pasos prácticos:</span>
+                            <ul class="action-steps">
+                                <li>Identificación de 20 marcas afines a tu nicho.</li>
+                                <li>Envío de tus primeras propuestas de colaboración.</li>
+                                <li>Cierre de tu primer trato de contenido pagado.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Module 5 -->
+                    <div class="module-card reveal">
+                        <div class="module-icon"><i class="fas fa-robot"></i></div>
+                        <h3>Módulo 5: Automatización con IA</h3>
+                        <div class="module-content">
+                            <p>Libera tu tiempo. Usa inteligencia artificial para gestionar tu cuenta mientras duermes.
+                            </p>
+                            <span class="action-steps-title">Lo que aprenderás:</span>
+                            <ul class="learn-list">
+                                <li>Chatbots para respuestas automáticas en DMs.</li>
+                                <li>IA para generación de ideas y captions infinitos.</li>
+                                <li>Programación estratégica sin penalización.</li>
+                            </ul>
+                            <span class="action-steps-title">Pasos prácticos:</span>
+                            <ul class="action-steps">
+                                <li>Configuración de flujos básicos en ManyChat.</li>
+                                <li>Creación de un prompt maestro en ChatGPT para tu marca.</li>
+                                <li>Automatización del 70% de tus tareas diarias.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Monetization Strategy Section -->
+        <section class="monetization-section">
+            <div class="container reveal">
+                <div class="section-title">
+                    <h2 class="hero-h1" style="font-size: 3rem;">Vías de <span class="text-gradient">Monetización</span>
+                    </h2>
+                    <p style="color: var(--text-muted);">Más allá de los "likes". Construye un negocio real.</p>
+                </div>
+
+                <div class="monetization-grid">
+                    <div class="strategy-card">
+                        <i class="fas fa-star"></i>
+                        <h4>Brand Deals</h4>
+                        <p>Colaboraciones pagadas con marcas para promocionar sus productos ante tu audiencia fiel.</p>
+                    </div>
+                    <div class="strategy-card">
+                        <i class="fas fa-box-open"></i>
+                        <h4>Digital Products</h4>
+                        <p>Venta de tus propios cursos, presets, plantillas o ebooks directamente a tus seguidores.</p>
+                    </div>
+                    <div class="strategy-card">
+                        <i class="fas fa-link"></i>
+                        <h4>Affiliate Marketing</h4>
+                        <p>Gana comisiones recomendando productos de terceros que ya usas y amas.</p>
+                    </div>
+                    <div class="strategy-card">
+                        <i class="fas fa-users"></i>
+                        <h4>Paid Communities</h4>
+                        <p>Crea un espacio exclusivo de suscripción (Patreon o Telegram VIP) para tus fans más leales.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Income Potential Section -->
+        <section class="income-potential-section">
+            <div class="container reveal">
+                <div class="section-title">
+                    <h2 class="hero-h1" style="font-size: 3rem;">Potencial de <span
+                            class="text-gradient">Ingresos</span></h2>
+                    <p style="color: var(--text-muted);">Estimaciones basadas en promedios de la industria para cuentas
+                        optimizadas.</p>
+                </div>
+
+                <div class="income-grid">
+                    <div class="income-card">
+                        <span class="followers">1K Seguidores</span>
+                        <span class="amount">$100 - $500</span>
+                        <span class="period">al mes</span>
+                    </div>
+                    <div class="income-card">
+                        <span class="followers">10K Seguidores</span>
+                        <span class="amount">$1,000 - $3,000</span>
+                        <span class="period">al mes</span>
+                    </div>
+                    <div class="income-card">
+                        <span class="followers">100K Seguidores</span>
+                        <span class="amount">$5,000 - $20,000+</span>
+                        <span class="period">al mes</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="section" style="text-align: center;">
+            <div class="container reveal">
+                <div
+                    style="background: var(--surface-color); padding: 4rem; border-radius: 40px; border: 1px solid var(--border-color);">
+                    <h2 class="hero-h1" style="font-size: 3rem; margin-bottom: 2rem;">¿Listo para tu <span
+                            class="text-gradient">Transformación?</span></h2>
+                    <p
+                        style="color: var(--text-muted); margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                        No dejes tu crecimiento al azar. Únete a la academia y empieza a construir tu autoridad hoy
+                        mismo.
+                    </p>
+                    <a href="https://www.qqtube.com/?ref=2315017" target="_blank" class="btn btn-primary">Empezar Ahora
+                        <i class="fas fa-bolt" style="margin-left: 0.5rem;"></i></a>
                 </div>
             </div>
         </section>
@@ -265,7 +496,26 @@
             </div>
         </div>
     </footer>
+
     <script src="../js/app.js"></script>
+    <script>
+        // Simple reveal on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.8s ease-out';
+            observer.observe(el);
+        });
+    </script>
 </body>
 
 </html>

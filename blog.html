@@ -189,6 +189,35 @@
                 font-size: 2.5rem;
             }
         }
+
+        .platform-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+            box-shadow: 0 10px 30px rgba(0, 242, 234, 0.1);
+        }
+
+        .niche-detail-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.5rem;
+            margin-top: 1rem;
+            font-size: 0.75rem;
+        }
+
+        .niche-detail-item {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 0.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .niche-detail-label {
+            color: var(--text-muted);
+            display: block;
+            margin-bottom: 0.2rem;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+        }
     </style>
 </head>
 
@@ -239,6 +268,190 @@
                     style="padding: 0.5rem 1rem; font-size: 0.8rem;">Spotify</a>
                 <a href="#monetizacion" class="btn btn-secondary btn-small"
                     style="padding: 0.5rem 1rem; font-size: 0.8rem;">Monetización</a>
+            </div>
+        </section>
+
+        <!-- Explora por Plataforma -->
+        <section class="platform-explorer" style="padding: 5rem 0; background: #000;">
+            <div class="container">
+                <h2 class="hero-h1" style="font-size: 2.5rem; text-align: center; margin-bottom: 3rem;">Explora por
+                    <span class="text-gradient">Plataforma</span>
+                </h2>
+                <div class="platform-grid"
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem;">
+                    <a href="/blog/instagram/" class="platform-card"
+                        style="background: #111; border: 1px solid var(--niche-border); padding: 2rem; border-radius: 20px; text-align: center; text-decoration: none; transition: 0.3s; display: block;">
+                        <i class="fab fa-instagram"
+                            style="font-size: 2.5rem; color: #E1306C; margin-bottom: 1rem; display: block;"></i>
+                        <span style="color: white; font-weight: 700;">Instagram</span>
+                    </a>
+                    <a href="/blog/youtube/" class="platform-card"
+                        style="background: #111; border: 1px solid var(--niche-border); padding: 2rem; border-radius: 20px; text-align: center; text-decoration: none; transition: 0.3s; display: block;">
+                        <i class="fab fa-youtube"
+                            style="font-size: 2.5rem; color: #FF0000; margin-bottom: 1rem; display: block;"></i>
+                        <span style="color: white; font-weight: 700;">YouTube</span>
+                    </a>
+                    <a href="/blog/tiktok/" class="platform-card"
+                        style="background: #111; border: 1px solid var(--niche-border); padding: 2rem; border-radius: 20px; text-align: center; text-decoration: none; transition: 0.3s; display: block;">
+                        <i class="fab fa-tiktok"
+                            style="font-size: 2.5rem; color: #00f2ea; margin-bottom: 1rem; display: block;"></i>
+                        <span style="color: white; font-weight: 700;">TikTok</span>
+                    </a>
+                    <a href="/blog/spotify/" class="platform-card"
+                        style="background: #111; border: 1px solid var(--niche-border); padding: 2rem; border-radius: 20px; text-align: center; text-decoration: none; transition: 0.3s; display: block;">
+                        <i class="fab fa-spotify"
+                            style="font-size: 2.5rem; color: #1DB954; margin-bottom: 1rem; display: block;"></i>
+                        <span style="color: white; font-weight: 700;">Spotify</span>
+                    </a>
+                    <a href="/blog/monetizacion/" class="platform-card"
+                        style="background: #111; border: 1px solid var(--niche-border); padding: 2rem; border-radius: 20px; text-align: center; text-decoration: none; transition: 0.3s; display: block;">
+                        <i class="fas fa-wallet"
+                            style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 1rem; display: block;"></i>
+                        <span style="color: white; font-weight: 700;">Monetización</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nichos Más Virales Section -->
+        <section class="niches-section">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 4rem;">
+                    <span
+                        style="color: var(--primary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 2px;">Market
+                        Trends</span>
+                    <h2 class="hero-h1" style="font-size: 2.5rem;">Nichos más <span class="text-gradient">Virales y
+                            Rentables</span> 2026</h2>
+                </div>
+                <div class="niches-grid">
+                    <!-- IA -->
+                    <div class="niche-card reveal">
+                        <div class="niche-icon"><i class="fas fa-microchip"></i></div>
+                        <h3 class="niche-title">Inteligencia Artificial</h3>
+                        <p class="niche-info">Implementación de agentes y automatización para empresas.</p>
+                        <div class="niche-detail-grid">
+                            <div class="niche-detail-item"><span class="niche-detail-label">Monetización</span>SaaS /
+                                Consultoría</div>
+                            <div class="niche-detail-item"><span class="niche-detail-label">Viralidad</span>Exponencial
+                            </div>
+                            <div class="niche-detail-item"><span class="niche-detail-label">Income</span>$10k+ / mes
+                            </div>
+                        </div>
+                        <div class="potencial-badge">Potencial: Extremo</div>
+                    </div>
+                    <!-- Finanzas -->
+                    <div class="niche-card reveal">
+                        <div class="niche-icon"><i class="fas fa-chart-pie"></i></div>
+                        <h3 class="niche-title">Finanzas Personales</h3>
+                        <p class="niche-info">Gestión de patrimonio y libertad financiera en tiempos volátiles.</p>
+                        <div class="niche-detail-grid">
+                            <div class="niche-detail-item"><span class="niche-detail-label">Monetización</span>Afiliados
+                                / Cursos</div>
+                            <div class="niche-detail-item"><span class="niche-detail-label">Viralidad</span>Alta</div>
+                            <div class="niche-detail-item"><span class="niche-detail-label">Income</span>$5k - $15k
+                            </div>
+                        </div>
+                        <div class="potencial-badge">Potencial: Muy Alto</div>
+                    </div>
+                    <!-- Marca Personal -->
+                    <div class="niche-card reveal">
+                        <div class="niche-icon"><i class="fas fa-user-check"></i></div>
+                        <h3 class="niche-title">Marca Personal</h3>
+                        <p class="niche-info">Posicionamiento de CEOs y Fundadores como líderes de opinión.</p>
+                        <div class="niche-detail-grid">
+                            <div class="niche-detail-item"><span
+                                    class="niche-detail-label">Monetización</span>Ghostwriting / Mentoring</div>
+                            <div class="niche-detail-item"><span class="niche-detail-label">Viralidad</span>Media-Alta
+                            </div>
+                            <div class="niche-detail-item"><span class="niche-detail-label">Income</span>$8k+ / mes
+                            </div>
+                        </div>
+                        <div class="potencial-badge">Potencial: Alto</div>
+                    </div>
+                    <!-- Educación Online -->
+                    <div class="niche-card reveal">
+                        <div class="niche-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <h3 class="niche-title">Educación Online</h3>
+                        <p class="niche-info">Escalamiento de habilidades técnicas y creativas.</p>
+                        <div class="niche-detail-grid">
+                            <div class="niche-detail-item"><span
+                                    class="niche-detail-label">Monetización</span>Membresías / Bootcamps</div>
+                            <div class="niche-detail-item"><span class="niche-detail-label">Viralidad</span>Alta</div>
+                            <div class="niche-detail-item"><span class="niche-detail-label">Income</span>$15k+
+                                (Escalable)</div>
+                        </div>
+                        <div class="potencial-badge">Potencial: Alto</div>
+                    </div>
+                    <!-- Fitness -->
+                    <div class="niche-card reveal">
+                        <div class="niche-icon"><i class="fas fa-dumbbell"></i></div>
+                        <h3 class="niche-title">Fitness & Biohacking</h3>
+                        <p class="niche-info">Optimización del rendimiento humano y longevidad.</p>
+                        <div class="niche-detail-grid">
+                            <div class="niche-detail-item"><span class="niche-detail-label">Monetización</span>Planes
+                                Pro / Suplementos</div>
+                            <div class="niche-detail-item"><span class="niche-detail-label">Viralidad</span>Masiva</div>
+                            <div class="niche-detail-item"><span class="niche-detail-label">Income</span>$4k - $10k
+                            </div>
+                        </div>
+                        <div class="potencial-badge">Potencial: Medio-Alto</div>
+                    </div>
+                    <!-- Música -->
+                    <div class="niche-card reveal">
+                        <div class="niche-icon"><i class="fas fa-music"></i></div>
+                        <h3 class="niche-title">Producción Musical</h3>
+                        <p class="niche-info">Beatmaking y creación de contenido para la industria indie.</p>
+                        <div class="niche-detail-grid">
+                            <div class="niche-detail-item"><span class="niche-detail-label">Monetización</span>Sample
+                                Packs / Royalties</div>
+                            <div class="niche-detail-item"><span class="niche-detail-label">Viralidad</span>Media</div>
+                            <div class="niche-detail-item"><span class="niche-detail-label">Income</span>$2k - $7k</div>
+                        </div>
+                        <div class="potencial-badge">Potencial: Estable</div>
+                    </div>
+                    <!-- Gaming -->
+                    <div class="niche-card reveal">
+                        <div class="niche-icon"><i class="fas fa-gamepad"></i></div>
+                        <h3 class="niche-title">Gaming & Streaming</h3>
+                        <p class="niche-info">Creación de comunidades y entretenimiento interactivo.</p>
+                        <div class="niche-detail-grid">
+                            <div class="niche-detail-item"><span class="niche-detail-label">Monetización</span>Sponsors
+                                / Suscripciones</div>
+                            <div class="niche-detail-item"><span class="niche-detail-label">Viralidad</span>Extrema
+                            </div>
+                            <div class="niche-detail-item"><span class="niche-detail-label">Income</span>Variable</div>
+                        </div>
+                        <div class="potencial-badge">Potencial: Alto Volumen</div>
+                    </div>
+                    <!-- Trading -->
+                    <div class="niche-card reveal">
+                        <div class="niche-icon"><i class="fas fa-chart-line"></i></div>
+                        <h3 class="niche-title">Trading & Crypto</h3>
+                        <p class="niche-info">Mercados líquidos y sistemas de trading algorítmico.</p>
+                        <div class="niche-detail-grid">
+                            <div class="niche-detail-item"><span class="niche-detail-label">Monetización</span>Señales /
+                                Copytrading</div>
+                            <div class="niche-detail-item"><span class="niche-detail-label">Viralidad</span>Alta</div>
+                            <div class="niche-detail-item"><span class="niche-detail-label">Income</span>Ilimitado (Alto
+                                Riesgo)</div>
+                        </div>
+                        <div class="potencial-badge">Potencial: Extremo</div>
+                    </div>
+                    <!-- Negocios Digitales -->
+                    <div class="niche-card reveal">
+                        <div class="niche-icon"><i class="fas fa-laptop-code"></i></div>
+                        <h3 class="niche-title">Negocios Digitales</h3>
+                        <p class="niche-info">Modelos de negocio remotos y nómada digital lifestyle.</p>
+                        <div class="niche-detail-grid">
+                            <div class="niche-detail-item"><span class="niche-detail-label">Monetización</span>Agencias
+                                / Dropshipping</div>
+                            <div class="niche-detail-item"><span class="niche-detail-label">Viralidad</span>Alta</div>
+                            <div class="niche-detail-item"><span class="niche-detail-label">Income</span>$10k - $50k
+                            </div>
+                        </div>
+                        <div class="potencial-badge">Potencial: Elite</div>
+                    </div>
+                </div>
             </div>
         </section>
 

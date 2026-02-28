@@ -189,6 +189,35 @@
                 font-size: 2.5rem;
             }
         }
+
+        .platform-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+            box-shadow: 0 10px 30px rgba(0, 242, 234, 0.1);
+        }
+
+        .niche-detail-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.5rem;
+            margin-top: 1rem;
+            font-size: 0.75rem;
+        }
+
+        .niche-detail-item {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 0.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .niche-detail-label {
+            color: var(--text-muted);
+            display: block;
+            margin-bottom: 0.2rem;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+        }
     </style>
 </head>
 
@@ -239,6 +268,178 @@
                     style="padding: 0.5rem 1rem; font-size: 0.8rem;">Spotify</a>
                 <a href="#monetizacion" class="btn btn-secondary btn-small"
                     style="padding: 0.5rem 1rem; font-size: 0.8rem;">Monetization</a>
+            </div>
+        </section>
+
+        <!-- Platform Explorer -->
+        <section class="platform-explorer" style="padding: 5rem 0; background: #000;">
+            <div class="container">
+                <h2 class="hero-h1" style="font-size: 2.5rem; text-align: center; margin-bottom: 3rem;">Explore by <span
+                        class="text-gradient">Platform</span></h2>
+                <div class="platform-grid"
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem;">
+                    <a href="/blog/instagram/" class="platform-card"
+                        style="background: #111; border: 1px solid var(--niche-border); padding: 2rem; border-radius: 20px; text-align: center; text-decoration: none; transition: 0.3s; display: block;">
+                        <i class="fab fa-instagram"
+                            style="font-size: 2.5rem; color: #E1306C; margin-bottom: 1rem; display: block;"></i>
+                        <span style="color: white; font-weight: 700;">Instagram</span>
+                    </a>
+                    <a href="/blog/youtube/" class="platform-card"
+                        style="background: #111; border: 1px solid var(--niche-border); padding: 2rem; border-radius: 20px; text-align: center; text-decoration: none; transition: 0.3s; display: block;">
+                        <i class="fab fa-youtube"
+                            style="font-size: 2.5rem; color: #FF0000; margin-bottom: 1rem; display: block;"></i>
+                        <span style="color: white; font-weight: 700;">YouTube</span>
+                    </a>
+                    <a href="/blog/tiktok/" class="platform-card"
+                        style="background: #111; border: 1px solid var(--niche-border); padding: 2rem; border-radius: 20px; text-align: center; text-decoration: none; transition: 0.3s; display: block;">
+                        <i class="fab fa-tiktok"
+                            style="font-size: 2.5rem; color: #00f2ea; margin-bottom: 1rem; display: block;"></i>
+                        <span style="color: white; font-weight: 700;">TikTok</span>
+                    </a>
+                    <a href="/blog/spotify/" class="platform-card"
+                        style="background: #111; border: 1px solid var(--niche-border); padding: 2rem; border-radius: 20px; text-align: center; text-decoration: none; transition: 0.3s; display: block;">
+                        <i class="fab fa-spotify"
+                            style="font-size: 2.5rem; color: #1DB954; margin-bottom: 1rem; display: block;"></i>
+                        <span style="color: white; font-weight: 700;">Spotify</span>
+                    </a>
+                    <a href="/blog/monetizacion/" class="platform-card"
+                        style="background: #111; border: 1px solid var(--niche-border); padding: 2rem; border-radius: 20px; text-align: center; text-decoration: none; transition: 0.3s; display: block;">
+                        <i class="fas fa-wallet"
+                            style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 1rem; display: block;"></i>
+                        <span style="color: white; font-weight: 700;">Monetization</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Viral Niches Section -->
+        <section class="niches-section">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 4rem;">
+                    <span
+                        style="color: var(--primary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 2px;">Market
+                        Trends</span>
+                    <h2 class="hero-h1" style="font-size: 2.5rem;">Most <span class="text-gradient">Viral and
+                            Profitable</span> Niches 2026</h2>
+                </div>
+                <div class="niches-grid">
+                    <div class="niche-card reveal">
+                        <div class="niche-icon"><i class="fas fa-microchip"></i></div>
+                        <h3 class="niche-title">Artificial Intelligence</h3>
+                        <p class="niche-info">Agent implementation and automation for businesses.</p>
+                        <div class="niche-detail-grid">
+                            <div class="niche-detail-item"><span class="niche-detail-label">Monetization</span>SaaS /
+                                Consulting</div>
+                            <div class="niche-detail-item"><span class="niche-detail-label">Virality</span>Exponential
+                            </div>
+                            <div class="niche-detail-item"><span class="niche-detail-label">Income</span>$10k+ / mo
+                            </div>
+                        </div>
+                        <div class="potencial-badge">Potential: Extreme</div>
+                    </div>
+                    <div class="niche-card reveal">
+                        <div class="niche-icon"><i class="fas fa-chart-pie"></i></div>
+                        <h3 class="niche-title">Personal Finance</h3>
+                        <p class="niche-info">Wealth management and financial freedom in volatile times.</p>
+                        <div class="niche-detail-grid">
+                            <div class="niche-detail-item"><span
+                                    class="niche-detail-label">Monetization</span>Affiliates / Courses</div>
+                            <div class="niche-detail-item"><span class="niche-detail-label">Virality</span>High</div>
+                            <div class="niche-detail-item"><span class="niche-detail-label">Income</span>$5k - $15k
+                            </div>
+                        </div>
+                        <div class="potencial-badge">Potential: Very High</div>
+                    </div>
+                    <div class="niche-card reveal">
+                        <div class="niche-icon"><i class="fas fa-user-check"></i></div>
+                        <h3 class="niche-title">Personal Branding</h3>
+                        <p class="niche-info">Positioning CEOs and Founders as thought leaders.</p>
+                        <div class="niche-detail-grid">
+                            <div class="niche-detail-item"><span
+                                    class="niche-detail-label">Monetization</span>Ghostwriting / Mentoring</div>
+                            <div class="niche-detail-item"><span class="niche-detail-label">Virality</span>Medium-High
+                            </div>
+                            <div class="niche-detail-item"><span class="niche-detail-label">Income</span>$8k+ / mo</div>
+                        </div>
+                        <div class="potencial-badge">Potential: High</div>
+                    </div>
+                    <div class="niche-card reveal">
+                        <div class="niche-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <h3 class="niche-title">Online Education</h3>
+                        <p class="niche-info">Scaling technical and creative skills.</p>
+                        <div class="niche-detail-grid">
+                            <div class="niche-detail-item"><span
+                                    class="niche-detail-label">Monetization</span>Memberships / Bootcamps</div>
+                            <div class="niche-detail-item"><span class="niche-detail-label">Virality</span>High</div>
+                            <div class="niche-detail-item"><span class="niche-detail-label">Income</span>$15k+
+                                (Scalable)</div>
+                        </div>
+                        <div class="potencial-badge">Potential: High</div>
+                    </div>
+                    <div class="niche-card reveal">
+                        <div class="niche-icon"><i class="fas fa-dumbbell"></i></div>
+                        <h3 class="niche-title">Fitness & Biohacking</h3>
+                        <p class="niche-info">Optimizing human performance and longevity.</p>
+                        <div class="niche-detail-grid">
+                            <div class="niche-detail-item"><span class="niche-detail-label">Monetization</span>Pro Plans
+                                / Supplements</div>
+                            <div class="niche-detail-item"><span class="niche-detail-label">Virality</span>Massive</div>
+                            <div class="niche-detail-item"><span class="niche-detail-label">Income</span>$4k - $10k
+                            </div>
+                        </div>
+                        <div class="potencial-badge">Potential: Mid-High</div>
+                    </div>
+                    <div class="niche-card reveal">
+                        <div class="niche-icon"><i class="fas fa-music"></i></div>
+                        <h3 class="niche-title">Music Production</h3>
+                        <p class="niche-info">Beatmaking and content creation for the indie industry.</p>
+                        <div class="niche-detail-grid">
+                            <div class="niche-detail-item"><span class="niche-detail-label">Monetization</span>Sample
+                                Packs / Royalties</div>
+                            <div class="niche-detail-item"><span class="niche-detail-label">Virality</span>Medium</div>
+                            <div class="niche-detail-item"><span class="niche-detail-label">Income</span>$2k - $7k</div>
+                        </div>
+                        <div class="potencial-badge">Potential: Stable</div>
+                    </div>
+                    <div class="niche-card reveal">
+                        <div class="niche-icon"><i class="fas fa-gamepad"></i></div>
+                        <h3 class="niche-title">Gaming & Streaming</h3>
+                        <p class="niche-info">Community building and interactive entertainment.</p>
+                        <div class="niche-detail-grid">
+                            <div class="niche-detail-item"><span class="niche-detail-label">Monetization</span>Sponsors
+                                / Subs</div>
+                            <div class="niche-detail-item"><span class="niche-detail-label">Virality</span>Extreme</div>
+                            <div class="niche-detail-item"><span class="niche-detail-label">Income</span>Variable</div>
+                        </div>
+                        <div class="potencial-badge">Potential: High Volume</div>
+                    </div>
+                    <div class="niche-card reveal">
+                        <div class="niche-icon"><i class="fas fa-chart-line"></i></div>
+                        <h3 class="niche-title">Trading & Crypto</h3>
+                        <p class="niche-info">Liquid markets and algorithmic trading systems.</p>
+                        <div class="niche-detail-grid">
+                            <div class="niche-detail-item"><span class="niche-detail-label">Monetization</span>Signals /
+                                Copytrading</div>
+                            <div class="niche-detail-item"><span class="niche-detail-label">Virality</span>High</div>
+                            <div class="niche-detail-item"><span class="niche-detail-label">Income</span>Unlimited (High
+                                Risk)</div>
+                        </div>
+                        <div class="potencial-badge">Potential: Extreme</div>
+                    </div>
+                    <div class="niche-card reveal">
+                        <div class="niche-icon"><i class="fas fa-laptop-code"></i></div>
+                        <h3 class="niche-title">Digital Business</h3>
+                        <p class="niche-info">Remote business models and digital nomad lifestyle.</p>
+                        <div class="niche-detail-grid">
+                            <div class="niche-detail-item"><span class="niche-detail-label">Monetization</span>Agencies
+                                / Dropshipping</div>
+                            <div class="niche-detail-item"><span class="niche-detail-label">Virality</span>High</div>
+                            <div class="niche-detail-item"><span class="niche-detail-label">Income</span>$10k - $50k
+                            </div>
+                        </div>
+                        <div class="potencial-badge">Potential: Elite</div>
+                    </div>
+                </div>
             </div>
         </section>
 

@@ -4,165 +4,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TikTok Viral Engine Mastery | ViralAuthority Academy</title>
+    <title>TikTok Viral Mastery | ViralAuthority Academy</title>
     <meta name="description"
-        content="Master TikTok hooks, FYP algorithms, and creator rewards. Exclusive ViralAuthority training.">
+        content="Domina el algoritmo de TikTok, crece masivamente y monetiza tu contenido con estrategias de viralidad probadas.">
 
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/academy-hub.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
+        :root {
+            --accent-tt: #00f2ea;
+            --accent-tt-alt: #ff0050;
+        }
+
         .class-hero {
-            padding: 8rem 0 4rem;
-            background: radial-gradient(circle at top right, rgba(236, 72, 153, 0.1), transparent),
-                radial-gradient(circle at bottom left, rgba(0, 242, 255, 0.05), transparent);
+            padding: 10rem 0 6rem;
+            background: radial-gradient(circle at top right, rgba(0, 242, 234, 0.15), transparent),
+                radial-gradient(circle at bottom left, rgba(255, 0, 80, 0.1), transparent);
+            text-align: center;
         }
 
-        .video-container {
-            position: relative;
-            width: 100%;
-            aspect-ratio: 16 / 9;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 24px;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 2rem;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(10px);
-        }
-
-        .video-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(10, 10, 15, 0.8), transparent);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: var(--transition-smooth);
-        }
-
-        .video-overlay:hover {
-            background: linear-gradient(to top, rgba(10, 10, 15, 0.6), rgba(236, 72, 153, 0.1));
-        }
-
-        .play-btn {
-            width: 80px;
-            height: 80px;
-            background: var(--accent-pink);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: white;
+        .hero-h1 {
+            font-size: clamp(3rem, 8vw, 5rem);
             margin-bottom: 1.5rem;
-            box-shadow: 0 0 30px rgba(236, 72, 153, 0.5);
-            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            line-height: 1.1;
         }
 
-        .video-overlay:hover .play-btn {
-            transform: scale(1.1);
-        }
-
-        .curriculum-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 3rem;
-            margin-top: 4rem;
-        }
-
-        @media (max-width: 992px) {
-            .curriculum-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .module-list {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .module-item {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 16px;
-            padding: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-            transition: var(--transition-smooth);
-        }
-
-        .module-item:hover {
-            border-color: var(--accent-pink);
-            background: rgba(255, 0, 255, 0.01);
-            transform: translateX(10px);
-        }
-
-        .module-number {
-            width: 40px;
-            height: 40px;
-            background: rgba(236, 72, 153, 0.1);
-            color: var(--accent-pink);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            flex-shrink: 0;
-        }
-
-        .module-info h4 {
-            margin-bottom: 0.25rem;
-            font-size: 1.1rem;
-        }
-
-        .module-info p {
-            font-size: 0.9rem;
+        .hero-subtitle {
+            font-size: 1.25rem;
             color: var(--text-muted);
-            margin: 0;
-        }
-
-        .sidebar-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 2rem;
-            height: fit-content;
-            position: sticky;
-            top: 100px;
-            backdrop-filter: blur(10px);
-        }
-
-        .sidebar-card h3 {
-            margin-bottom: 1.5rem;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .benefit-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
-            font-size: 0.95rem;
-        }
-
-        .benefit-item i {
-            color: var(--accent-pink);
+            max-width: 700px;
+            margin: 0 auto 3rem;
         }
     </style>
 </head>
 
 <body>
+    <!-- Top Free Banner -->
+    <div class="academy-notice-banner">
+        <i class="fas fa-unlock-alt" style="margin-right: 0.5rem;"></i>
+        Academia gratuita por tiempo limitado
+    </div>
+
     <header class="header">
         <div class="container nav-container">
             <a href="/index.html" class="logo">
@@ -172,75 +56,206 @@
             <nav class="nav-links">
                 <a href="/index.html" class="nav-link">Inicio</a>
                 <a href="/services.html" class="nav-link">Servicios</a>
-                <a href="/academy.html" class="nav-link">Academia</a>
+                <a href="/academy.html" class="nav-link text-white">Academia</a>
                 <a href="/blog.html" class="nav-link">Blog</a>
             </nav>
         </div>
     </header>
 
     <main>
+        <!-- 1. Hero Section -->
         <section class="class-hero">
             <div class="container reveal">
                 <div
-                    style="font-size: 0.9rem; color: var(--accent-blue); font-weight: 600; text-transform: uppercase; margin-bottom: 1rem; letter-spacing: 2px;">
-                    Academy | Masterclass</div>
-                <h1 class="hero-h1">TikTok <span class="text-gradient">Viral Engine Mastery</span></h1>
+                    style="font-size: 0.9rem; color: var(--accent-tt); font-weight: 600; text-transform: uppercase; margin-bottom: 1rem; letter-spacing: 2px;">
+                    TikTok Growth & Monetization Mastery</div>
+                <h1 class="hero-h1"><span class="text-gradient">TikTok</span><br>Authority Mastery</h1>
+                <p class="hero-subtitle">Aprende a crecer, dominar el algoritmo y generar ingresos reales.</p>
 
-                <div class="video-container">
-                    <div class="video-overlay">
-                        <div class="play-btn"><i class="fas fa-play"></i></div>
-                        <p style="font-weight: 600; letter-spacing: 1px; text-transform: uppercase;">Desbloquear Clase
-                            Magistral</p>
+                <!-- Progress Bar -->
+                <div class="academy-progress-container" style="max-width: 600px; margin: 0 auto;">
+                    <div class="progress-header">
+                        <span style="font-size: 0.9rem; font-weight: 600;">Tu Progreso</span>
+                        <span class="progress-percentage"
+                            style="color: var(--academy-accent); font-weight: 700;">0%</span>
+                    </div>
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar-fill"></div>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <div class="curriculum-grid">
-                    <div class="module-list">
-                        <h3>Módulos de Aprendizaje</h3>
-                        <div class="module-item">
-                            <div class="module-number">01</div>
-                            <div class="module-info">
-                                <h4>Psicología del Primer Hook</h4>
-                                <p>Cómo retener la atención en los primeros 1.5 segundos para forzar el FYP.</p>
+        <!-- 2. Learning Modules Accordion -->
+        <section class="section">
+            <div class="container">
+                <div class="module-accordion">
+
+                    <!-- Module 1 -->
+                    <div class="unit-card reveal">
+                        <div class="unit-header">
+                            <div class="unit-title-group">
+                                <div class="unit-icon"><i class="fab fa-tiktok"></i></div>
+                                <div>
+                                    <h3 style="margin: 0; font-size: 1.25rem;">Módulo 1: Algoritmo TikTok</h3>
+                                    <span style="font-size: 0.85rem; color: var(--text-muted);">3 Lecciones •
+                                        Funcionamiento Interno</span>
+                                </div>
                             </div>
+                            <div class="unit-chevron"><i class="fas fa-chevron-down"></i></div>
                         </div>
-                        <div class="module-item">
-                            <div class="module-number">02</div>
-                            <div class="module-info">
-                                <h4>Dominación USA/Global</h4>
-                                <p>Estrategia técnica para posicionar tu contenido en mercados de alto CPM.</p>
-                            </div>
-                        </div>
-                        <div class="module-item">
-                            <div class="module-number">03</div>
-                            <div class="module-info">
-                                <h4>Creator Rewards Alpha</h4>
-                                <p>Estructuración de videos de +1 min para maximizar el RPM y ganancias pasivas.</p>
-                            </div>
-                        </div>
-                        <div class="module-item">
-                            <div class="module-number">04</div>
-                            <div class="module-info">
-                                <h4>Cierre de Ventas en TikTok</h4>
-                                <p>Uso de TikTok Shop y Affiliate Marketing para monetización explosiva.</p>
+                        <div class="unit-content">
+                            <div class="lesson-grid">
+                                <div class="lesson-item">
+                                    <div class="lesson-meta">
+                                        <h4 style="margin: 0;">1.1 Tiempo de Visualización</h4>
+                                        <button class="complete-btn" data-lesson-id="tt-1-1">Marcar como
+                                            completado</button>
+                                    </div>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted);">La métrica reina. Aprende
+                                        cómo mantener al usuario pegado a la pantalla para que TikTok te promocione.</p>
+                                </div>
+                                <div class="lesson-item">
+                                    <div class="lesson-meta">
+                                        <h4 style="margin: 0;">1.2 Repetición Estratégica</h4>
+                                        <button class="complete-btn" data-lesson-id="tt-1-2">Marcar como
+                                            completado</button>
+                                    </div>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted);">Cómo incentivar que los
+                                        usuarios vean tus videos varias veces (Loops).</p>
+                                </div>
+                                <div class="lesson-item">
+                                    <div class="lesson-meta">
+                                        <h4 style="margin: 0;">1.3 Tendencias Inteligentes</h4>
+                                        <button class="complete-btn" data-lesson-id="tt-1-3">Marcar como
+                                            completado</button>
+                                    </div>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted);">Cómo subirte a los trends de
+                                        forma orgánica y adaptada a tu nicho personal.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="sidebar-card">
-                        <h3>Derrumba los Obstáculos</h3>
-                        <p style="margin-bottom: 2rem; font-size: 0.95rem; color: var(--text-muted);">
-                            No esperes a que el algoritmo decida. Activa las señales de confianza que disparan la
-                            distribución masiva.
-                        </p>
-                        <div class="benefit-item"><i class="fas fa-check-circle"></i> Tracción Algorítmica Inmediata
+                    <!-- Module 2 -->
+                    <div class="unit-card reveal">
+                        <div class="unit-header">
+                            <div class="unit-title-group">
+                                <div class="unit-icon"><i class="fas fa-bolt"></i></div>
+                                <div>
+                                    <h3 style="margin: 0; font-size: 1.25rem;">Módulo 2: Crecimiento Rápido</h3>
+                                    <span style="font-size: 0.85rem; color: var(--text-muted);">3 Lecciones • Viralidad
+                                        Explosiva</span>
+                                </div>
+                            </div>
+                            <div class="unit-chevron"><i class="fas fa-chevron-down"></i></div>
                         </div>
-                        <div class="benefit-item"><i class="fas fa-check-circle"></i> Desbloqueo de Live Stream</div>
-                        <div class="benefit-item"><i class="fas fa-check-circle"></i> Dominio de Nicho</div>
-                        <a href="https://www.qqtube.com/?ref=2315017" target="_blank" class="btn btn-primary"
-                            style="width: 100%; margin-top: 2rem; background: var(--accent-pink);">Obtener Impulso <i
-                                class="fas fa-bolt" style="margin-left: 0.5rem;"></i></a>
+                        <div class="unit-content">
+                            <div class="lesson-grid">
+                                <div class="lesson-item">
+                                    <div class="lesson-meta">
+                                        <h4 style="margin: 0;">2.1 Hooks en 2 Segundos</h4>
+                                        <button class="complete-btn" data-lesson-id="tt-2-1">Marcar como
+                                            completado</button>
+                                    </div>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted);">Ganchos visuales y de texto
+                                        ultra rápidos para detener el scroll instantáneamente.</p>
+                                </div>
+                                <div class="lesson-item">
+                                    <div class="lesson-meta">
+                                        <h4 style="margin: 0;">2.2 Edición Dinámica</h4>
+                                        <button class="complete-btn" data-lesson-id="tt-2-2">Marcar como
+                                            completado</button>
+                                    </div>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted);">Ritmos de edición que
+                                        aumentan la retención usando CapCut de forma profesional.</p>
+                                </div>
+                                <div class="lesson-item">
+                                    <div class="lesson-meta">
+                                        <h4 style="margin: 0;">2.3 Psicología de Viralidad</h4>
+                                        <button class="complete-btn" data-lesson-id="tt-2-3">Marcar como
+                                            completado</button>
+                                    </div>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted);">Los gatillos emocionales que
+                                        obligan a los usuarios a compartir tu contenido.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
+                    <!-- Module 3 -->
+                    <div class="unit-card reveal">
+                        <div class="unit-header">
+                            <div class="unit-title-group">
+                                <div class="unit-icon"><i class="fas fa-coins"></i></div>
+                                <div>
+                                    <h3 style="margin: 0; font-size: 1.25rem;">Módulo 3: Monetización</h3>
+                                    <span style="font-size: 0.85rem; color: var(--text-muted);">4 Lecciones • Negocio
+                                        Digital</span>
+                                </div>
+                            </div>
+                            <div class="unit-chevron"><i class="fas fa-chevron-down"></i></div>
+                        </div>
+                        <div class="unit-content">
+                            <div class="lesson-grid">
+                                <div class="lesson-item">
+                                    <div class="lesson-meta">
+                                        <h4 style="margin: 0;">3.1 Creator Fund & Rewards</h4>
+                                        <button class="complete-btn" data-lesson-id="tt-3-1">Marcar como
+                                            completado</button>
+                                    </div>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted);">Cómo calificar y maximizar
+                                        tus ingresos directos de TikTok por vistas.</p>
+                                </div>
+                                <div class="lesson-item">
+                                    <div class="lesson-meta">
+                                        <h4 style="margin: 0;">3.2 Marketing de Afiliados</h4>
+                                        <button class="complete-btn" data-lesson-id="tt-3-2">Marcar como
+                                            completado</button>
+                                    </div>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted);">Uso de enlaces estratégicos
+                                        para ganar comisiones por recomendaciones rápidas.</p>
+                                </div>
+                                <div class="lesson-item">
+                                    <div class="lesson-meta">
+                                        <h4 style="margin: 0;">3.3 TikTok Shop</h4>
+                                        <button class="complete-btn" data-lesson-id="tt-3-3">Marcar como
+                                            completado</button>
+                                    </div>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted);">Venta directa de productos
+                                        físicos usando la tienda integrada de TikTok.</p>
+                                </div>
+                                <div class="lesson-item">
+                                    <div class="lesson-meta">
+                                        <h4 style="margin: 0;">3.4 Funnels Externos</h4>
+                                        <button class="complete-btn" data-lesson-id="tt-3-4">Marcar como
+                                            completado</button>
+                                    </div>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted);">Cómo mover tu tráfico de
+                                        TikTok hacia listas de correo o Telegram de pago.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Community CTA -->
+        <section class="container reveal">
+            <div class="community-cta">
+                <h2 class="hero-h1" style="font-size: 2.5rem; margin-bottom: 1.5rem;">¿Quieres más <span
+                        class="text-gradient">Estrategias?</span></h2>
+                <p
+                    style="color: var(--text-muted); margin-bottom: 2.5rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    Únete a nuestra comunidad exclusiva para recibir actualizaciones de algoritmos, hacks de edición y
+                    consejos de monetización directamente en tu correo.
+                </p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="https://www.qqtube.com/?ref=2315017" target="_blank" class="btn btn-primary">Únete a la
+                        Comunidad <i class="fas fa-users" style="margin-left: 0.5rem;"></i></a>
+                    <a href="/academy.html" class="btn btn-secondary">Ver Otras Clases</a>
                 </div>
             </div>
         </section>
@@ -251,10 +266,10 @@
             <div class="footer-grid">
                 <div class="footer-col">
                     <a href="/index.html" class="logo" style="margin-bottom: 1.5rem;">ViralAuthority</a>
-                    <p>Haciendo que la viralidad sea una ciencia, no un azar.</p>
+                    <p>Dominando algoritmos, creando leyendas digitales.</p>
                 </div>
                 <div class="footer-col">
-                    <h4>Clases</h4>
+                    <h4>Clases Gratuitas</h4>
                     <ul class="footer-links">
                         <li><a href="instagram.html">Instagram</a></li>
                         <li><a href="tiktok.html">TikTok</a></li>
@@ -265,7 +280,27 @@
             </div>
         </div>
     </footer>
+
     <script src="../js/app.js"></script>
+    <script src="../js/academy-hub.js"></script>
+    <script>
+        // Reveal animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.8s ease-out';
+            observer.observe(el);
+        });
+    </script>
 </body>
 
 </html>

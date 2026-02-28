@@ -9,6 +9,7 @@
         content="Domina el algoritmo de Instagram, crece tu audiencia y monetiza tu influencia con estrategias probadas.">
 
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/academy-hub.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
@@ -36,209 +37,16 @@
             max-width: 700px;
             margin: 0 auto 3rem;
         }
-
-        .module-section {
-            padding: 6rem 0;
-            background: rgba(255, 255, 255, 0.02);
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .module-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-
-        .module-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 24px;
-            padding: 2.5rem;
-            transition: var(--transition-smooth);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .module-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--accent-insta);
-            background: rgba(225, 48, 108, 0.02);
-        }
-
-        .module-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: var(--accent-insta-grad);
-            opacity: 0;
-            transition: var(--transition-smooth);
-        }
-
-        .module-card:hover::before {
-            opacity: 1;
-        }
-
-        .module-icon {
-            width: 60px;
-            height: 60px;
-            background: rgba(225, 48, 108, 0.1);
-            color: var(--accent-insta);
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .module-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--text-main);
-        }
-
-        .module-content p {
-            color: var(--text-muted);
-            margin-bottom: 1.5rem;
-            font-size: 0.95rem;
-        }
-
-        .learn-list,
-        .action-steps {
-            list-style: none;
-            margin-bottom: 1.5rem;
-        }
-
-        .learn-list li,
-        .action-steps li {
-            position: relative;
-            padding-left: 1.5rem;
-            margin-bottom: 0.75rem;
-            font-size: 0.9rem;
-        }
-
-        .learn-list li::before {
-            content: '→';
-            position: absolute;
-            left: 0;
-            color: var(--accent-blue);
-        }
-
-        .action-steps li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--accent-insta);
-            font-weight: bold;
-        }
-
-        .action-steps-title {
-            font-weight: 700;
-            color: var(--text-main);
-            margin-bottom: 0.5rem;
-            display: block;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .monetization-section {
-            padding: 8rem 0;
-        }
-
-        .monetization-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .strategy-card {
-            background: var(--surface-color);
-            border: 1px solid var(--border-color);
-            border-radius: 20px;
-            padding: 2rem;
-            text-align: center;
-        }
-
-        .strategy-card i {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            display: block;
-            background: var(--gradient-neon);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .income-potential-section {
-            padding: 8rem 0;
-            background: linear-gradient(to bottom, transparent, rgba(139, 92, 246, 0.05));
-        }
-
-        .income-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .income-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 24px;
-            padding: 3rem 2rem;
-            text-align: center;
-            backdrop-filter: blur(10px);
-            transition: var(--transition-smooth);
-        }
-
-        .income-card:hover {
-            border-color: var(--accent-purple);
-            transform: scale(1.05);
-        }
-
-        .income-card .followers {
-            font-size: 1rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 1rem;
-            display: block;
-        }
-
-        .income-card .amount {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--text-main);
-            margin-bottom: 0.5rem;
-            display: block;
-        }
-
-        .income-card .period {
-            color: var(--accent-blue);
-            font-weight: 600;
-        }
-
-        @media (max-width: 768px) {
-            .hero-h1 {
-                font-size: 3rem;
-            }
-
-            .module-grid {
-                grid-template-columns: 1fr;
-            }
-        }
     </style>
 </head>
 
 <body>
+    <!-- Top 404/Free Banner -->
+    <div class="academy-notice-banner">
+        <i class="fas fa-unlock-alt" style="margin-right: 0.5rem;"></i>
+        Academia gratuita por tiempo limitado
+    </div>
+
     <header class="header">
         <div class="container nav-container">
             <a href="/index.html" class="logo">
@@ -248,7 +56,7 @@
             <nav class="nav-links">
                 <a href="/index.html" class="nav-link">Inicio</a>
                 <a href="/services.html" class="nav-link">Servicios</a>
-                <a href="/academy.html" class="nav-link">Academia</a>
+                <a href="/academy.html" class="nav-link text-white">Academia</a>
                 <a href="/blog.html" class="nav-link">Blog</a>
             </nav>
         </div>
@@ -258,220 +66,207 @@
         <!-- 1. Hero Section -->
         <section class="class-hero">
             <div class="container reveal">
+                <div
+                    style="font-size: 0.9rem; color: var(--accent-insta); font-weight: 600; text-transform: uppercase; margin-bottom: 1rem; letter-spacing: 2px;">
+                    Instagram Growth & Monetization Mastery</div>
                 <h1 class="hero-h1"><span class="text-gradient">Instagram</span><br>Authority Mastery</h1>
-                <p class="hero-subtitle">Domina el algoritmo, crece tu audiencia y convierte seguidores en ingresos
-                    reales con estrategias de élite.</p>
-                <div class="hero-ctas">
-                    <a href="#modules" class="btn btn-primary">Empezar Ahora <i class="fas fa-arrow-right"
-                            style="margin-left: 0.5rem;"></i></a>
-                    <a href="monetization.html" class="btn btn-secondary" style="margin-left: 1rem;">Calculadora de
-                        Ingresos</a>
+                <p class="hero-subtitle">Aprende a crecer, dominar el algoritmo y generar ingresos reales.</p>
+
+                <!-- Progress Bar -->
+                <div class="academy-progress-container" style="max-width: 600px; margin: 0 auto;">
+                    <div class="progress-header">
+                        <span style="font-size: 0.9rem; font-weight: 600;">Tu Progreso</span>
+                        <span class="progress-percentage"
+                            style="color: var(--academy-accent); font-weight: 700;">0%</span>
+                    </div>
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar-fill"></div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- 2. Learning Modules Section -->
-        <section id="modules" class="module-section">
+        <!-- 2. Learning Modules Accordion -->
+        <section class="section">
             <div class="container">
-                <div class="section-title reveal">
-                    <h2 class="hero-h1" style="font-size: 3rem;">Programa de <span class="text-gradient">Estudios</span>
-                    </h2>
-                    <p style="color: var(--text-muted);">Un camino paso a paso desde cero hasta la autoridad total.</p>
-                </div>
+                <div class="module-accordion">
 
-                <div class="module-grid">
                     <!-- Module 1 -->
-                    <div class="module-card reveal">
-                        <div class="module-icon"><i class="fas fa-user-circle"></i></div>
-                        <h3>Módulo 1: Optimización del Perfil</h3>
-                        <div class="module-content">
-                            <p>Tu biografía es tu carta de presentación. Aprende a convertir visitas en seguidores en
-                                menos de 3 segundos.</p>
-                            <span class="action-steps-title">Lo que aprenderás:</span>
-                            <ul class="learn-list">
-                                <li>Ingeniería de nombres de usuario y SEO en Instagram.</li>
-                                <li>Diseño de biografía de alta conversión (Estructura ganadora).</li>
-                                <li>Estrategia de destacados (Highlights) para retención.</li>
-                            </ul>
-                            <span class="action-steps-title">Pasos prácticos:</span>
-                            <ul class="action-steps">
-                                <li>Auditoría completa de tu perfil actual.</li>
-                                <li>Definición de tu propuesta de valor única.</li>
-                                <li>Configuración de botones de contacto y enlaces bio.</li>
-                            </ul>
+                    <div class="unit-card reveal">
+                        <div class="unit-header">
+                            <div class="unit-title-group">
+                                <div class="unit-icon"><i class="fas fa-id-card"></i></div>
+                                <div>
+                                    <h3 style="margin: 0; font-size: 1.25rem;">Módulo 1: Perfil Magnético</h3>
+                                    <span style="font-size: 0.85rem; color: var(--text-muted);">3 Lecciones • Estrategia
+                                        de Perfil</span>
+                                </div>
+                            </div>
+                            <div class="unit-chevron"><i class="fas fa-chevron-down"></i></div>
+                        </div>
+                        <div class="unit-content">
+                            <div class="lesson-grid">
+                                <div class="lesson-item">
+                                    <div class="lesson-meta">
+                                        <h4 style="margin: 0;">1.1 Bio Estratégica</h4>
+                                        <button class="complete-btn" data-lesson-id="ig-1-1">Marcar como
+                                            completado</button>
+                                    </div>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted);">Aprende a estructurar una
+                                        biografía que convierta visitas en seguidores en segundos.</p>
+                                    <div
+                                        style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--academy-border);">
+                                        <span
+                                            style="display: block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--accent-insta); margin-bottom: 0.5rem;">Pasos
+                                            Prácticos:</span>
+                                        <ul style="font-size: 0.85rem; color: var(--text-muted); padding-left: 1.2rem;">
+                                            <li>Define tu propuesta de valor.</li>
+                                            <li>Configura tu nombre de pantalla (SEO).</li>
+                                            <li>Optimiza el enlace de tu biografía.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="lesson-item">
+                                    <div class="lesson-meta">
+                                        <h4 style="margin: 0;">1.2 Username SEO</h4>
+                                        <button class="complete-btn" data-lesson-id="ig-1-2">Marcar como
+                                            completado</button>
+                                    </div>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted);">Cómo elegir y posicionar un
+                                        nombre de usuario que atraiga tráfico orgánico.</p>
+                                </div>
+                                <div class="lesson-item">
+                                    <div class="lesson-meta">
+                                        <h4 style="margin: 0;">1.3 Highlights de Conversión</h4>
+                                        <button class="complete-btn" data-lesson-id="ig-1-3">Marcar como
+                                            completado</button>
+                                    </div>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted);">Estrategia de destacados
+                                        para retener a la audiencia y vender sin esfuerzo.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Module 2 -->
-                    <div class="module-card reveal">
-                        <div class="module-icon"><i class="fas fa-fire"></i></div>
-                        <h3>Módulo 2: Estrategia de Contenido Viral</h3>
-                        <div class="module-content">
-                            <p>Deja de publicar al azar. Crea contenido que el algoritmo se sienta obligado a
-                                promocionar.</p>
-                            <span class="action-steps-title">Lo que aprenderás:</span>
-                            <ul class="learn-list">
-                                <li>Psicología del contenido compartible.</li>
-                                <li>Uso de tendencias (sin perder tu esencia).</li>
-                                <li>Calendario de contenidos para crecimiento sostenido.</li>
-                            </ul>
-                            <span class="action-steps-title">Pasos prácticos:</span>
-                            <ul class="action-steps">
-                                <li>Creación de tus 3 "pilares de contenido".</li>
-                                <li>Investigación de hashtags y palabras clave SEO.</li>
-                                <li>Scripting para posts de alta interacción.</li>
-                            </ul>
+                    <div class="unit-card reveal">
+                        <div class="unit-header">
+                            <div class="unit-title-group">
+                                <div class="unit-icon"><i class="fas fa-magic"></i></div>
+                                <div>
+                                    <h3 style="margin: 0; font-size: 1.25rem;">Módulo 2: Contenido Viral</h3>
+                                    <span style="font-size: 0.85rem; color: var(--text-muted);">3 Lecciones • Algoritmo
+                                        y Creatividad</span>
+                                </div>
+                            </div>
+                            <div class="unit-chevron"><i class="fas fa-chevron-down"></i></div>
+                        </div>
+                        <div class="unit-content">
+                            <div class="lesson-grid">
+                                <div class="lesson-item">
+                                    <div class="lesson-meta">
+                                        <h4 style="margin: 0;">2.1 Psicología del Algoritmo</h4>
+                                        <button class="complete-btn" data-lesson-id="ig-2-1">Marcar como
+                                            completado</button>
+                                    </div>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted);">Entiende qué métricas
+                                        prioriza Instagram hoy para viralizar contenido.</p>
+                                </div>
+                                <div class="lesson-item">
+                                    <div class="lesson-meta">
+                                        <h4 style="margin: 0;">2.2 Hooks Visuales</h4>
+                                        <button class="complete-btn" data-lesson-id="ig-2-2">Marcar como
+                                            completado</button>
+                                    </div>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted);">Domina los primeros 3
+                                        segundos para detener el scroll de forma masiva.</p>
+                                </div>
+                                <div class="lesson-item">
+                                    <div class="lesson-meta">
+                                        <h4 style="margin: 0;">2.3 Storytelling Magnético</h4>
+                                        <button class="complete-btn" data-lesson-id="ig-2-3">Marcar como
+                                            completado</button>
+                                    </div>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted);">Conecta emocionalmente con
+                                        tu audiencia para crear seguidores fieles.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Module 3 -->
-                    <div class="module-card reveal">
-                        <div class="module-icon"><i class="fas fa-video"></i></div>
-                        <h3>Módulo 3: Reels de Alto Impacto</h3>
-                        <div class="module-content">
-                            <p>El formato rey. Domina el arte del video corto para alcanzar a millones de personas
-                                gratis.</p>
-                            <span class="action-steps-title">Lo que aprenderás:</span>
-                            <ul class="learn-list">
-                                <li>Ganchos (Hooks) visuales y auditivos irresistibles.</li>
-                                <li>Edición profesional rápida con herramientas móviles.</li>
-                                <li>Estrategia de "Watch Time" para viralizar.</li>
-                            </ul>
-                            <span class="action-steps-title">Pasos prácticos:</span>
-                            <ul class="action-steps">
-                                <li>Grabación de tus primeros 5 reels estratégicos.</li>
-                                <li>Uso de audios en tendencia corregidos.</li>
-                                <li>Análisis de métricas para iteración rápida.</li>
-                            </ul>
+                    <div class="unit-card reveal">
+                        <div class="unit-header">
+                            <div class="unit-title-group">
+                                <div class="unit-icon"><i class="fas fa-dollar-sign"></i></div>
+                                <div>
+                                    <h3 style="margin: 0; font-size: 1.25rem;">Módulo 3: Monetización</h3>
+                                    <span style="font-size: 0.85rem; color: var(--text-muted);">4 Lecciones • Negocio
+                                        Real</span>
+                                </div>
+                            </div>
+                            <div class="unit-chevron"><i class="fas fa-chevron-down"></i></div>
+                        </div>
+                        <div class="unit-content">
+                            <div class="lesson-grid">
+                                <div class="lesson-item">
+                                    <div class="lesson-meta">
+                                        <h4 style="margin: 0;">3.1 Brand Deals</h4>
+                                        <button class="complete-btn" data-lesson-id="ig-3-1">Marcar como
+                                            completado</button>
+                                    </div>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted);">Cómo negociar con marcas
+                                        incluso si tienes pocos seguidores.</p>
+                                </div>
+                                <div class="lesson-item">
+                                    <div class="lesson-meta">
+                                        <h4 style="margin: 0;">3.2 Afiliados</h4>
+                                        <button class="complete-btn" data-lesson-id="ig-3-2">Marcar como
+                                            completado</button>
+                                    </div>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted);">Sistemas de recomendación
+                                        para generar ingresos pasivos.</p>
+                                </div>
+                                <div class="lesson-item">
+                                    <div class="lesson-meta">
+                                        <h4 style="margin: 0;">3.3 Productos Digitales</h4>
+                                        <button class="complete-btn" data-lesson-id="ig-3-3">Marcar como
+                                            completado</button>
+                                    </div>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted);">Lanzamiento de infoproductos
+                                        escalables (Presets, Ebooks, Cursos).</p>
+                                </div>
+                                <div class="lesson-item">
+                                    <div class="lesson-meta">
+                                        <h4 style="margin: 0;">3.4 Comunidad Privada</h4>
+                                        <button class="complete-btn" data-lesson-id="ig-3-4">Marcar como
+                                            completado</button>
+                                    </div>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted);">Creación de grupos
+                                        exclusivos de suscripción recurrente.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Module 4 -->
-                    <div class="module-card reveal">
-                        <div class="module-icon"><i class="fas fa-handshake"></i></div>
-                        <h3>Módulo 4: Monetización con Marcas</h3>
-                        <div class="module-content">
-                            <p>Aprende a negociar y cerrar tratos con marcas, incluso con una audiencia pequeña
-                                (Micro-influencer).</p>
-                            <span class="action-steps-title">Lo que aprenderás:</span>
-                            <ul class="learn-list">
-                                <li>Creación de tu Media Kit profesional.</li>
-                                <li>Cómo contactar marcas de forma efectiva (Scripts de DM).</li>
-                                <li>Modelos de precios y contratos básicos.</li>
-                            </ul>
-                            <span class="action-steps-title">Pasos prácticos:</span>
-                            <ul class="action-steps">
-                                <li>Identificación de 20 marcas afines a tu nicho.</li>
-                                <li>Envío de tus primeras propuestas de colaboración.</li>
-                                <li>Cierre de tu primer trato de contenido pagado.</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Module 5 -->
-                    <div class="module-card reveal">
-                        <div class="module-icon"><i class="fas fa-robot"></i></div>
-                        <h3>Módulo 5: Automatización con IA</h3>
-                        <div class="module-content">
-                            <p>Libera tu tiempo. Usa inteligencia artificial para gestionar tu cuenta mientras duermes.
-                            </p>
-                            <span class="action-steps-title">Lo que aprenderás:</span>
-                            <ul class="learn-list">
-                                <li>Chatbots para respuestas automáticas en DMs.</li>
-                                <li>IA para generación de ideas y captions infinitos.</li>
-                                <li>Programación estratégica sin penalización.</li>
-                            </ul>
-                            <span class="action-steps-title">Pasos prácticos:</span>
-                            <ul class="action-steps">
-                                <li>Configuración de flujos básicos en ManyChat.</li>
-                                <li>Creación de un prompt maestro en ChatGPT para tu marca.</li>
-                                <li>Automatización del 70% de tus tareas diarias.</li>
-                            </ul>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- 3. Monetization Strategy Section -->
-        <section class="monetization-section">
-            <div class="container reveal">
-                <div class="section-title">
-                    <h2 class="hero-h1" style="font-size: 3rem;">Vías de <span class="text-gradient">Monetización</span>
-                    </h2>
-                    <p style="color: var(--text-muted);">Más allá de los "likes". Construye un negocio real.</p>
-                </div>
-
-                <div class="monetization-grid">
-                    <div class="strategy-card">
-                        <i class="fas fa-star"></i>
-                        <h4>Brand Deals</h4>
-                        <p>Colaboraciones pagadas con marcas para promocionar sus productos ante tu audiencia fiel.</p>
-                    </div>
-                    <div class="strategy-card">
-                        <i class="fas fa-box-open"></i>
-                        <h4>Digital Products</h4>
-                        <p>Venta de tus propios cursos, presets, plantillas o ebooks directamente a tus seguidores.</p>
-                    </div>
-                    <div class="strategy-card">
-                        <i class="fas fa-link"></i>
-                        <h4>Affiliate Marketing</h4>
-                        <p>Gana comisiones recomendando productos de terceros que ya usas y amas.</p>
-                    </div>
-                    <div class="strategy-card">
-                        <i class="fas fa-users"></i>
-                        <h4>Paid Communities</h4>
-                        <p>Crea un espacio exclusivo de suscripción (Patreon o Telegram VIP) para tus fans más leales.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 4. Income Potential Section -->
-        <section class="income-potential-section">
-            <div class="container reveal">
-                <div class="section-title">
-                    <h2 class="hero-h1" style="font-size: 3rem;">Potencial de <span
-                            class="text-gradient">Ingresos</span></h2>
-                    <p style="color: var(--text-muted);">Estimaciones basadas en promedios de la industria para cuentas
-                        optimizadas.</p>
-                </div>
-
-                <div class="income-grid">
-                    <div class="income-card">
-                        <span class="followers">1K Seguidores</span>
-                        <span class="amount">$100 - $500</span>
-                        <span class="period">al mes</span>
-                    </div>
-                    <div class="income-card">
-                        <span class="followers">10K Seguidores</span>
-                        <span class="amount">$1,000 - $3,000</span>
-                        <span class="period">al mes</span>
-                    </div>
-                    <div class="income-card">
-                        <span class="followers">100K Seguidores</span>
-                        <span class="amount">$5,000 - $20,000+</span>
-                        <span class="period">al mes</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Final CTA -->
-        <section class="section" style="text-align: center;">
-            <div class="container reveal">
-                <div
-                    style="background: var(--surface-color); padding: 4rem; border-radius: 40px; border: 1px solid var(--border-color);">
-                    <h2 class="hero-h1" style="font-size: 3rem; margin-bottom: 2rem;">¿Listo para tu <span
-                            class="text-gradient">Transformación?</span></h2>
-                    <p
-                        style="color: var(--text-muted); margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">
-                        No dejes tu crecimiento al azar. Únete a la academia y empieza a construir tu autoridad hoy
-                        mismo.
-                    </p>
-                    <a href="https://www.qqtube.com/?ref=2315017" target="_blank" class="btn btn-primary">Empezar Ahora
-                        <i class="fas fa-bolt" style="margin-left: 0.5rem;"></i></a>
+        <!-- Community CTA -->
+        <section class="container reveal">
+            <div class="community-cta">
+                <h2 class="hero-h1" style="font-size: 2.5rem; margin-bottom: 1.5rem;">¿Quieres más <span
+                        class="text-gradient">Estrategias?</span></h2>
+                <p
+                    style="color: var(--text-muted); margin-bottom: 2.5rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    Únete a nuestra comunidad exclusiva para recibir actualizaciones de algoritmos, hacks de edición y
+                    consejos de monetización directamente en tu correo.
+                </p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="https://www.qqtube.com/?ref=2315017" target="_blank" class="btn btn-primary">Únete a la
+                        Comunidad <i class="fas fa-users" style="margin-left: 0.5rem;"></i></a>
+                    <a href="/academy.html" class="btn btn-secondary">Ver Otras Clases</a>
                 </div>
             </div>
         </section>
@@ -485,7 +280,7 @@
                     <p>Dominando algoritmos, creando leyendas digitales.</p>
                 </div>
                 <div class="footer-col">
-                    <h4>Clases</h4>
+                    <h4>Clases Gratuitas</h4>
                     <ul class="footer-links">
                         <li><a href="instagram.html">Instagram</a></li>
                         <li><a href="tiktok.html">TikTok</a></li>
@@ -498,8 +293,9 @@
     </footer>
 
     <script src="../js/app.js"></script>
+    <script src="../js/academy-hub.js"></script>
     <script>
-        // Simple reveal on scroll
+        // Reveal animation
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {

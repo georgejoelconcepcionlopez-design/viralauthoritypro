@@ -4,173 +4,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora de Ingresos Social Media | ViralAuthority Academy</title>
+    <title>Calculadora de Ingresos | ViralAuthority Academy</title>
     <meta name="description"
-        content="Calcula tu potencial de ingresos en YouTube, TikTok, Spotify e Instagram. Herramienta gratuita de ViralAuthority Academy.">
+        content="Calcula tus ingresos potenciales en YouTube, TikTok, Instagram y Spotify con nuestra herramienta interactiva.">
 
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/academy-hub.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        .calculator-container {
-            padding: 8rem 0;
-            background: radial-gradient(circle at top right, rgba(59, 130, 246, 0.1), transparent),
-                radial-gradient(circle at bottom left, rgba(139, 92, 246, 0.1), transparent);
-        }
-
-        .calc-wrapper {
-            max-width: 900px;
-            margin: 0 auto;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 32px;
-            padding: 3rem;
-            backdrop-filter: blur(20px);
-            box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.5);
-        }
-
-        .calc-header {
+        .calc-hero {
+            padding: 8rem 0 4rem;
             text-align: center;
-            margin-bottom: 4rem;
         }
 
-        .calc-tabs {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 3rem;
-            flex-wrap: wrap;
-        }
-
-        .tab-btn {
-            padding: 1rem 2rem;
-            background: var(--surface-color);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            color: var(--text-muted);
-            cursor: pointer;
+        .platform-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--academy-border);
+            border-radius: 24px;
+            padding: 2rem;
             transition: var(--transition-smooth);
+        }
+
+        .platform-card:hover {
+            border-color: var(--academy-accent);
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .platform-header {
             display: flex;
             align-items: center;
-            gap: 0.75rem;
-            font-weight: 600;
+            gap: 1rem;
+            margin-bottom: 2rem;
         }
 
-        .tab-btn.active {
-            background: var(--gradient-neon);
-            color: white;
-            border-color: transparent;
-            box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+        .platform-icon {
+            font-size: 1.5rem;
         }
 
-        .calc-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
+        .platform-name {
+            font-weight: 700;
+            font-size: 1.2rem;
         }
 
-        @media (max-width: 768px) {
-            .calc-content {
-                grid-template-columns: 1fr;
-            }
-
-            .calc-wrapper {
-                padding: 2rem;
-            }
+        .platform-result {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--academy-border);
+            text-align: right;
         }
 
-        .inputs-group {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
+        .platform-amount {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--text-main);
         }
 
-        .input-field {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-        }
-
-        .input-field label {
-            font-size: 0.9rem;
+        .platform-label {
+            font-size: 0.8rem;
             color: var(--text-muted);
-            font-weight: 500;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
-        .input-field input {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 1rem;
-            color: white;
-            font-size: 1.1rem;
-            font-family: var(--font-body);
-            transition: border-color 0.3s ease;
-        }
-
-        .input-field input:focus {
-            outline: none;
-            border-color: var(--accent-blue);
-        }
-
-        .results-panel {
-            background: rgba(255, 255, 255, 0.02);
-            border-radius: 24px;
-            padding: 2.5rem;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            min-height: 300px;
-        }
-
-        .result-label {
-            color: var(--text-muted);
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-        }
-
-        .result-amount {
-            font-size: 4rem;
-            font-weight: 800;
-            margin-bottom: 0.5rem;
-            background: var(--gradient-neon);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .result-period {
-            color: var(--accent-blue);
-            font-weight: 600;
-            letter-spacing: 2px;
-        }
-
-        .calc-section {
-            display: none;
-        }
-
-        .calc-section.active {
-            display: block;
-        }
-
-        /* Platform specific icons */
-        .fa-youtube {
+        /* Platform specific colors */
+        .yt-color {
             color: #FF0000;
         }
 
-        .fa-tiktok {
+        .tt-color {
             color: #00f2ea;
         }
 
-        .fa-spotify {
+        .sp-color {
             color: #1DB954;
         }
 
-        .fa-instagram {
+        .ig-color {
             color: #E1306C;
         }
     </style>
@@ -186,106 +96,135 @@
             <nav class="nav-links">
                 <a href="/index.html" class="nav-link">Inicio</a>
                 <a href="/services.html" class="nav-link">Servicios</a>
-                <a href="/academy.html" class="nav-link">Academia</a>
+                <a href="/academy.html" class="nav-link text-white">Academia</a>
                 <a href="/blog.html" class="nav-link">Blog</a>
             </nav>
         </div>
     </header>
 
     <main>
-        <section class="calculator-container">
+        <section class="calc-hero">
+            <div class="container reveal">
+                <h1 class="hero-h1">Social Media <span class="text-gradient">Earnings Calculator</span></h1>
+                <p class="hero-subtitle">Calcula tu potencial de monetización y planifica tu estrategia de crecimiento.
+                </p>
+            </div>
+        </section>
+
+        <section class="section pt-0">
             <div class="container">
-                <div class="calc-header">
-                    <h1 class="hero-h1"><span class="text-gradient">Earnings</span> Calculator</h1>
-                    <p class="hero-subtitle">Descubre cuánto podrías estar ganando con tu contenido en las principales
-                        plataformas.</p>
+                <div class="calc-container reveal">
+
+                    <div class="calc-grid">
+                        <!-- YouTube -->
+                        <div class="platform-card">
+                            <div class="platform-header">
+                                <i class="fab fa-youtube platform-icon yt-color"></i>
+                                <span class="platform-name">YouTube</span>
+                            </div>
+                            <div class="calc-input-group">
+                                <label class="calc-label">Vistas Mensuales</label>
+                                <input type="number" id="yt-views" class="calc-input" value="100000" step="10000">
+                            </div>
+                            <div class="calc-input-group">
+                                <label class="calc-label">CPM Estimado ($)</label>
+                                <input type="number" id="yt-cpm" class="calc-input" value="4" step="0.5">
+                            </div>
+                            <div class="platform-result">
+                                <span class="platform-label">Ingresos Est.</span>
+                                <div id="youtube-result" class="platform-amount">$400</div>
+                            </div>
+                        </div>
+
+                        <!-- TikTok -->
+                        <div class="platform-card">
+                            <div class="platform-header">
+                                <i class="fab fa-tiktok platform-icon tt-color"></i>
+                                <span class="platform-name">TikTok</span>
+                            </div>
+                            <div class="calc-input-group">
+                                <label class="calc-label">Vistas Mensuales</label>
+                                <input type="number" id="tt-views" class="calc-input" value="1000000" step="100000">
+                            </div>
+                            <div class="calc-input-group">
+                                <label class="calc-label">RPM Estimado ($)</label>
+                                <input type="number" id="tt-rpm" class="calc-input" value="0.8" step="0.1">
+                            </div>
+                            <div class="platform-result">
+                                <span class="platform-label">Ingresos Est.</span>
+                                <div id="tiktok-result" class="platform-amount">$800</div>
+                            </div>
+                        </div>
+
+                        <!-- Spotify -->
+                        <div class="platform-card">
+                            <div class="platform-header">
+                                <i class="fab fa-spotify platform-icon sp-color"></i>
+                                <span class="platform-name">Spotify</span>
+                            </div>
+                            <div class="calc-input-group">
+                                <label class="calc-label">Streams Mensuales</label>
+                                <input type="number" id="sp-streams" class="calc-input" value="50000" step="5000">
+                            </div>
+                            <div class="calc-input-group">
+                                <label class="calc-label">Pago por Stream ($)</label>
+                                <input type="number" id="sp-rate" class="calc-input" value="0.0035" step="0.0005">
+                            </div>
+                            <div class="platform-result">
+                                <span class="platform-label">Ingresos Est.</span>
+                                <div id="spotify-result" class="platform-amount">$175</div>
+                            </div>
+                        </div>
+
+                        <!-- Instagram -->
+                        <div class="platform-card">
+                            <div class="platform-header">
+                                <i class="fab fa-instagram platform-icon ig-color"></i>
+                                <span class="platform-name">Instagram</span>
+                            </div>
+                            <div class="calc-input-group">
+                                <label class="calc-label">Seguidores</label>
+                                <input type="number" id="ig-followers" class="calc-input" value="10000" step="1000">
+                            </div>
+                            <div class="calc-input-group">
+                                <label class="calc-label">Tasa de Engagement (%)</label>
+                                <input type="number" id="ig-rate" class="calc-input" value="3" step="0.5">
+                            </div>
+                            <div class="platform-result">
+                                <span class="platform-label">Brand Deals Est.</span>
+                                <div id="instagram-result" class="platform-amount">$1,000</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="calc-result-box" style="margin-top: 4rem;">
+                        <span class="platform-label">Ingresos Mensuales Totales</span>
+                        <div id="total-earnings" class="result-number text-gradient">$2,375</div>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem;">
+                            * Estas cifras son estimaciones basadas en promedios de la industria y pueden variar según
+                            el nicho y la audiencia.
+                        </p>
+                    </div>
+
                 </div>
+            </div>
+        </section>
 
-                <div class="calc-wrapper">
-                    <div class="calc-tabs">
-                        <button class="tab-btn active" data-platform="youtube"><i class="fab fa-youtube"></i>
-                            YouTube</button>
-                        <button class="tab-btn" data-platform="tiktok"><i class="fab fa-tiktok"></i> TikTok</button>
-                        <button class="tab-btn" data-platform="spotify"><i class="fab fa-spotify"></i> Spotify</button>
-                        <button class="tab-btn" data-platform="instagram"><i class="fab fa-instagram"></i>
-                            Instagram</button>
-                    </div>
-
-                    <div class="calc-content">
-                        <!-- Inputs -->
-                        <div class="inputs-container">
-                            <!-- YouTube Section -->
-                            <div class="calc-section active" id="youtube-section">
-                                <div class="inputs-group">
-                                    <div class="input-field">
-                                        <label>Vistas Mensuales</label>
-                                        <input type="number" id="yt-views" value="100000" placeholder="Ej. 100,000">
-                                    </div>
-                                    <div class="input-field">
-                                        <label>CPM Estimado ($)</label>
-                                        <input type="number" id="yt-cpm" value="2.5" step="0.5" placeholder="Ej. 2.50">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- TikTok Section -->
-                            <div class="calc-section" id="tiktok-section">
-                                <div class="inputs-group">
-                                    <div class="input-field">
-                                        <label>Vistas Mensuales</label>
-                                        <input type="number" id="tt-views" value="500000" placeholder="Ej. 500,000">
-                                    </div>
-                                    <div class="input-field">
-                                        <label>RPM Estimado ($)</label>
-                                        <input type="number" id="tt-rpm" value="0.05" step="0.01"
-                                            placeholder="Ej. 0.04">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Spotify Section -->
-                            <div class="calc-section" id="spotify-section">
-                                <div class="inputs-group">
-                                    <div class="input-field">
-                                        <label>Reproducciones Mensuales</label>
-                                        <input type="number" id="sp-streams" value="50000" placeholder="Ej. 50,000">
-                                    </div>
-                                    <div class="input-field">
-                                        <label>Pago por Stream ($)</label>
-                                        <input type="number" id="sp-payout" value="0.004" step="0.001"
-                                            placeholder="0.003 - 0.005">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Instagram Section -->
-                            <div class="calc-section" id="instagram-section">
-                                <div class="inputs-group">
-                                    <div class="input-field">
-                                        <label>Seguidores</label>
-                                        <input type="number" id="ig-followers" value="10000" placeholder="Ej. 10,000">
-                                    </div>
-                                    <div class="input-field">
-                                        <label>Engagement Rate (%)</label>
-                                        <input type="number" id="ig-engagement" value="3.5" step="0.1">
-                                    </div>
-                                    <div class="input-field">
-                                        <label>Tarifa por Deal ($)</label>
-                                        <input type="number" id="ig-deal-rate" value="150" placeholder="Ej. 150">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Results -->
-                        <div class="results-panel">
-                            <span class="result-label">Ingresos Estimados</span>
-                            <div class="result-amount">$<span id="display-amount">0</span></div>
-                            <span class="result-period">MENSUALES</span>
-                            <p style="margin-top: 2rem; font-size: 0.8rem; color: var(--text-muted);">*Estas cifras son
-                                estimaciones basadas en promedios y pueden variar según el nicho y ubicación.</p>
-                        </div>
-                    </div>
+        <!-- CTA -->
+        <section class="container reveal">
+            <div class="community-cta">
+                <h2 class="hero-h1" style="font-size: 2.5rem; margin-bottom: 1.5rem;">¿Listo para <span
+                        class="text-gradient">Maximizar</span> tus Ingresos?</h2>
+                <p
+                    style="color: var(--text-muted); margin-bottom: 2.5rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    Nuestras clases gratuitas te enseñan las estrategias exactas para alcanzar estas cifras y
+                    superarlas.
+                </p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="/academy.html" class="btn btn-primary">Ver Todas las Clases <i
+                            class="fas fa-graduation-cap" style="margin-left: 0.5rem;"></i></a>
+                    <a href="https://www.qqtube.com/?ref=2315017" target="_blank" class="btn btn-secondary">Impulsar mis
+                        Redes</a>
                 </div>
             </div>
         </section>
@@ -299,94 +238,35 @@
                     <p>Dominando algoritmos, creando leyendas digitales.</p>
                 </div>
                 <div class="footer-col">
-                    <h4>Clases</h4>
+                    <h4>Navegación</h4>
                     <ul class="footer-links">
-                        <li><a href="instagram.html">Instagram</a></li>
-                        <li><a href="tiktok.html">TikTok</a></li>
-                        <li><a href="youtube.html">YouTube</a></li>
-                        <li><a href="spotify.html">Spotify</a></li>
+                        <li><a href="/academy.html">Academia</a></li>
+                        <li><a href="/blog.html">Blog</a></li>
+                        <li><a href="/services.html">Servicios</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </footer>
 
+    <script src="../js/app.js"></script>
+    <script src="../js/academy-hub.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const tabs = document.querySelectorAll('.tab-btn');
-            const sections = document.querySelectorAll('.calc-section');
-            const displayAmount = document.getElementById('display-amount');
-
-            let currentPlatform = 'youtube';
-
-            // Tab Switching Logic
-            tabs.forEach(tab => {
-                tab.addEventListener('click', () => {
-                    tabs.forEach(t => t.classList.remove('active'));
-                    sections.forEach(s => s.classList.remove('active'));
-
-                    tab.classList.add('active');
-                    const platform = tab.dataset.platform;
-                    currentPlatform = platform;
-                    document.getElementById(`${platform}-section`).classList.add('active');
-                    calculate();
-                });
-            });
-
-            // Input Listeners for Live Updates
-            const inputs = document.querySelectorAll('input');
-            inputs.forEach(input => {
-                input.addEventListener('input', calculate);
-            });
-
-            function animateValue(obj, start, end, duration) {
-                let startTimestamp = null;
-                const step = (timestamp) => {
-                    if (!startTimestamp) startTimestamp = timestamp;
-                    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                    const current = Math.floor(progress * (end - start) + start);
-                    obj.innerHTML = current.toLocaleString();
-                    if (progress < 1) {
-                        window.requestAnimationFrame(step);
-                    }
-                };
-                window.requestAnimationFrame(step);
-            }
-
-            let previousValue = 0;
-
-            function calculate() {
-                let total = 0;
-
-                if (currentPlatform === 'youtube') {
-                    const views = parseFloat(document.getElementById('yt-views').value) || 0;
-                    const cpm = parseFloat(document.getElementById('yt-cpm').value) || 0;
-                    total = (views / 1000) * cpm;
-                } else if (currentPlatform === 'tiktok') {
-                    const views = parseFloat(document.getElementById('tt-views').value) || 0;
-                    const rpm = parseFloat(document.getElementById('tt-rpm').value) || 0;
-                    total = (views / 1000) * rpm;
-                } else if (currentPlatform === 'spotify') {
-                    const streams = parseFloat(document.getElementById('sp-streams').value) || 0;
-                    const payout = parseFloat(document.getElementById('sp-payout').value) || 0;
-                    total = streams * payout;
-                } else if (currentPlatform === 'instagram') {
-                    const followers = parseFloat(document.getElementById('ig-followers').value) || 0;
-                    const engagement = parseFloat(document.getElementById('ig-engagement').value) || 0;
-                    const rate = parseFloat(document.getElementById('ig-deal-rate').value) || 0;
-
-                    // Simple logic: Estimating brand deals based on engagement
-                    // Let's say 1 deal per 10k followers if engagement is > 2%
-                    const estimatedDeals = Math.ceil((followers / 10000) * (engagement / 3));
-                    total = estimatedDeals * rate;
+        // Reveal animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
                 }
+            });
+        }, { threshold: 0.1 });
 
-                animateValue(displayAmount, previousValue, Math.round(total), 300);
-                previousValue = Math.round(total);
-            }
-
-            // Initial calculation
-            calculate();
+        document.querySelectorAll('.reveal').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.8s ease-out';
+            observer.observe(el);
         });
     </script>
 </body>

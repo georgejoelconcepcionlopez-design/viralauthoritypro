@@ -4,165 +4,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YouTube Ecosystem Authority | ViralAuthority Academy</title>
+    <title>YouTube Masterclass | ViralAuthority Academy</title>
     <meta name="description"
-        content="Master YouTube SEO, thumbnails, and channel automation. Exclusive ViralAuthority training.">
+        content="Domina el algoritmo de YouTube, aumenta tu tiempo de visualización y monetiza tu canal con estrategias de expertos.">
 
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/academy-hub.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
+        :root {
+            --accent-yt: #FF0000;
+        }
+
         .class-hero {
-            padding: 8rem 0 4rem;
-            background: radial-gradient(circle at top right, rgba(255, 0, 0, 0.05), transparent),
-                radial-gradient(circle at bottom left, rgba(0, 242, 255, 0.05), transparent);
+            padding: 10rem 0 6rem;
+            background: radial-gradient(circle at top right, rgba(255, 0, 0, 0.15), transparent),
+                radial-gradient(circle at bottom left, rgba(59, 130, 246, 0.1), transparent);
+            text-align: center;
         }
 
-        .video-container {
-            position: relative;
-            width: 100%;
-            aspect-ratio: 16 / 9;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 24px;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 2rem;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(10px);
-        }
-
-        .video-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(10, 10, 15, 0.8), transparent);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: var(--transition-smooth);
-        }
-
-        .video-overlay:hover {
-            background: linear-gradient(to top, rgba(10, 10, 15, 0.6), rgba(255, 0, 0, 0.05));
-        }
-
-        .play-btn {
-            width: 80px;
-            height: 80px;
-            background: #ff0000;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: white;
+        .hero-h1 {
+            font-size: clamp(3rem, 8vw, 5rem);
             margin-bottom: 1.5rem;
-            box-shadow: 0 0 30px rgba(255, 0, 0, 0.4);
-            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            line-height: 1.1;
         }
 
-        .video-overlay:hover .play-btn {
-            transform: scale(1.1);
-        }
-
-        .curriculum-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 3rem;
-            margin-top: 4rem;
-        }
-
-        @media (max-width: 992px) {
-            .curriculum-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .module-list {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .module-item {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 16px;
-            padding: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-            transition: var(--transition-smooth);
-        }
-
-        .module-item:hover {
-            border-color: #ff0000;
-            background: rgba(255, 0, 0, 0.01);
-            transform: translateX(10px);
-        }
-
-        .module-number {
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 0, 0, 0.1);
-            color: #ff0000;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            flex-shrink: 0;
-        }
-
-        .module-info h4 {
-            margin-bottom: 0.25rem;
-            font-size: 1.1rem;
-        }
-
-        .module-info p {
-            font-size: 0.9rem;
+        .hero-subtitle {
+            font-size: 1.25rem;
             color: var(--text-muted);
-            margin: 0;
-        }
-
-        .sidebar-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 2rem;
-            height: fit-content;
-            position: sticky;
-            top: 100px;
-            backdrop-filter: blur(10px);
-        }
-
-        .sidebar-card h3 {
-            margin-bottom: 1.5rem;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .benefit-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
-            font-size: 0.95rem;
-        }
-
-        .benefit-item i {
-            color: #ff0000;
+            max-width: 700px;
+            margin: 0 auto 3rem;
         }
     </style>
 </head>
 
 <body>
+    <!-- Top Free Banner -->
+    <div class="academy-notice-banner">
+        <i class="fas fa-unlock-alt" style="margin-right: 0.5rem;"></i>
+        Academia gratuita por tiempo limitado
+    </div>
+
     <header class="header">
         <div class="container nav-container">
             <a href="/index.html" class="logo">
@@ -172,76 +55,206 @@
             <nav class="nav-links">
                 <a href="/index.html" class="nav-link">Inicio</a>
                 <a href="/services.html" class="nav-link">Servicios</a>
-                <a href="/academy.html" class="nav-link">Academia</a>
+                <a href="/academy.html" class="nav-link text-white">Academia</a>
                 <a href="/blog.html" class="nav-link">Blog</a>
             </nav>
         </div>
     </header>
 
     <main>
+        <!-- 1. Hero Section -->
         <section class="class-hero">
             <div class="container reveal">
                 <div
-                    style="font-size: 0.9rem; color: #ff0000; font-weight: 600; text-transform: uppercase; margin-bottom: 1rem; letter-spacing: 2px;">
-                    Academy | Masterclass</div>
-                <h1 class="hero-h1">YouTube <span class="text-gradient">Ecosystem Authority</span></h1>
+                    style="font-size: 0.9rem; color: var(--accent-yt); font-weight: 600; text-transform: uppercase; margin-bottom: 1rem; letter-spacing: 2px;">
+                    YouTube Growth & Monetization Mastery</div>
+                <h1 class="hero-h1"><span class="text-gradient">YouTube</span><br>Authority Mastery</h1>
+                <p class="hero-subtitle">Aprende a crecer, dominar el algoritmo y generar ingresos reales.</p>
 
-                <div class="video-container">
-                    <div class="video-overlay">
-                        <div class="play-btn"><i class="fas fa-play"></i></div>
-                        <p style="font-weight: 600; letter-spacing: 1px; text-transform: uppercase;">Desbloquear Clase
-                            Magistral</p>
+                <!-- Progress Bar -->
+                <div class="academy-progress-container" style="max-width: 600px; margin: 0 auto;">
+                    <div class="progress-header">
+                        <span style="font-size: 0.9rem; font-weight: 600;">Tu Progreso</span>
+                        <span class="progress-percentage"
+                            style="color: var(--academy-accent); font-weight: 700;">0%</span>
+                    </div>
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar-fill"></div>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <div class="curriculum-grid">
-                    <div class="module-list">
-                        <h3>Módulos de Aprendizaje</h3>
-                        <div class="module-item">
-                            <div class="module-number">01</div>
-                            <div class="module-info">
-                                <h4>Psicología del Clic (Thumbnail)</h4>
-                                <p>Diseño de miniaturas disruptivas basadas en patrones oculares de alta conversión.</p>
+        <!-- 2. Learning Modules Accordion -->
+        <section class="section">
+            <div class="container">
+                <div class="module-accordion">
+
+                    <!-- Module 1 -->
+                    <div class="unit-card reveal">
+                        <div class="unit-header">
+                            <div class="unit-title-group">
+                                <div class="unit-icon"><i class="fab fa-youtube"></i></div>
+                                <div>
+                                    <h3 style="margin: 0; font-size: 1.25rem;">Módulo 1: Canal Optimizado</h3>
+                                    <span style="font-size: 0.85rem; color: var(--text-muted);">3 Lecciones • Branding y
+                                        SEO</span>
+                                </div>
                             </div>
+                            <div class="unit-chevron"><i class="fas fa-chevron-down"></i></div>
                         </div>
-                        <div class="module-item">
-                            <div class="module-number">02</div>
-                            <div class="module-info">
-                                <h4>SEO y Búsqueda Dominante</h4>
-                                <p>Posicionamiento en los primeros resultados para palabras clave de alta intención.</p>
-                            </div>
-                        </div>
-                        <div class="module-item">
-                            <div class="module-number">03</div>
-                            <div class="module-info">
-                                <h4>Retención Evolucionada</h4>
-                                <p>Técnicas de guionización para mantener espectadores pegados a la pantalla.</p>
-                            </div>
-                        </div>
-                        <div class="module-item">
-                            <div class="module-number">04</div>
-                            <div class="module-info">
-                                <h4>Escala sin Rostro (Automation)</h4>
-                                <p>Cómo delegar la producción y escalar canales que operen por ti 24/7.</p>
+                        <div class="unit-content">
+                            <div class="lesson-grid">
+                                <div class="lesson-item">
+                                    <div class="lesson-meta">
+                                        <h4 style="margin: 0;">1.1 Branding del Canal</h4>
+                                        <button class="complete-btn" data-lesson-id="yt-1-1">Marcar como
+                                            completado</button>
+                                    </div>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted);">Diseña una identidad visual
+                                        impactante: Banner, Avatar e Intro estratégica.</p>
+                                </div>
+                                <div class="lesson-item">
+                                    <div class="lesson-meta">
+                                        <h4 style="margin: 0;">1.2 Títulos SEO</h4>
+                                        <button class="complete-btn" data-lesson-id="yt-1-2">Marcar como
+                                            completado</button>
+                                    </div>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted);">Cómo usar el buscador de
+                                        YouTube para atraer tráfico cualificado mediante palabras clave.</p>
+                                </div>
+                                <div class="lesson-item">
+                                    <div class="lesson-meta">
+                                        <h4 style="margin: 0;">1.3 Miniaturas que Convierten</h4>
+                                        <button class="complete-btn" data-lesson-id="yt-1-3">Marcar como
+                                            completado</button>
+                                    </div>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted);">Psicología aplicada al
+                                        diseño de thumbnails para disparar tu CTR.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="sidebar-card">
-                        <h3>Domina el Motor de Búsqueda</h3>
-                        <p style="margin-bottom: 2rem; font-size: 0.95rem; color: var(--text-muted);">
-                            No dejes que el tiempo desgaste tu canal. Dale el empuje inicial que YouTube necesita para
-                            recomendarte.
-                        </p>
-                        <div class="benefit-item"><i class="fas fa-check-circle"></i> Activación Algorítmica Rápida
+                    <!-- Module 2 -->
+                    <div class="unit-card reveal">
+                        <div class="unit-header">
+                            <div class="unit-title-group">
+                                <div class="unit-icon"><i class="fas fa-clock"></i></div>
+                                <div>
+                                    <h3 style="margin: 0; font-size: 1.25rem;">Módulo 2: Retención</h3>
+                                    <span style="font-size: 0.85rem; color: var(--text-muted);">3 Lecciones • Estrategia
+                                        de Contenido</span>
+                                </div>
+                            </div>
+                            <div class="unit-chevron"><i class="fas fa-chevron-down"></i></div>
                         </div>
-                        <div class="benefit-item"><i class="fas fa-check-circle"></i> Monetización en Tiempo Récord
+                        <div class="unit-content">
+                            <div class="lesson-grid">
+                                <div class="lesson-item">
+                                    <div class="lesson-meta">
+                                        <h4 style="margin: 0;">2.1 Hook en 10 Segundos</h4>
+                                        <button class="complete-btn" data-lesson-id="yt-2-1">Marcar como
+                                            completado</button>
+                                    </div>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted);">Domina el inicio de tus
+                                        videos para evitar que el espectador se vaya.</p>
+                                </div>
+                                <div class="lesson-item">
+                                    <div class="lesson-meta">
+                                        <h4 style="margin: 0;">2.2 Watch Time Strategy</h4>
+                                        <button class="complete-btn" data-lesson-id="yt-2-2">Marcar como
+                                            completado</button>
+                                    </div>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted);">Estructuras narrativas que
+                                        mantienen a la audiencia enganchada hasta el final.</p>
+                                </div>
+                                <div class="lesson-item">
+                                    <div class="lesson-meta">
+                                        <h4 style="margin: 0;">2.3 Series Inteligentes</h4>
+                                        <button class="complete-btn" data-lesson-id="yt-2-3">Marcar como
+                                            completado</button>
+                                    </div>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted);">Cómo encadenar videos para
+                                        que el espectador vea todo tu canal en una tarde.</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="benefit-item"><i class="fas fa-check-circle"></i> Autoridad de Canal</div>
-                        <a href="https://www.qqtube.com/?ref=2315017" target="_blank" class="btn btn-primary"
-                            style="width: 100%; margin-top: 2rem; background: #ff0000;">Impulsar Mi Canal <i
-                                class="fas fa-bolt" style="margin-left: 0.5rem;"></i></a>
                     </div>
+
+                    <!-- Module 3 -->
+                    <div class="unit-card reveal">
+                        <div class="unit-header">
+                            <div class="unit-title-group">
+                                <div class="unit-icon"><i class="fas fa-money-bill-wave"></i></div>
+                                <div>
+                                    <h3 style="margin: 0; font-size: 1.25rem;">Módulo 3: Monetización</h3>
+                                    <span style="font-size: 0.85rem; color: var(--text-muted);">4 Lecciones • Modelos de
+                                        Negocio</span>
+                                </div>
+                            </div>
+                            <div class="unit-chevron"><i class="fas fa-chevron-down"></i></div>
+                        </div>
+                        <div class="unit-content">
+                            <div class="lesson-grid">
+                                <div class="lesson-item">
+                                    <div class="lesson-meta">
+                                        <h4 style="margin: 0;">3.1 Google Adsense</h4>
+                                        <button class="complete-btn" data-lesson-id="yt-3-1">Marcar como
+                                            completado</button>
+                                    </div>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted);">Todo sobre el CPM y RPM para
+                                        maximizar tus ingresos por anuncios.</p>
+                                </div>
+                                <div class="lesson-item">
+                                    <div class="lesson-meta">
+                                        <h4 style="margin: 0;">3.2 Patrocinios (Sponsorships)</h4>
+                                        <button class="complete-btn" data-lesson-id="yt-3-2">Marcar como
+                                            completado</button>
+                                    </div>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted);">Cómo contactar y cerrar
+                                        tratos con marcas que encajen con tu contenido.</p>
+                                </div>
+                                <div class="lesson-item">
+                                    <div class="lesson-meta">
+                                        <h4 style="margin: 0;">3.3 Marketing de Afiliados</h4>
+                                        <button class="complete-btn" data-lesson-id="yt-3-3">Marcar como
+                                            completado</button>
+                                    </div>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted);">Genera comisiones
+                                        recomendando productos en tus descripciones.</p>
+                                </div>
+                                <div class="lesson-item">
+                                    <div class="lesson-meta">
+                                        <h4 style="margin: 0;">3.4 Productos Propios</h4>
+                                        <button class="complete-btn" data-lesson-id="yt-3-4">Marcar como
+                                            completado</button>
+                                    </div>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted);">Venta de merchandising,
+                                        cursos o acceso exclusivo a tu comunidad.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Community CTA -->
+        <section class="container reveal">
+            <div class="community-cta">
+                <h2 class="hero-h1" style="font-size: 2.5rem; margin-bottom: 1.5rem;">¿Quieres más <span
+                        class="text-gradient">Estrategias?</span></h2>
+                <p
+                    style="color: var(--text-muted); margin-bottom: 2.5rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    Únete a nuestra comunidad exclusiva para recibir actualizaciones de algoritmos, hacks de edición y
+                    consejos de monetización directamente en tu correo.
+                </p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="https://www.qqtube.com/?ref=2315017" target="_blank" class="btn btn-primary">Únete a la
+                        Comunidad <i class="fas fa-users" style="margin-left: 0.5rem;"></i></a>
+                    <a href="/academy.html" class="btn btn-secondary">Ver Otras Clases</a>
                 </div>
             </div>
         </section>
@@ -252,10 +265,10 @@
             <div class="footer-grid">
                 <div class="footer-col">
                     <a href="/index.html" class="logo" style="margin-bottom: 1.5rem;">ViralAuthority</a>
-                    <p>Construyendo imperios digitales en el mayor buscador de video.</p>
+                    <p>Dominando algoritmos, creando leyendas digitales.</p>
                 </div>
                 <div class="footer-col">
-                    <h4>Clases</h4>
+                    <h4>Clases Gratuitas</h4>
                     <ul class="footer-links">
                         <li><a href="instagram.html">Instagram</a></li>
                         <li><a href="tiktok.html">TikTok</a></li>
@@ -266,7 +279,27 @@
             </div>
         </div>
     </footer>
+
     <script src="../js/app.js"></script>
+    <script src="../js/academy-hub.js"></script>
+    <script>
+        // Reveal animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.8s ease-out';
+            observer.observe(el);
+        });
+    </script>
 </body>
 
 </html>

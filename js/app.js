@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 3. Scroll Reveal Animations
     const revealElements = document.querySelectorAll('.reveal');
-    
+
     const revealOnScroll = () => {
         const windowHeight = window.innerHeight;
         const elementVisible = 100;
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Show popup after 5 seconds OR if user scrolls halfway down
     let popupShown = false;
-    
+
     const showPopup = () => {
         if (!popupShown && popup) {
             popup.classList.add('active');
@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const originalText = btn.innerText;
             btn.innerText = "Subscribed!";
             btn.style.background = "#22c55e"; // Success green
-            
+
             setTimeout(() => {
                 popup.classList.remove('active');
                 btn.innerText = originalText;
@@ -90,3 +90,56 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// Academy Platform Filtering
+function filterPlatform(platformId) {
+    const sections = document.querySelectorAll('.platform-section');
+    const buttons = document.querySelectorAll('.filter-btn');
+
+    // Update buttons
+    buttons.forEach(btn => {
+        if (btn.getAttribute('onclick')?.includes(platformId)) {
+            btn.classList.add('active');
+        } else {
+            btn.classList.remove('active');
+        }
+    });
+
+    // Update sections
+    sections.forEach(sec => {
+        if (sec.id === platformId) {
+            sec.classList.add('active');
+        } else {
+            sec.classList.remove('active');
+        }
+    });
+}
+
+// Academy Lesson Expansion
+function toggleLesson(button) {
+    const card = button.closest('.course-card');
+    const isExpanded = card.classList.contains('expanded');
+
+    // Close other expanded cards (optional but recommended for cleaner UI)
+    document.querySelectorAll('.course-card.expanded').forEach(otherCard => {
+        if (otherCard !== card) {
+            otherCard.classList.remove('expanded');
+            const otherBtn = otherCard.querySelector('.btn-secondary');
+            if (otherBtn) {
+                const lang = document.documentElement.lang;
+                otherBtn.innerText = lang === 'es' ? 'Ver Clase' : 'Watch Class';
+            }
+        }
+    });
+
+    // Toggle current card
+    card.classList.toggle('expanded');
+
+    // Update button text
+    const lang = document.documentElement.lang;
+    if (card.classList.contains('expanded')) {
+        button.innerText = lang === 'es' ? 'Cerrar Detalles' : 'Close Details';
+    } else {
+        button.innerText = lang === 'es' ? 'Ver Clase' : 'Watch Class';
+    }
+}

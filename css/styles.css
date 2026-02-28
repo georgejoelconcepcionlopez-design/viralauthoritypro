@@ -396,6 +396,7 @@ h6 {
     font-size: 2.5rem !important;
   }
 }
+
 /* Academy Learning Hub */
 .academy-hub-header {
   padding: 10rem 0 4rem;
@@ -516,9 +517,23 @@ h6 {
   width: fit-content;
 }
 
-.level-beginner { background: rgba(16, 185, 129, 0.1); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.2); }
-.level-intermediate { background: rgba(59, 130, 246, 0.1); color: #3b82f6; border: 1px solid rgba(59, 130, 246, 0.2); }
-.level-advanced { background: rgba(236, 72, 153, 0.1); color: #ec4899; border: 1px solid rgba(236, 72, 153, 0.2); }
+.level-beginner {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.level-intermediate {
+  background: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.level-advanced {
+  background: rgba(236, 72, 153, 0.1);
+  color: #ec4899;
+  border: 1px solid rgba(236, 72, 153, 0.2);
+}
 
 .course-card h3 {
   font-size: 1.5rem;
@@ -534,8 +549,15 @@ h6 {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (max-width: 640px) {
@@ -544,3 +566,64 @@ h6 {
   }
 }
 
+/* Academy Expansion & Detailed CTA */
+.lesson-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+  opacity: 0;
+  padding-top: 0;
+}
+
+.course-card.expanded {
+  border-color: var(--accent-purple);
+  background: rgba(26, 26, 26, 0.8);
+}
+
+.course-card.expanded .lesson-content {
+  max-height: 500px;
+  opacity: 1;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  margin-top: 1.5rem;
+}
+
+.lesson-features {
+  list-style: none;
+  margin-bottom: 2rem;
+}
+
+.lesson-features li {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.lesson-features li i {
+  color: var(--accent-blue);
+  font-size: 0.8rem;
+}
+
+.btn-boost {
+  width: 100%;
+  background: var(--gradient-neon);
+  color: white;
+  padding: 1rem;
+  font-size: 1rem;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.2);
+}
+
+.btn-boost:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+}
+
+.course-card .btn-secondary {
+  width: 100%;
+}

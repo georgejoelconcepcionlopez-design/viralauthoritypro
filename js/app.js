@@ -89,6 +89,9 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 2000);
         });
     }
+
+    // 5. Growth Diagnosis Modal Logic
+    new DiagnosisModal();
 });
 
 // Academy Platform Filtering
@@ -148,54 +151,106 @@ class DiagnosisModal {
     constructor() {
         this.step = 1;
         this.answers = {};
+        this.lang = document.documentElement.lang === 'es' ? 'es' : 'en';
         this.init();
     }
 
+    getContent() {
+        const texts = {
+            es: {
+                step1Title: "¿En qué red quieres crecer?",
+                step2Title: "¿Cuál es tu objetivo principal?",
+                step3Title: "¿Tu cuenta ya genera ingresos?",
+                optInstagram: "Instagram",
+                optTikTok: "TikTok",
+                optYouTube: "YouTube",
+                optSpotify: "Spotify",
+                optFollowers: "Más seguidores",
+                optSales: "Más ventas",
+                optPlays: "Más reproducciones",
+                optBrand: "Construir marca personal",
+                optYes: "Sí",
+                optNo: "No",
+                optStarting: "Apenas comenzando",
+                resultTitle: "Tu Diagnóstico Élite",
+                resultCTA: "Ver Plan Recomendado",
+                stepPrefix: "Paso"
+            },
+            en: {
+                step1Title: "Which network do you want to grow?",
+                step2Title: "What is your main goal?",
+                step3Title: "Does your account already generate income?",
+                optInstagram: "Instagram",
+                optTikTok: "TikTok",
+                optYouTube: "YouTube",
+                optSpotify: "Spotify",
+                optFollowers: "More Followers",
+                optSales: "More Sales",
+                optPlays: "More Plays",
+                optBrand: "Build Personal Brand",
+                optYes: "Yes",
+                optNo: "No",
+                optStarting: "Just Starting",
+                resultTitle: "Your Elite Diagnosis",
+                resultCTA: "View Recommended Plan",
+                stepPrefix: "Step"
+            }
+        };
+        return texts[this.lang];
+    }
+
     init() {
-        // Inject HTML
+        const t = this.getContent();
         const modalHTML = `
             <div class="diagnosis-overlay" id="diagnosisModal">
                 <div class="diagnosis-container">
-                    <button class="diagnosis-close"><i class="fas fa-times"></i></button>
-                    <div class="diagnosis-progress">
-                        <div class="diagnosis-progress-bar" id="diagnosisProgress"></div>
+                    <button class="diagnosis-close" aria-label="Close"><i class="fas fa-times"></i></button>
+                    
+                    <div class="diagnosis-progress-wrapper">
+                        <div class="diagnosis-progress-text">
+                            <span id="diagnosisStepText">${t.stepPrefix} 1/3</span>
+                            <span id="diagnosisPercent">0%</span>
+                        </div>
+                        <div class="diagnosis-progress-bar-bg">
+                            <div class="diagnosis-progress-bar-fill" id="diagnosisProgress"></div>
+                        </div>
                     </div>
                     
                     <div class="diagnosis-step active" data-step="1">
-                        <h3 class="diagnosis-title">¿En qué red quieres crecer?</h3>
+                        <h3 class="diagnosis-title">${t.step1Title}</h3>
                         <div class="diagnosis-options">
-                            <div class="diagnosis-option" data-value="Instagram"><i class="fab fa-instagram"></i> Instagram</div>
-                            <div class="diagnosis-option" data-value="TikTok"><i class="fab fa-tiktok"></i> TikTok</div>
-                            <div class="diagnosis-option" data-value="YouTube"><i class="fab fa-youtube"></i> YouTube</div>
-                            <div class="diagnosis-option" data-value="Spotify"><i class="fab fa-spotify"></i> Spotify</div>
+                            <div class="diagnosis-option" data-value="Instagram"><i class="fab fa-instagram"></i> ${t.optInstagram}</div>
+                            <div class="diagnosis-option" data-value="TikTok"><i class="fab fa-tiktok"></i> ${t.optTikTok}</div>
+                            <div class="diagnosis-option" data-value="YouTube"><i class="fab fa-youtube"></i> ${t.optYouTube}</div>
+                            <div class="diagnosis-option" data-value="Spotify"><i class="fab fa-spotify"></i> ${t.optSpotify}</div>
                         </div>
                     </div>
 
                     <div class="diagnosis-step" data-step="2">
-                        <h3 class="diagnosis-title">¿Cuál es tu objetivo principal?</h3>
+                        <h3 class="diagnosis-title">${t.step2Title}</h3>
                         <div class="diagnosis-options">
-                            <div class="diagnosis-option" data-value="Followers"><i class="fas fa-users"></i> Más seguidores</div>
-                            <div class="diagnosis-option" data-value="Sales"><i class="fas fa-shopping-cart"></i> Más ventas</div>
-                            <div class="diagnosis-option" data-value="Plays"><i class="fas fa-play"></i> Más reproducciones</div>
-                            <div class="diagnosis-option" data-value="Brand"><i class="fas fa-id-badge"></i> Construir marca personal</div>
+                            <div class="diagnosis-option" data-value="Followers"><i class="fas fa-users"></i> ${t.optFollowers}</div>
+                            <div class="diagnosis-option" data-value="Sales"><i class="fas fa-shopping-cart"></i> ${t.optSales}</div>
+                            <div class="diagnosis-option" data-value="Plays"><i class="fas fa-play"></i> ${t.optPlays}</div>
+                            <div class="diagnosis-option" data-value="Brand"><i class="fas fa-id-badge"></i> ${t.optBrand}</div>
                         </div>
                     </div>
 
                     <div class="diagnosis-step" data-step="3">
-                        <h3 class="diagnosis-title">¿Tu cuenta ya genera ingresos?</h3>
+                        <h3 class="diagnosis-title">${t.step3Title}</h3>
                         <div class="diagnosis-options">
-                            <div class="diagnosis-option" data-value="Yes"><i class="fas fa-check"></i> Sí</div>
-                            <div class="diagnosis-option" data-value="No"><i class="fas fa-times"></i> No</div>
-                            <div class="diagnosis-option" data-value="Starting"><i class="fas fa-seedling"></i> Apenas comenzando</div>
+                            <div class="diagnosis-option" data-value="Yes"><i class="fas fa-check"></i> ${t.optYes}</div>
+                            <div class="diagnosis-option" data-value="No"><i class="fas fa-times"></i> ${t.optNo}</div>
+                            <div class="diagnosis-option" data-value="Starting"><i class="fas fa-seedling"></i> ${t.optStarting}</div>
                         </div>
                     </div>
 
                     <div class="diagnosis-step" data-step="result">
                         <div class="recommendation-card">
-                            <i class="fas fa-magic"></i>
-                            <h3 id="resultTitle">Tu Diagnóstico Élite</h3>
+                            <div class="recom-icon-box"><i class="fas fa-magic"></i></div>
+                            <h3 id="resultTitle">${t.resultTitle}</h3>
                             <p id="resultText"></p>
-                            <a href="#" id="resultCTA" class="btn btn-primary">Ver Plan Recomendado</a>
+                            <a href="#" id="resultCTA" class="btn btn-primary">${t.resultCTA}</a>
                         </div>
                     </div>
                 </div>
@@ -203,14 +258,16 @@ class DiagnosisModal {
         `;
         document.body.insertAdjacentHTML('beforeend', modalHTML);
 
-        // Bind Events
         this.overlay = document.getElementById('diagnosisModal');
         this.container = this.overlay.querySelector('.diagnosis-container');
         this.closeBtn = this.overlay.querySelector('.diagnosis-close');
         this.progressBar = document.getElementById('diagnosisProgress');
+        this.stepText = document.getElementById('diagnosisStepText');
+        this.percentText = document.getElementById('diagnosisPercent');
+
+        // Find the floating rocket button
         this.trigger = document.querySelector('.floating-cta');
 
-        // Replace trigger link with js action if needed (detect and change)
         if (this.trigger) {
             this.trigger.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -223,7 +280,6 @@ class DiagnosisModal {
             if (e.target === this.overlay) this.close();
         });
 
-        // Option Clicks
         this.overlay.querySelectorAll('.diagnosis-option').forEach(opt => {
             opt.addEventListener('click', () => {
                 const step = opt.closest('.diagnosis-step').dataset.step;
@@ -256,41 +312,66 @@ class DiagnosisModal {
     }
 
     updateUI() {
+        const t = this.getContent();
         const steps = this.overlay.querySelectorAll('.diagnosis-step');
         steps.forEach(s => s.classList.remove('active'));
 
         const currentStep = this.overlay.querySelector(`[data-step="${this.step}"]`);
         if (currentStep) currentStep.classList.add('active');
 
-        const progressPercent = ((this.step - 1) / 3) * 100;
+        const progressPercent = Math.round(((this.step - 1) / 3) * 100);
         this.progressBar.style.width = `${progressPercent}%`;
+        this.stepText.innerText = `${t.stepPrefix} ${this.step}/3`;
+        this.percentText.innerText = `${progressPercent}%`;
+
+        // Hide progress on result step
+        const progressWrapper = this.overlay.querySelector('.diagnosis-progress-wrapper');
+        if (this.step === 'result') {
+            progressWrapper.style.display = 'none';
+        } else {
+            progressWrapper.style.display = 'block';
+        }
     }
 
     showResult() {
         const steps = this.overlay.querySelectorAll('.diagnosis-step');
         steps.forEach(s => s.classList.remove('active'));
         this.overlay.querySelector('[data-step="result"]').classList.add('active');
+
+        this.step = 'result';
+        this.updateUI();
         this.progressBar.style.width = '100%';
+        this.percentText.innerText = '100%';
 
         const { 1: platform, 2: goal, 3: monetization } = this.answers;
         let recommendation = "";
-        let targetLink = "services.html";
+        let targetLink = this.lang === 'es' ? "/es/services.html" : "/en/services.html";
 
-        if (platform === 'Spotify') {
-            recommendation = "Para dominar Spotify necesitas tracción algorítmica premium. Enfócate en aumentar tu Save Rate.";
-            targetLink = "es/spotify-streams.html";
-        } else if (goal === 'Sales' || goal === 'Brand') {
-            recommendation = "Tu prioridad debe ser la autoridad digital. Necesitas un ecosistema de contenido que genere confianza.";
-            targetLink = "es/academia.html";
+        if (this.lang === 'es') {
+            if (platform === 'Spotify') {
+                recommendation = "Para dominar Spotify necesitas tracción algorítmica premium. Enfócate en aumentar tu Save Rate.";
+                targetLink = "/es/spotify-streams.html";
+            } else if (goal === 'Sales' || goal === 'Brand') {
+                recommendation = "Tu prioridad debe ser la autoridad digital. Necesitas un ecosistema de contenido que genere confianza.";
+                targetLink = "/es/academy.html";
+            } else {
+                recommendation = `Para escalar en ${platform}, necesitas superar el umbral de credibilidad del algoritmo mediante señales de alta retención.`;
+                targetLink = "/es/services.html";
+            }
         } else {
-            recommendation = `Para escalar en ${platform}, necesitas superar el umbral de credibilidad del algoritmo mediante señales de alta retención.`;
-            targetLink = "services.html";
+            if (platform === 'Spotify') {
+                recommendation = "To dominate Spotify you need premium algorithmic traction. Focus on increasing your Save Rate.";
+                targetLink = "/en/spotify-streams.html";
+            } else if (goal === 'Sales' || goal === 'Brand') {
+                recommendation = "Your priority should be digital authority. You need a content ecosystem that builds trust.";
+                targetLink = "/en/academy.html";
+            } else {
+                recommendation = `To scale on ${platform}, you need to surpass the algorithm's credibility threshold through high-retention signals.`;
+                targetLink = "/en/services.html";
+            }
         }
 
         document.getElementById('resultText').innerText = recommendation;
         document.getElementById('resultCTA').href = targetLink;
     }
 }
-
-// Initialize Diagnosis Modal
-new DiagnosisModal();

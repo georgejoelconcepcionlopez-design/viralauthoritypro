@@ -627,3 +627,238 @@ h6 {
 .course-card .btn-secondary {
   width: 100%;
 }
+
+/* Diagnosis Modal Premium Styles */
+.diagnosis-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(12px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: var(--transition-smooth);
+}
+
+.diagnosis-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.diagnosis-container {
+  background: rgba(17, 17, 17, 0.8);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 28px;
+  width: 90%;
+  max-width: 500px;
+  padding: 3rem 2rem 2.5rem;
+  position: relative;
+  transform: translateY(30px) scale(0.95);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.diagnosis-overlay.active .diagnosis-container {
+  transform: translateY(0) scale(1);
+}
+
+.diagnosis-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  color: var(--text-muted);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  z-index: 10;
+}
+
+.diagnosis-close:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  transform: rotate(90deg);
+}
+
+/* Progress Indicator */
+.diagnosis-progress-wrapper {
+  margin-bottom: 2.5rem;
+}
+
+.diagnosis-progress-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.diagnosis-progress-bar-bg {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.diagnosis-progress-bar-fill {
+  height: 100%;
+  background: var(--gradient-neon);
+  width: 0%;
+  transition: width 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+  box-shadow: 0 0 15px rgba(139, 92, 246, 0.4);
+}
+
+/* Steps */
+.diagnosis-step {
+  display: none;
+  animation: diagnosisFadeIn 0.5s ease forwards;
+}
+
+.diagnosis-step.active {
+  display: block;
+}
+
+@keyframes diagnosisFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.diagnosis-title {
+  font-size: 1.75rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.diagnosis-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.diagnosis-option {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 1.5rem 1rem;
+  border-radius: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 500;
+}
+
+.diagnosis-option i {
+  font-size: 1.5rem;
+  color: var(--accent-purple);
+  transition: var(--transition-smooth);
+}
+
+.diagnosis-option:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(139, 92, 246, 0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.diagnosis-option:hover i {
+  transform: scale(1.1);
+  color: white;
+}
+
+/* Result Card */
+.recommendation-card {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.recom-icon-box {
+  width: 80px;
+  height: 80px;
+  background: var(--gradient-neon);
+  border-radius: 24px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 1.5rem;
+  font-size: 2.5rem;
+  color: white;
+  box-shadow: 0 15px 30px rgba(139, 92, 246, 0.3);
+  animation: recomPulse 2s infinite;
+}
+
+@keyframes recomPulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.recommendation-card h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  background: var(--gradient-neon);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.recommendation-card p {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
+
+@media (max-width: 480px) {
+  .diagnosis-container {
+    padding: 2.5rem 1.5rem 2rem;
+    border-radius: 24px;
+  }
+
+  .diagnosis-title {
+    font-size: 1.5rem;
+  }
+
+  .diagnosis-options {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .diagnosis-option {
+    padding: 1rem;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 1.5rem;
+  }
+}

@@ -1,167 +1,505 @@
-<!DOCTYPE html><html lang="en"><head>
-    <link rel="icon" type="image/png" href="/assets/logo.png?v=2">
-    <link rel="shortcut icon" href="/favicon.ico?v=2">
-    <meta name="theme-color" content="#0f0f0f">
+<!DOCTYPE html><html lang="es"><head>
     <meta charset="UTF-8">
-    <title>ViralAuthority Academy Redirect</title>
-    <script>
-        (function () {
-            var userLang = navigator.language || navigator.userLanguage;
-            if (userLang && userLang.toLowerCase().startsWith('es')) {
-                window.location.replace('/es/academia.html');
-            } else {
-                window.location.replace('/en/academy.html');
-            }
-        })();
-    </script>
-    <meta http-equiv="refresh" content="0; url=/en/academy.html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ViralAuthority Academy | Dashboard de Crecimiento Digital</title>
+    <meta name="description" content="Domina Instagram, TikTok, YouTube y Monetización. Accede a tu dashboard de aprendizaje personalizado y escala tu autoridad digital.">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --surface-card: #121212;
+            --border-glow: rgba(225, 48, 108, 0.2);
+        }
 
-    <meta name="description" content="Redirecting to Academy... Descubre estrategias probadas para escalar tu audiencia y monetizar tu contenido.">
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+        .academy-dashboard-hero {
+            padding: 10rem 0 5rem;
+            background: radial-gradient(circle at 70% 20%, rgba(225, 48, 108, 0.08), transparent),
+                radial-gradient(circle at 20% 80%, rgba(54, 83, 229, 0.05), transparent);
+            text-align: center;
+        }
+
+        /* Goal Selector Styles */
+        .path-selector-container {
+            margin: 4rem 0;
+        }
+
+        .goal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .goal-card {
+            background: var(--surface-card);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-align: center;
+        }
+
+        .goal-card:hover,
+        .goal-card.active {
+            border-color: var(--accent-pink);
+            background: rgba(225, 48, 108, 0.03);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .goal-card i {
+            font-size: 2rem;
+            color: var(--accent-pink);
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .recommendation-output {
+            margin-top: 3rem;
+            padding: 2.5rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 24px;
+            border: 1px dashed rgba(255, 255, 255, 0.1);
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        /* Platform Grid */
+        .platform-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+
+        .platform-card {
+            background: var(--surface-card);
+            border-radius: 24px;
+            padding: 2.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .platform-card:hover {
+            border-color: rgba(255, 255, 255, 0.1);
+            transform: scale(1.02);
+        }
+
+        .platform-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--card-accent);
+        }
+
+        .platform-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .platform-meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .platform-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Progress Tracker */
+        .progress-dashboard {
+            background: #0a0a0a;
+            padding: 4rem;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            margin: 6rem 0;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item h4 {
+            font-size: 2.5rem;
+            color: var(--accent-pink);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Tools Section */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .tool-link {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            text-decoration: none;
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .tool-link:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: var(--accent-pink);
+        }
+
+        .tool-link i {
+            font-size: 1.8rem;
+            color: var(--accent-pink);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .progress-dashboard {
+                padding: 2rem;
+            }
+        }
+    </style>
+
     <meta name="keywords" content="crecimiento orgánico, estrategia de redes sociales, optimización de algoritmos, monetización, estrategia de contenido 2026">
     <link rel="canonical" href="https://viralauthority.com/academy.html">
     <link rel="alternate" hreflang="es" href="https://viralauthority.com/academy.html">
     <link rel="alternate" hreflang="en" href="https://viralauthority.com/en/academy.html">
     <link rel="alternate" hreflang="x-default" href="https://viralauthority.com/academy.html">
-    <meta property="og:title" content="ViralAuthority Academy Redirect">
-    <meta property="og:description" content="Redirecting to Academy... Descubre estrategias probadas para escalar tu audiencia y monetizar tu contenido.">
+    <meta property="og:title" content="ViralAuthority Academy | Dashboard de Crecimiento Digital">
+    <meta property="og:description" content="Domina Instagram, TikTok, YouTube y Monetización. Accede a tu dashboard de aprendizaje personalizado y escala tu autoridad digital.">
     <meta property="og:url" content="https://viralauthority.com/academy.html">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://viralauthority.com/assets/logo.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="ViralAuthority Academy Redirect">
-    <meta name="twitter:description" content="Redirecting to Academy... Descubre estrategias probadas para escalar tu audiencia y monetizar tu contenido.">
+    <meta name="twitter:title" content="ViralAuthority Academy | Dashboard de Crecimiento Digital">
+    <meta name="twitter:description" content="Domina Instagram, TikTok, YouTube y Monetización. Accede a tu dashboard de aprendizaje personalizado y escala tu autoridad digital.">
     <meta name="twitter:image" content="https://viralauthority.com/assets/logo.png"></head>
 
 <body>
-    <p>Redirecting to Academy...</p>
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><i class="fas fa-bolt text-white"></i></div>
+                ViralAuthority
+            </a>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link">Inicio</a>
+                <a href="services.html" class="nav-link">Servicios</a>
+                <a href="academy.html" class="nav-link active">Academia</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="academy-dashboard-hero">
+            <div class="container reveal">
+                <h1 class="hero-h1">Digital <span class="text-gradient">Growth Academy</span></h1>
+                <p class="hero-subtitle">Domina las estrategias de contenido, algoritmos y monetización en un solo
+                    lugar.</p>
+                <div style="margin-top: 2.5rem;">
+                    <a href="#paths" class="btn btn-primary" style="padding: 1rem 3rem;">Comenzar Ahora</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="paths" class="section">
+            <div class="container">
+                <div class="reveal text-center">
+                    <h2 class="hero-h1" style="font-size: 2.5rem;">Tu ruta de <span class="text-gradient">aprendizaje</span></h2>
+                    <p class="text-muted">Selecciona tu objetivo principal para recibir una recomendación personalizada.
+                    </p>
+                </div>
+
+                <div class="goal-grid reveal">
+                    <div class="goal-card" onclick="setGoal('grow', this)">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Crecer Seguidores</h3>
+                        <p class="text-muted">Enfócate en viralidad y alcance masivo.</p>
+                    </div>
+                    <div class="goal-card" onclick="setGoal('monetize', this)">
+                        <i class="fas fa-wallet"></i>
+                        <h3>Monetizar Audiencia</h3>
+                        <p>Convierte tu atención en ingresos reales.</p>
+                    </div>
+                    <div class="goal-card" onclick="setGoal('brand', this)">
+                        <i class="fas fa-award"></i>
+                        <h3>Construir Marca</h3>
+                        <p>Autoridad y confianza a largo plazo.</p>
+                    </div>
+                    <div class="goal-card" onclick="setGoal('pro', this)">
+                        <i class="fas fa-user-tie"></i>
+                        <h3>Creador Pro</h3>
+                        <p>Estructura y automatización de negocio.</p>
+                    </div>
+                </div>
+
+                <div id="recommendation" class="recommendation-output">
+                    <div id="rec-content"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section pt-0">
+            <div class="container">
+                <h2 class="hero-h1 reveal" style="font-size: 2.5rem; margin-bottom: 3rem;">Explorar Plataformas</h2>
+
+                <div class="platform-grid">
+                    <!-- Instagram -->
+                    <div class="platform-card reveal" style="--card-accent: #E1306C;">
+                        <div class="platform-info">
+                            <h3>Instagram Mastery</h3>
+                            <div class="platform-meta">
+                                <span><i class="fas fa-layer-group"></i> 3 Módulos</span>
+                                <span><i class="fas fa-clock"></i> 9 Lecciones</span>
+                            </div>
+                            <p class="text-muted">Optimización de perfil, reels virales y embudos de venta directa.</p>
+                            <a href="academy/instagram.html" class="btn btn-secondary" style="margin-top: 1.5rem; width: 100%;">Entrar</a>
+                        </div>
+                    </div>
+
+                    <!-- TikTok -->
+                    <div class="platform-card reveal" style="--card-accent: #00f2ea;">
+                        <div class="platform-info">
+                            <h3>TikTok Viral</h3>
+                            <div class="platform-meta">
+                                <span><i class="fas fa-layer-group"></i> 3 Módulos</span>
+                                <span><i class="fas fa-clock"></i> 9 Lecciones</span>
+                            </div>
+                            <p class="text-muted">Domina el algoritmo, hooks de retención y monetización de videos
+                                cortos.</p>
+                            <a href="academy/tiktok.html" class="btn btn-secondary" style="margin-top: 1.5rem; width: 100%;">Entrar</a>
+                        </div>
+                    </div>
+
+                    <!-- YouTube -->
+                    <div class="platform-card reveal" style="--card-accent: #FF0000;">
+                        <div class="platform-info">
+                            <h3>YouTube Hub</h3>
+                            <div class="platform-meta">
+                                <span><i class="fas fa-layer-group"></i> 3 Módulos</span>
+                                <span><i class="fas fa-clock"></i> 9 Lecciones</span>
+                            </div>
+                            <p class="text-muted">SEO de búsqueda, miniaturas de alto CTR y automatización de canales.
+                            </p>
+                            <a href="academy/youtube.html" class="btn btn-secondary" style="margin-top: 1.5rem; width: 100%;">Entrar</a>
+                        </div>
+                    </div>
+
+                    <!-- Spotify -->
+                    <div class="platform-card reveal" style="--card-accent: #1DB954;">
+                        <div class="platform-info">
+                            <h3>Spotify Strategy</h3>
+                            <div class="platform-meta">
+                                <span><i class="fas fa-layer-group"></i> 3 Módulos</span>
+                                <span><i class="fas fa-clock"></i> 9 Lecciones</span>
+                            </div>
+                            <p class="text-muted">Branding para artistas, algoritmos de playlists y regalías de
+                                streaming.</p>
+                            <a href="academy/spotify.html" class="btn btn-secondary" style="margin-top: 1.5rem; width: 100%;">Entrar</a>
+                        </div>
+                    </div>
+
+                    <!-- Monetization -->
+                    <div class="platform-card reveal" style="--card-accent: #FFD700;">
+                        <div class="platform-info">
+                            <h3>Monetization Mastery</h3>
+                            <div class="platform-meta">
+                                <span><i class="fas fa-layer-group"></i> 3 Módulos</span>
+                                <span><i class="fas fa-clock"></i> 9 Lecciones</span>
+                            </div>
+                            <p class="text-muted">Modelos de ingresos masivos, marca personal y escalamiento 6-figuras.
+                            </p>
+                            <a href="academy/monetization.html" class="btn btn-secondary" style="margin-top: 1.5rem; width: 100%;">Entrar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="progress-dashboard reveal">
+                    <h2 class="hero-h1" style="font-size: 2rem; margin-bottom: 3rem;">Estado de Aprendizaje</h2>
+                    <div class="stat-grid">
+                        <div class="stat-item">
+                            <h4 id="lessons-completed">0</h4>
+                            <p class="text-muted">Clases Completadas</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4 id="global-progress">0%</h4>
+                            <p class="text-muted">Progreso Total</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4 id="active-courses">0</h4>
+                            <p class="text-muted">Cursos Iniciados</p>
+                        </div>
+                    </div>
+                    <div class="progress-bar-bg" style="margin-top: 3rem; background: rgba(255,255,255,0.05);">
+                        <div id="total-progress-bar" class="progress-bar-fill" style="width: 0%; background: var(--accent-pink);"></div>
+                    </div>
+                </div>
+
+                <div class="reveal">
+                    <h2 class="hero-h1" style="font-size: 2.5rem; margin-bottom: 2rem;">Caja de Herramientas</h2>
+                    <div class="tools-grid">
+                        <a href="ai-tools.html" class="tool-link">
+                            <i class="fas fa-calculator"></i>
+                            <div>
+                                <h3>Calculadora de Ingresos</h3>
+                                <p class="text-muted">Estima tus ganancias según plataforma y audiencia.</p>
+                            </div>
+                        </a>
+                        <a href="blog/ranking-plataformas-mas-rentables-2026.html" class="tool-link">
+                            <i class="fas fa-trophy"></i>
+                            <div>
+                                <h3>Ranking de Nichos</h3>
+                                <p class="text-muted">Descubre las áreas con mayor rentabilidad hoy.</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="reveal text-center" style="margin-top: 8rem; padding: 5rem 2rem; background: linear-gradient(rgba(225, 48, 108, 0.05), transparent); border-radius: 40px; border: 1px solid var(--border-glow);">
+                    <h2 class="hero-h1" style="font-size: 3rem;">Escala tu <span class="text-gradient">Autoridad</span>
+                    </h2>
+                    <p class="text-muted" style="max-width: 600px; margin: 0 auto 3rem;">¿Buscas resultados
+                        profesionales inmediatos? Nuestro equipo gestiona tu campaña de crecimiento estratégico.</p>
+                    <a href="growth-campaign.html" class="btn btn-primary" style="padding: 1.2rem 3.5rem; font-size: 1.1rem;">Apply for Growth Campaign</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col" style="grid-column: span 1;">
+                    <a href="index.html" class="logo" style="margin-bottom: 1.5rem;">ViralAuthority</a>
+                    <p>Estrategia de crecimiento premium.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Clases</h4>
+                    <ul class="footer-links">
+                        <li><a href="academy/instagram.html">Instagram Mastery</a></li>
+                        <li><a href="academy/tiktok.html">TikTok Viral</a></li>
+                        <li><a href="academy/youtube.html">YouTube Hub</a></li>
+                        <li><a href="academy/monetization.html">Monetización</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 ViralAuthority. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const coursesData = {
+            'grow': {
+                title: 'Ruta: Crecimiento Explosivo',
+                desc: 'Esta ruta prioriza la viralidad y el alcance masivo en plataformas de video corto.',
+                steps: ['Módulo 2 de TikTok (Hooks)', 'Módulo 2 de Instagram (Contenido Viral)', 'Módulo 2 de YouTube (Retención)']
+            },
+            'monetize': {
+                title: 'Ruta: Monetización Directa',
+                desc: 'Aprende a convertir seguidores en dólares con sistemas de ingresos probados.',
+                steps: ['Módulo 1 de Monetización (Modelos)', 'Módulo 3 de Instagram (Ventas)', 'Módulo 3 de YouTube (Sponsors)']
+            },
+            'brand': {
+                title: 'Ruta: Autoridad de Marca',
+                desc: 'Construye una presencia que genere confianza y respeto en tu industria.',
+                steps: ['Módulo 2 de Monetización (Branding)', 'Módulo 1 de Spotify (Identidad)', 'Módulo 1 de Instagram (Perfil)']
+            },
+            'pro': {
+                title: 'Ruta: Creador Profesional',
+                desc: 'Estructura tu presencia digital como un negocio de alto rendimiento.',
+                steps: ['Módulo 3 de Monetización (Automatización)', 'Módulo 1 de YouTube (Optimización)', 'Módulo 3 de TikTok (Ingresos)']
+            }
+        };
+
+        function setGoal(goal, element) {
+            document.querySelectorAll('.goal-card').forEach(c => c.classList.remove('active'));
+            element.classList.add('active');
+
+            const data = coursesData[goal];
+            const output = document.getElementById('recommendation');
+            const content = document.getElementById('rec-content');
+
+            content.innerHTML = `
+                <h3 style="color: var(--accent-pink); margin-bottom: 1rem;">${data.title}</h3>
+                <p style="margin-bottom: 2rem;">${data.desc}</p>
+                <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+                    ${data.steps.map(s => `<span style="padding: 0.5rem 1.2rem; background: rgba(255,255,255,0.05); border-radius: 100px; font-size: 0.85rem;">${s}</span>`).join('')}
+                </div>
+            `;
+            output.style.display = 'block';
+            output.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        function updateGlobalStats() {
+            // Placeholder: In a real app we would check localStorage keys generated by individual lesson pages
+            const completed = parseInt(localStorage.getItem('va_total_completed_lessons') || '0');
+            const started = completed > 0 ? 1 : 0;
+            const totalLessons = 45; // 5 platforms * 9 lessons
+            const progress = Math.min(Math.round((completed / totalLessons) * 100), 100);
+
+            document.getElementById('lessons-completed').innerText = completed;
+            document.getElementById('global-progress').innerText = progress + '%';
+            document.getElementById('active-courses').innerText = started;
+            document.getElementById('total-progress-bar').style.width = progress + '%';
+        }
+
+        // Reveal animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.8s ease-out';
+            observer.observe(el);
+        });
+
+        window.onload = updateGlobalStats;
+    </script>
 
 
-
-    
-
-    
-
-    
 
     <script type="application/ld+json">
 {
@@ -173,7 +511,7 @@
   "name": "ViralAuthority",
   "url": "https://viralauthority.com",
   "logo": "https://viralauthority.com/assets/logo.png",
-  "description": "Redirecting to Academy... Descubre estrategias probadas para escalar tu audiencia y monetizar tu contenido."
+  "description": "Domina Instagram, TikTok, YouTube y Monetización. Accede a tu dashboard de aprendizaje personalizado y escala tu autoridad digital."
 }
     </script>
 </body></html>

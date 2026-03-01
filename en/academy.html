@@ -1,485 +1,364 @@
 <!DOCTYPE html><html lang="en"><head>
-    <link rel="icon" type="image/png" href="/assets/logo.png?v=2">
-    <link rel="shortcut icon" href="/favicon.ico?v=2">
-    <meta name="theme-color" content="#0f0f0f">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ViralAuthority Academy | Premium Social Media Learning Hub</title>
-    <meta name="description" content="Master Instagram, TikTok, YouTube, Facebook, and X. Premium courses to dominate algorithms and scale your digital authority.">
-    
-
-    
-    
-    
-    
-
+    <title>ViralAuthority Academy | Digital Growth Dashboard</title>
+    <meta name="description" content="Master Instagram, TikTok, YouTube, and Monetization. Access your personalized learning dashboard and scale your digital authority today.">
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
     <style>
-        .lang-switcher {
+        :root {
+            --surface-card: #121212;
+            --border-glow: rgba(225, 48, 108, 0.2);
+        }
+
+        .academy-dashboard-hero {
+            padding: 10rem 0 5rem;
+            background: radial-gradient(circle at 70% 20%, rgba(225, 48, 108, 0.08), transparent),
+                radial-gradient(circle at 20% 80%, rgba(54, 83, 229, 0.05), transparent);
+            text-align: center;
+        }
+
+        .goal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .goal-card {
+            background: var(--surface-card);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-align: center;
+        }
+
+        .goal-card:hover,
+        .goal-card.active {
+            border-color: var(--accent-pink);
+            background: rgba(225, 48, 108, 0.03);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .goal-card i {
+            font-size: 2rem;
+            color: var(--accent-pink);
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .recommendation-output {
+            margin-top: 3rem;
+            padding: 2.5rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 24px;
+            border: 1px dashed rgba(255, 255, 255, 0.1);
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .platform-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+
+        .platform-card {
+            background: var(--surface-card);
+            border-radius: 24px;
+            padding: 2.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .platform-card:hover {
+            border-color: rgba(255, 255, 255, 0.1);
+            transform: scale(1.02);
+        }
+
+        .platform-card::before {
+            content: '';
             position: absolute;
-            top: 1.5rem;
-            right: 2rem;
-            color: white;
-            font-size: 0.85rem;
-            font-weight: 600;
-            z-index: 1001;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--card-accent);
+        }
+
+        .progress-dashboard {
+            background: #0a0a0a;
+            padding: 4rem;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            margin: 6rem 0;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item h4 {
+            font-size: 2.5rem;
+            color: var(--accent-pink);
+            margin-bottom: 0.5rem;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .tool-link {
             display: flex;
-            gap: 0.5rem;
-        }
-
-        .lang-switcher a {
-            color: white;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
             text-decoration: none;
-            opacity: 0.5;
-            transition: var(--transition-smooth);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
         }
 
-        .lang-switcher a.active,
-        .lang-switcher a:hover {
-            opacity: 1;
+        .tool-link:hover {
+            border-color: var(--accent-pink);
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         @media (max-width: 768px) {
-            .lang-switcher {
-                right: 5rem;
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .progress-dashboard {
+                padding: 2rem;
             }
         }
     </style>
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <meta name="keywords" content="organic growth, social media strategy, algorithm optimization, monetization social media, content strategy 2026">
     <link rel="canonical" href="https://viralauthority.com/en/academy.html">
     <link rel="alternate" hreflang="es" href="https://viralauthority.com/academy.html">
     <link rel="alternate" hreflang="en" href="https://viralauthority.com/en/academy.html">
     <link rel="alternate" hreflang="x-default" href="https://viralauthority.com/academy.html">
-    <meta property="og:title" content="ViralAuthority Academy | Premium Social Media Learning Hub">
-    <meta property="og:description" content="Master Instagram, TikTok, YouTube, Facebook, and X. Premium courses to dominate algorithms and scale your digital authority.">
+    <meta property="og:title" content="ViralAuthority Academy | Digital Growth Dashboard">
+    <meta property="og:description" content="Master Instagram, TikTok, YouTube, and Monetization. Access your personalized learning dashboard and scale your digital authority today.">
     <meta property="og:url" content="https://viralauthority.com/en/academy.html">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://viralauthority.com/assets/logo.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="ViralAuthority Academy | Premium Social Media Learning Hub">
-    <meta name="twitter:description" content="Master Instagram, TikTok, YouTube, Facebook, and X. Premium courses to dominate algorithms and scale your digital authority.">
+    <meta name="twitter:title" content="ViralAuthority Academy | Digital Growth Dashboard">
+    <meta name="twitter:description" content="Master Instagram, TikTok, YouTube, and Monetization. Access your personalized learning dashboard and scale your digital authority today.">
     <meta name="twitter:image" content="https://viralauthority.com/assets/logo.png"></head>
 
 <body>
-
     <header class="header">
-        <div class="lang-switcher">
-            <a href="/academy.html">ES</a> |
-            <a href="/academy.html" class="active">EN</a>
-        </div>
-
         <div class="container nav-container">
-            <a href="/index.html" class="logo">
+            <a href="../index.html" class="logo">
                 <div class="logo-icon"><i class="fas fa-bolt text-white"></i></div>
                 ViralAuthority
             </a>
-
             <nav class="nav-links">
-                <a href="/index.html" class="nav-link">Home</a>
-                <a href="/services.html" class="nav-link">Services</a>
-                <a href="/en/ai-tools.html" class="nav-link">AI Tools</a>
-                <a href="/academy.html" class="nav-link text-white">Academy</a>
-                <a href="/blog.html" class="nav-link">Blog</a>
-                <a href="/contact.html" class="nav-link">Contact</a>
-                <a href="/growth-campaign.html" target="_blank" class="btn btn-primary" style="padding: 0.5rem 1.5rem; font-size: 0.95rem;">Join Elite</a>
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="../services.html" class="nav-link">Services</a>
+                <a href="academy.html" class="nav-link active">Academy</a>
+                <a href="../blog.html" class="nav-link">Blog</a>
             </nav>
-
-            <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
         </div>
     </header>
 
     <main>
-        <section class="academy-hub-header">
+        <section class="academy-dashboard-hero">
             <div class="container reveal">
-                <div style="font-size: 0.9rem; color: var(--accent-pink); font-weight: 600; text-transform: uppercase; margin-bottom: 1rem; letter-spacing: 2px;">
-                    ViralAuthority Academy
+                <h1 class="hero-h1">Digital <span class="text-gradient">Growth Academy</span></h1>
+                <p class="hero-subtitle">Master content strategies, algorithms, and monetization in one place.</p>
+                <div style="margin-top: 2.5rem;">
+                    <a href="#paths" class="btn btn-primary" style="padding: 1rem 3rem;">Start Now</a>
                 </div>
-                <h1 class="hero-h1">Premium <span class="text-gradient">Learning Hub</span></h1>
-                <p class="hero-subtitle">Select a platform to unlock specialized strategies designed to dominate modern
-                    social algorithms and scale your digital influence.</p>
+            </div>
+        </section>
+
+        <section id="paths" class="section">
+            <div class="container">
+                <div class="reveal text-center">
+                    <h2 class="hero-h1" style="font-size: 2.5rem;">Your <span class="text-gradient">Learning Path</span>
+                    </h2>
+                    <p class="text-muted">Select your primary goal to receive a personalized recommendation.</p>
+                </div>
+
+                <div class="goal-grid reveal">
+                    <div class="goal-card" onclick="setGoal('grow', this)">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Grow Followers</h3>
+                        <p class="text-muted">Focus on virality and massive reach.</p>
+                    </div>
+                    <div class="goal-card" onclick="setGoal('monetize', this)">
+                        <i class="fas fa-wallet"></i>
+                        <h3>Monetize Audience</h3>
+                        <p>Turn attention into real income.</p>
+                    </div>
+                    <div class="goal-card" onclick="setGoal('brand', this)">
+                        <i class="fas fa-award"></i>
+                        <h3>Build Brand</h3>
+                        <p>Long-term authority and trust.</p>
+                    </div>
+                    <div class="goal-card" onclick="setGoal('pro', this)">
+                        <i class="fas fa-user-tie"></i>
+                        <h3>Go Professional</h3>
+                        <p>Structure and business automation.</p>
+                    </div>
+                </div>
+
+                <div id="recommendation" class="recommendation-output">
+                    <div id="rec-content"></div>
+                </div>
             </div>
         </section>
 
         <section class="section pt-0">
             <div class="container">
-                <!-- Platform Filters -->
-                <div class="platform-filters reveal">
-                    <button class="filter-btn active" onclick="filterPlatform('instagram')">
-                        <i class="fab fa-instagram"></i> Instagram
-                    </button>
-                    <button class="filter-btn" onclick="filterPlatform('tiktok')">
-                        <i class="fab fa-tiktok"></i> TikTok
-                    </button>
-                    <button class="filter-btn" onclick="filterPlatform('youtube')">
-                        <i class="fab fa-youtube"></i> YouTube
-                    </button>
-                    <button class="filter-btn" onclick="filterPlatform('facebook')">
-                        <i class="fab fa-facebook"></i> Facebook
-                    </button>
-                    <button class="filter-btn" onclick="filterPlatform('x')">
-                        <i class="fab fa-x-twitter"></i> Twitter (X)
-                    </button>
-                </div>
+                <h2 class="hero-h1 reveal" style="font-size: 2.5rem; margin-bottom: 3rem;">Explore Platforms</h2>
 
-                <!-- INSTAGRAM SECTION -->
-                <div id="instagram" class="platform-section active">
-                    <div class="platform-intro reveal">
-                        <h2>Instagram Authority</h2>
-                        <p class="text-muted">Master visual storytelling and aesthetic dominance. Turn your profile into
-                            a high-converting authority machine.</p>
-                    </div>
-                    <div class="course-grid">
-                        <div class="course-card reveal">
-                            <span class="level-badge level-beginner">Beginner</span>
-                            <h3>Profile Optimization Blueprint</h3>
-                            <p>The foundational steps to audit and optimize your bio, highlights, and grid for immediate
-                                trust and conversion.</p>
-                            <a href="../academy/instagram.html" class="btn btn-secondary">Watch Class</a>
-                        </div>
-                        <div class="course-card reveal">
-                            <span class="level-badge level-intermediate">Intermediate</span>
-                            <h3>Reels Algorithm Mastery</h3>
-                            <p>Deep dive into the mechanics of vertical video virality. Learn how to script and edit for
-                                massive retention spikes.</p>
-                            <a href="../academy/instagram.html" class="btn btn-secondary">Watch Class</a>
-                        </div>
-                        <div class="course-card reveal">
-                            <span class="level-badge level-intermediate">Intermediate</span>
-                            <h3>Aesthetic Visual Storytelling</h3>
-                            <p>Master the art of the cohesive feed and high-retention stories that turn casual viewers
-                                into loyal fans.</p>
-                            <button onclick="toggleLesson(this)" class="btn btn-secondary">Watch Class</button>
-                            <div class="lesson-content">
-                                <ul class="lesson-features">
-                                    <li><i class="fas fa-check-circle"></i> Feed color psychology</li>
-                                    <li><i class="fas fa-check-circle"></i> Daily story narration hooks</li>
-                                    <li><i class="fas fa-check-circle"></i> Building an active community</li>
-                                </ul>
-                                <a href="/growth-campaign.html" target="_blank" class="btn btn-boost">Boost My Account</a>
+                <div class="platform-grid">
+                    <!-- Instagram -->
+                    <div class="platform-card reveal" style="--card-accent: #E1306C;">
+                        <div class="platform-info">
+                            <h3>Instagram Mastery</h3>
+                            <div class="platform-meta">
+                                <span><i class="fas fa-layer-group"></i> 3 Modules</span>
+                                <span><i class="fas fa-clock"></i> 9 Lessons</span>
                             </div>
+                            <p class="text-muted">Profile optimization, viral reels, and direct sales funnels.</p>
+                            <a href="instagram.html" class="btn btn-secondary" style="margin-top: 1.5rem; width: 100%;">Enter</a>
                         </div>
-                        <div class="course-card reveal">
-                            <span class="level-badge level-advanced">Advanced</span>
-                            <h3>Brand Partnership Scaling</h3>
-                            <p>Pro strategies to attract and negotiate high-ticket sponsorship deals with top-tier
-                                international brands.</p>
-                            <a href="../academy/instagram.html" class="btn btn-secondary">Watch Class</a>
+                    </div>
+
+                    <!-- TikTok -->
+                    <div class="platform-card reveal" style="--card-accent: #00f2ea;">
+                        <div class="platform-info">
+                            <h3>TikTok Viral</h3>
+                            <div class="platform-meta">
+                                <span><i class="fas fa-layer-group"></i> 3 Modules</span>
+                                <span><i class="fas fa-clock"></i> 9 Lessons</span>
+                            </div>
+                            <p class="text-muted">Dominate the algorithm, retention hooks, and short-form monetization.
+                            </p>
+                            <a href="tiktok.html" class="btn btn-secondary" style="margin-top: 1.5rem; width: 100%;">Enter</a>
                         </div>
-                        <div class="course-card reveal">
-                            <span class="level-badge level-advanced">Advanced</span>
-                            <h3>Sales Funnel Automation</h3>
-                            <p>Turning followers into clients with automated DM funnels and high-conversion landing page
-                                structures.</p>
-                            <a href="../academy/instagram.html" class="btn btn-secondary">Watch Class</a>
+                    </div>
+
+                    <!-- YouTube -->
+                    <div class="platform-card reveal" style="--card-accent: #FF0000;">
+                        <div class="platform-info">
+                            <h3>YouTube Hub</h3>
+                            <div class="platform-meta">
+                                <span><i class="fas fa-layer-group"></i> 3 Modules</span>
+                                <span><i class="fas fa-clock"></i> 9 Lessons</span>
+                            </div>
+                            <p class="text-muted">Search SEO, high-CTR thumbnails, and channel automation.</p>
+                            <a href="youtube.html" class="btn btn-secondary" style="margin-top: 1.5rem; width: 100%;">Enter</a>
+                        </div>
+                    </div>
+
+                    <!-- Spotify -->
+                    <div class="platform-card reveal" style="--card-accent: #1DB954;">
+                        <div class="platform-info">
+                            <h3>Spotify Strategy</h3>
+                            <div class="platform-meta">
+                                <span><i class="fas fa-layer-group"></i> 3 Modules</span>
+                                <span><i class="fas fa-clock"></i> 9 Lessons</span>
+                            </div>
+                            <p class="text-muted">Artist branding, playlist algorithms, and streaming royalties.</p>
+                            <a href="spotify.html" class="btn btn-secondary" style="margin-top: 1.5rem; width: 100%;">Enter</a>
+                        </div>
+                    </div>
+
+                    <!-- Monetization -->
+                    <div class="platform-card reveal" style="--card-accent: #FFD700;">
+                        <div class="platform-info">
+                            <h3>Monetization Mastery</h3>
+                            <div class="platform-meta">
+                                <span><i class="fas fa-layer-group"></i> 3 Modules</span>
+                                <span><i class="fas fa-clock"></i> 9 Lessons</span>
+                            </div>
+                            <p class="text-muted">Massive income models, personal branding, and 6-figure scaling.</p>
+                            <a href="monetization.html" class="btn btn-secondary" style="margin-top: 1.5rem; width: 100%;">Enter</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- TIKTOK SECTION -->
-                <div id="tiktok" class="platform-section">
-                    <div class="platform-intro reveal">
-                        <h2>TikTok Viral Engine</h2>
-                        <p class="text-muted">Harness the power of the most explosive algorithm on the web. Skip the
-                            grind and trigger massive virality today.</p>
+                <div class="progress-dashboard reveal">
+                    <h2 class="hero-h1" style="font-size: 2rem; margin-bottom: 3rem;">Learning Progress</h2>
+                    <div class="stat-grid">
+                        <div class="stat-item">
+                            <h4 id="lessons-completed">0</h4>
+                            <p class="text-muted">Classes Completed</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4 id="global-progress">0%</h4>
+                            <p class="text-muted">Total Progress</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4 id="active-courses">0</h4>
+                            <p class="text-muted">Active Courses</p>
+                        </div>
                     </div>
-                    <div class="course-grid">
-                        <div class="course-card">
-                            <span class="level-badge level-beginner">Beginner</span>
-                            <h3>TikTok Zero to Hero</h3>
-                            <p>Quick-start guide to understanding the FYP dynamics and posting your first hook-driven
-                                content that catches eyes.</p>
-                            <a href="../academy/tiktok.html" class="btn btn-secondary">Watch Class</a>
-                        </div>
-                        <div class="course-card">
-                            <span class="level-badge level-intermediate">Intermediate</span>
-                            <h3>US Market Domination</h3>
-                            <p>Technical guide to breaking into the US algorithm from anywhere in the world to access
-                                the highest CPMs.</p>
-                            <a href="../academy/tiktok.html" class="btn btn-secondary">Watch Class</a>
-                        </div>
-                        <div class="course-card">
-                            <span class="level-badge level-intermediate">Intermediate</span>
-                            <h3>Viral Hook Psychology</h3>
-                            <p>The science behind the first 3 seconds. Learn how to stop the scroll and force engagement
-                                on every post.</p>
-                            <a href="../academy/tiktok.html" class="btn btn-secondary">Watch Class</a>
-                        </div>
-                        <div class="course-card">
-                            <span class="level-badge level-advanced">Advanced</span>
-                            <h3>Creator Rewards Maximization</h3>
-                            <p>How to structure 60s+ videos for maximum RPM and consistent payouts from the TikTok
-                                Creator Rewards program.</p>
-                            <a href="../academy/tiktok.html" class="btn btn-secondary">Watch Class</a>
-                        </div>
-                        <div class="course-card">
-                            <span class="level-badge level-advanced">Advanced</span>
-                            <h3>High-Ticket Affiliate Sales</h3>
-                            <p>Using TikTok as a lead-generation machine to promote premium digital products and
-                                high-ticket affiliate offers.</p>
-                            <a href="../academy/tiktok.html" class="btn btn-secondary">Watch Class</a>
-                        </div>
+                    <div class="progress-bar-bg" style="margin-top: 3rem; background: rgba(255,255,255,0.05);">
+                        <div id="total-progress-bar" class="progress-bar-fill" style="width: 0%; background: var(--accent-pink);"></div>
                     </div>
                 </div>
 
-                <!-- YOUTUBE SECTION -->
-                <div id="youtube" class="platform-section">
-                    <div class="platform-intro reveal">
-                        <h2>YouTube Ecosystem</h2>
-                        <p class="text-muted">Build a sustainable digital empire. Focus on long-term searchable assets
-                            and engine dominance.</p>
-                    </div>
-                    <div class="course-grid">
-                        <div class="course-card">
-                            <span class="level-badge level-beginner">Beginner</span>
-                            <h3>SEO &amp; Thumbnail Science</h3>
-                            <p>Learn the deep psychology of the click and how to show up consistently in global search
-                                and recommendations.</p>
-                            <a href="../academy/youtube.html" class="btn btn-secondary">Watch Class</a>
-                        </div>
-                        <div class="course-card">
-                            <span class="level-badge level-intermediate">Intermediate</span>
-                            <h3>Hybrid Channel Strategy</h3>
-                            <p>Using YouTube Shorts as a high-speed funnel to drive traffic to your high-RPM long-form
-                                video content.</p>
-                            <a href="../academy/youtube.html" class="btn btn-secondary">Watch Class</a>
-                        </div>
-                        <div class="course-card">
-                            <span class="level-badge level-intermediate">Intermediate</span>
-                            <h3>Scripting for Retention</h3>
-                            <p>Master the art of the YouTube script. Techniques to keep viewers watching through the
-                                entire video and trigger the algorithm.</p>
-                            <a href="../academy/youtube.html" class="btn btn-secondary">Watch Class</a>
-                        </div>
-                        <div class="course-card">
-                            <span class="level-badge level-advanced">Advanced</span>
-                            <h3>Automation &amp; Scale</h3>
-                            <p>Building a team and systemic workflow to run "faceless" channels that generate consistent
-                                passive income.</p>
-                            <a href="../academy/youtube.html" class="btn btn-secondary">Watch Class</a>
-                        </div>
-                        <div class="course-card">
-                            <span class="level-badge level-advanced">Advanced</span>
-                            <h3>High-RPM Niche Selection</h3>
-                            <p>Finding and dominating the most profitable categories on YouTube where advertisers pay
-                                10x more for views.</p>
-                            <a href="../academy/youtube.html" class="btn btn-secondary">Watch Class</a>
-                        </div>
+                <div class="reveal">
+                    <h2 class="hero-h1" style="font-size: 2.5rem; margin-bottom: 2rem;">Toolbox</h2>
+                    <div class="tools-grid">
+                        <a href="../ai-tools.html" class="tool-link">
+                            <i class="fas fa-calculator"></i>
+                            <div>
+                                <h3>Earnings Calculator</h3>
+                                <p class="text-muted">Estimate your earnings based on platform and audience.</p>
+                            </div>
+                        </a>
+                        <a href="../blog/ranking-plataformas-mas-rentables-2026.html" class="tool-link">
+                            <i class="fas fa-trophy"></i>
+                            <div>
+                                <h3>Niche Ranking</h3>
+                                <p class="text-muted">Discover the areas with the highest profitability today.</p>
+                            </div>
+                        </a>
                     </div>
                 </div>
 
-                <!-- FACEBOOK SECTION -->
-                <div id="facebook" class="platform-section">
-                    <div class="platform-intro reveal">
-                        <h2>Facebook Reels &amp; Community</h2>
-                        <p class="text-muted">Tap into a massive, high-conversion audience. Bridge the gap between
-                            social viral reels and community building.</p>
-                    </div>
-                    <div class="course-grid">
-                        <div class="course-card">
-                            <span class="level-badge level-beginner">Beginner</span>
-                            <h3>Facebook Page Foundations</h3>
-                            <p>Setting up your presence for professional monetization and mastering the Meta Business
-                                Suite dashboard.</p>
-                            <a href="../academy/facebook.html" class="btn btn-secondary">Watch Class</a>
-                        </div>
-                        <div class="course-card">
-                            <span class="level-badge level-intermediate">Intermediate</span>
-                            <h3>Conversation Catalysts</h3>
-                            <p>How to trigger massive, highly-anested comment threads that the Facebook AI loves to
-                                promote to wider audiences.</p>
-                            <a href="../academy/facebook.html" class="btn btn-secondary">Watch Class</a>
-                        </div>
-                        <div class="course-card">
-                            <span class="level-badge level-intermediate">Intermediate</span>
-                            <h3>Viral Video Distribution</h3>
-                            <p>Using Facebook Groups and collaborative cross-posting to amplify your video reach and
-                                gain followers for free.</p>
-                            <a href="../academy/facebook.html" class="btn btn-secondary">Watch Class</a>
-                        </div>
-                        <div class="course-card">
-                            <span class="level-badge level-advanced">Advanced</span>
-                            <h3>Performance Bonus Secrets</h3>
-                            <p>Maximizing your engagement reach to get invited to the exclusive Meta Performance Bonus
-                                programs for creators.</p>
-                            <a href="../academy/facebook.html" class="btn btn-secondary">Watch Class</a>
-                        </div>
-                        <div class="course-card">
-                            <span class="level-badge level-advanced">Advanced</span>
-                            <h3>Ad Campaign Architecture</h3>
-                            <p>Professional media buying strategies to scale digital products and services using Meta's
-                                powerful advertising engine.</p>
-                            <a href="../academy/facebook.html" class="btn btn-secondary">Watch Class</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- X SECTION -->
-                <div id="x" class="platform-section">
-                    <div class="platform-intro reveal">
-                        <h2>X Authority &amp; Networking</h2>
-                        <p class="text-muted">Dominate the global conversation. Use written authority and networking to
-                            build high-level connections.</p>
-                    </div>
-                    <div class="course-grid">
-                        <div class="course-card">
-                            <span class="level-badge level-beginner">Beginner</span>
-                            <h3>The Art of the Thread</h3>
-                            <p>How to write compelling, viral threads that convert casual readers into loyal, long-term
-                                followers.</p>
-                            <a href="../academy/x.html" class="btn btn-secondary">Watch Class</a>
-                        </div>
-                        <div class="course-card">
-                            <span class="level-badge level-intermediate">Intermediate</span>
-                            <h3>X Analytics &amp; Outreach</h3>
-                            <p>Using X's native data to find your target audience and building professional rapport
-                                through strategic engagement.</p>
-                            <a href="../academy/x.html" class="btn btn-secondary">Watch Class</a>
-                        </div>
-                        <div class="course-card">
-                            <span class="level-badge level-intermediate">Intermediate</span>
-                            <h3>Ghostwriting Mastery</h3>
-                            <p>Building a high-income digital skill by writing high-authority content for other top-tier
-                                entrepreneurs on X.</p>
-                            <a href="../academy/x.html" class="btn btn-secondary">Watch Class</a>
-                        </div>
-                        <div class="course-card">
-                            <span class="level-badge level-advanced">Advanced</span>
-                            <h3>High-Level Networking</h3>
-                            <p>Using X's unique access to connect with world-class entrepreneurs, industry leaders, and
-                                potential investors.</p>
-                            <a href="../academy/x.html" class="btn btn-secondary">Watch Class</a>
-                        </div>
-                        <div class="course-card">
-                            <span class="level-badge level-advanced">Advanced</span>
-                            <h3>Ad Revenue Optimization</h3>
-                            <p>Strategic positioning for your account to maximize monthly payouts from the X Ad Revenue
-                                Sharing system.</p>
-                            <a href="../academy/x.html" class="btn btn-secondary">Watch Class</a>
-                        </div>
-                    </div>
+                <div class="reveal text-center" style="margin-top: 8rem; padding: 5rem 2rem; background: linear-gradient(rgba(225, 48, 108, 0.05), transparent); border-radius: 40px; border: 1px solid var(--border-glow);">
+                    <h2 class="hero-h1" style="font-size: 3rem;">Scale Your <span class="text-gradient">Authority</span>
+                    </h2>
+                    <p class="text-muted" style="max-width: 600px; margin: 0 auto 3rem;">Looking for immediate
+                        professional results? Our team manages your strategic growth campaign.</p>
+                    <a href="../growth-campaign.html" class="btn btn-primary" style="padding: 1.2rem 3.5rem; font-size: 1.1rem;">Apply for Growth Campaign</a>
                 </div>
             </div>
         </section>
@@ -489,38 +368,16 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col" style="grid-column: span 1;">
-                    <a href="/index.html" class="logo" style="margin-bottom: 1.5rem;">
-                        <div class="logo-icon"><i class="fas fa-bolt text-white"></i></div>
-                        ViralAuthority
-                    </a>
-                    <p>The premium growth partner for serious digital creators and forward-thinking brands.</p>
+                    <a href="../index.html" class="logo" style="margin-bottom: 1.5rem;">ViralAuthority</a>
+                    <p>Premium growth strategy.</p>
                 </div>
                 <div class="footer-col">
-                    <h4>Company</h4>
+                    <h4>Classes</h4>
                     <ul class="footer-links">
-                        <li><a href="/index.html">Home</a></li>
-                        <li><a href="/services.html">Services</a></li>
-                        <li><a href="/es/ai-tools.html">AI Tools</a></li>
-                        <li><a href="/academy.html">Academy</a></li>
-                        <li><a href="/contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Services</h4>
-                    <ul class="footer-links">
-                        <li><a href="/growth-campaign.html" target="_blank">YouTube Boost</a></li>
-                        <li><a href="/growth-campaign.html" target="_blank">TikTok Viral</a></li>
-                        <li><a href="/growth-campaign.html" target="_blank">Instagram Authority</a></li>
-                        <li><a href="/growth-campaign.html" target="_blank">Spotify Growth</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Legal</h4>
-                    <ul class="footer-links">
-                        <li><a href="../legal/terms-of-service.html">Terms of Service</a></li>
-                        <li><a href="../legal/privacy-policy.html">Privacy Policy</a></li>
-                        <li><a href="../legal/disclaimer.html">Disclaimer</a></li>
-                        <li><a href="../legal/affiliate-disclosure.html">Affiliate Disclosure</a></li>
+                        <li><a href="instagram.html">Instagram Mastery</a></li>
+                        <li><a href="tiktok.html">TikTok Viral</a></li>
+                        <li><a href="youtube.html">YouTube Hub</a></li>
+                        <li><a href="monetization.html">Monetization</a></li>
                     </ul>
                 </div>
             </div>
@@ -530,36 +387,81 @@
         </div>
     </footer>
 
-    <script src="../js/app.js"></script>
     <script>
-        function filterPlatform(platform) {
-            // Update buttons
-            document.querySelectorAll('.filter-btn').forEach(btn => {
-                btn.classList.remove('active');
-                if (btn.textContent.toLowerCase().includes(platform)) {
-                    btn.classList.add('active');
+        const coursesData = {
+            'grow': {
+                title: 'Path: Explosive Growth',
+                desc: 'This path prioritizes virality and massive reach on short-form video platforms.',
+                steps: ['TikTok Module 2 (Hooks)', 'Instagram Module 2 (Viral Content)', 'YouTube Module 2 (Retention)']
+            },
+            'monetize': {
+                title: 'Path: Direct Monetization',
+                desc: 'Learn to turn followers into dollars with proven income systems.',
+                steps: ['Monetization Module 1 (Models)', 'Instagram Module 3 (Sales)', 'YouTube Module 3 (Sponsors)']
+            },
+            'brand': {
+                title: 'Path: Brand Authority',
+                desc: 'Build a presence that generates trust and respect in your industry.',
+                steps: ['Monetization Module 2 (Branding)', 'Spotify Module 1 (Identity)', 'Instagram Module 1 (Profile)']
+            },
+            'pro': {
+                title: 'Path: Go Professional',
+                desc: 'Structure your digital presence as a high-performance business.',
+                steps: ['Monetization Module 3 (Automation)', 'YouTube Module 1 (Optimization)', 'TikTok Module 3 (Income)']
+            }
+        };
+
+        function setGoal(goal, element) {
+            document.querySelectorAll('.goal-card').forEach(c => c.classList.remove('active'));
+            element.classList.add('active');
+
+            const data = coursesData[goal];
+            const output = document.getElementById('recommendation');
+            const content = document.getElementById('rec-content');
+
+            content.innerHTML = `
+                <h3 style="color: var(--accent-pink); margin-bottom: 1rem;">${data.title}</h3>
+                <p style="margin-bottom: 2rem;">${data.desc}</p>
+                <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+                    ${data.steps.map(s => `<span style="padding: 0.5rem 1.2rem; background: rgba(255,255,255,0.05); border-radius: 100px; font-size: 0.85rem;">${s}</span>`).join('')}
+                </div>
+            `;
+            output.style.display = 'block';
+            output.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        function updateGlobalStats() {
+            const completed = parseInt(localStorage.getItem('va_total_completed_lessons') || '0');
+            const started = completed > 0 ? 1 : 0;
+            const totalLessons = 45;
+            const progress = Math.min(Math.round((completed / totalLessons) * 100), 100);
+
+            document.getElementById('lessons-completed').innerText = completed;
+            document.getElementById('global-progress').innerText = progress + '%';
+            document.getElementById('active-courses').innerText = started;
+            document.getElementById('total-progress-bar').style.width = progress + '%';
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
                 }
             });
+        }, { threshold: 0.1 });
 
-            // Update sections
-            document.querySelectorAll('.platform-section').forEach(section => {
-                section.classList.remove('active');
-            });
-            document.getElementById(platform).classList.add('active');
+        document.querySelectorAll('.reveal').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.8s ease-out';
+            observer.observe(el);
+        });
 
-            // Trigger animations
-            const activeReveal = document.getElementById(platform).querySelectorAll('.reveal');
-            activeReveal.forEach(el => el.classList.add('active'));
-        }
+        window.onload = updateGlobalStats;
     </script>
 
 
-
-    
-
-    
-
-    
 
     <script type="application/ld+json">
 {
@@ -571,7 +473,7 @@
   "name": "ViralAuthority",
   "url": "https://viralauthority.com",
   "logo": "https://viralauthority.com/assets/logo.png",
-  "description": "Master Instagram, TikTok, YouTube, Facebook, and X. Premium courses to dominate algorithms and scale your digital authority."
+  "description": "Master Instagram, TikTok, YouTube, and Monetization. Access your personalized learning dashboard and scale your digital authority today."
 }
     </script>
 </body></html>

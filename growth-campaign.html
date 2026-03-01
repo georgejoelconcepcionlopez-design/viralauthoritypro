@@ -1,0 +1,424 @@
+<!DOCTYPE html><html lang="en"><head>
+    <link rel="icon" type="image/png" href="/assets/logo.png?v=2">
+    <link rel="shortcut icon" href="/favicon.ico?v=2">
+    <meta name="theme-color" content="#0f0f0f">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Scale Your Authority | Premium Growth Campaigns</title>
+    <meta name="description" content="Strategic Growth Campaigns Designed for Serious Creators. Apply for our premium agency services and scale your social media authority.">
+    
+
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        .page-header {
+            padding: 12rem 2rem 6rem;
+            text-align: center;
+            background: radial-gradient(circle at top, rgba(139, 92, 246, 0.15) 0%, rgba(5, 5, 5, 1) 80%);
+        }
+
+        .hero-h1 {
+            font-size: 4.5rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+            color: #fff;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-inline: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #fff;
+        }
+
+        /* How it works pipeline */
+        .pipeline-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .pipeline-step {
+            display: flex;
+            align-items: center;
+            margin-bottom: 3rem;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: transform 0.3s;
+        }
+
+        .pipeline-step:hover {
+            transform: translateX(10px);
+            border-color: rgba(139, 92, 246, 0.3);
+        }
+
+        .step-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: rgba(139, 92, 246, 0.2);
+            margin-right: 2rem;
+            min-width: 60px;
+            text-align: center;
+        }
+
+        .step-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .step-content p {
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* Target Audience & Results */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .info-card {
+            background: #111;
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .info-card:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.1);
+        }
+
+        .info-card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Application Form */
+        .form-section {
+            padding: 6rem 2rem;
+            background: #080808;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .application-form {
+            max-width: 700px;
+            margin: 0 auto;
+            background: #111;
+            padding: 3rem;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #ddd;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: white;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        select.form-control {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23FFFFFF%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem top 50%;
+            background-size: 0.65rem auto;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1.2rem;
+            margin-top: 1rem;
+            font-size: 1.1rem;
+        }
+    </style>
+
+    <link rel="canonical" href="https://viralauthority.com/growth-campaign.html">
+    <link rel="alternate" hreflang="es" href="https://viralauthority.com/growth-campaign.html">
+    <link rel="alternate" hreflang="en" href="https://viralauthority.com/en/growth-campaign.html">
+    <link rel="alternate" hreflang="x-default" href="https://viralauthority.com/growth-campaign.html">
+    <meta property="og:title" content="Scale Your Authority | Premium Growth Campaigns">
+    <meta property="og:description" content="Strategic Growth Campaigns Designed for Serious Creators. Apply for our premium agency services and scale your social media authority.">
+    <meta property="og:url" content="https://viralauthority.com/growth-campaign.html">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://viralauthority.com/assets/logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Scale Your Authority | Premium Growth Campaigns">
+    <meta name="twitter:description" content="Strategic Growth Campaigns Designed for Serious Creators. Apply for our premium agency services and scale your social media authority.">
+    <meta name="twitter:image" content="https://viralauthority.com/assets/logo.png"></head>
+
+<body>
+    <header class="header">
+        <div class="container nav-container">
+            <a href="/en/" class="logo">
+                <div class="logo-icon"><i class="fas fa-bolt text-white"></i></div>
+                ViralAuthority
+            </a>
+            <nav class="nav-links">
+                <a href="/en/" class="nav-link">Home</a>
+                <a href="/en/services.html" class="nav-link">Services</a>
+                <a href="/en/ai-tools.html" class="nav-link">AI Tools</a>
+                <a href="/en/academy/" class="nav-link">Academy</a>
+                <a href="/en/blog/" class="nav-link">Blog</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="page-header">
+            <div class="container">
+                <span style="color: var(--primary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 2px;">Premium
+                    Agency Services</span>
+                <h1 class="hero-h1">Scale Your Social <br><span class="text-gradient">Media Authority</span></h1>
+                <p class="hero-subtitle">Strategic Growth Campaigns Designed for Serious Creators, Brands, and
+                    Executives.</p>
+                <div style="margin-top: 2rem;">
+                    <a href="#apply" class="btn btn-primary" style="padding: 1rem 2.5rem; font-size: 1.1rem;">Apply for
+                        Campaign <i class="fas fa-arrow-right" style="margin-left: 0.5rem;"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section style="padding: 6rem 2rem; background: #050505;">
+            <div class="container">
+                <h2 class="section-title">The <span class="text-gradient">5-Step</span> Process</h2>
+                <div class="pipeline-container">
+
+                    <div class="pipeline-step reveal">
+                        <div class="step-number">01</div>
+                        <div class="step-content">
+                            <h3>Application &amp; Audit</h3>
+                            <p>We review your current profile, content quality, and market positioning to ensure our
+                                campaigns can deliver maximum impact for your specific niche.</p>
+                        </div>
+                    </div>
+
+                    <div class="pipeline-step reveal">
+                        <div class="step-number">02</div>
+                        <div class="step-content">
+                            <h3>Strategy Formulation</h3>
+                            <p>Our strategists design a customized distribution plan targeting the precise demographics
+                                and algorithmic triggers needed to elevate your specific platform presence.</p>
+                        </div>
+                    </div>
+
+                    <div class="pipeline-step reveal">
+                        <div class="step-number">03</div>
+                        <div class="step-content">
+                            <h3>Targeted Distribution</h3>
+                            <p>We deploy your content across high-authority networks and targeted communities to drive
+                                authentic, high-retention discovery and viewership.</p>
+                        </div>
+                    </div>
+
+                    <div class="pipeline-step reveal">
+                        <div class="step-number">04</div>
+                        <div class="step-content">
+                            <h3>Algorithmic Amplification</h3>
+                            <p>The initial momentum signals the platform algorithms (YouTube, TikTok, Instagram) that
+                                your content is highly engaging, triggering organic recommendation loops.</p>
+                        </div>
+                    </div>
+
+                    <div class="pipeline-step reveal">
+                        <div class="step-number">05</div>
+                        <div class="step-content">
+                            <h3>Exponential Authority</h3>
+                            <p>You emerge with a strengthened digital footprint, increased social proof, and a highly
+                                engaged audience base ready for monetization and brand scaling.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Who This Is For Section -->
+        <section style="padding: 6rem 2rem; background: #0a0a0a;">
+            <div class="container">
+                <h2 class="section-title">Who This Is <span class="text-gradient">For</span></h2>
+                <div class="grid-3">
+                    <div class="info-card reveal">
+                        <i class="fas fa-users-viewfinder"></i>
+                        <h3>Serious Creators</h3>
+                        <p>Content creators struggling to break through algorithmic plateaus and reach the audience
+                            their content deserves.</p>
+                    </div>
+                    <div class="info-card reveal">
+                        <i class="fas fa-building"></i>
+                        <h3>Modern Brands</h3>
+                        <p>Companies looking to establish immediate digital trust, social proof, and industry authority
+                            in competitive markets.</p>
+                    </div>
+                    <div class="info-card reveal">
+                        <i class="fas fa-user-tie"></i>
+                        <h3>Professionals</h3>
+                        <p>Executives, consultants, and founders building a premium personal brand to attract
+                            high-ticket clients and speaking opportunities.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Expected Results Section -->
+        <section style="padding: 6rem 2rem; background: #050505;">
+            <div class="container">
+                <h2 class="section-title">Expected <span class="text-gradient">Results</span></h2>
+                <div class="grid-3">
+                    <div class="info-card reveal">
+                        <i class="fas fa-chart-pie"></i>
+                        <h3>Elevated Perception</h3>
+                        <p>Establish immediate trust and authority with viewers, converting casual visitors into loyal
+                            followers and clients.</p>
+                    </div>
+                    <div class="info-card reveal">
+                        <i class="fas fa-satellite-dish"></i>
+                        <h3>Enhanced Reach</h3>
+                        <p>Trigger platform algorithms to naturally recommend your content to wider, lookalike audiences
+                            organically.</p>
+                    </div>
+                    <div class="info-card reveal">
+                        <i class="fas fa-handshake"></i>
+                        <h3>Real Engagement</h3>
+                        <p>Attract genuine attention from real people interested in your specific niche and content
+                            pillars.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Application Form -->
+        <section id="apply" class="form-section">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 3rem;">
+                    <h2 class="hero-h1" style="font-size: 3rem;">Apply for <span class="text-gradient">Campaign</span>
+                    </h2>
+                    <p class="hero-subtitle">Fill out the form below. We only accept clients we are 100% confident we
+                        can help.</p>
+                </div>
+
+                <form action="/thank-you-campaign.html" method="GET" class="application-form reveal">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" class="form-control" required="" placeholder="Enter your full name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Professional Email</label>
+                        <input type="email" id="email" name="email" class="form-control" required="" placeholder="name@company.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="platform">Primary Platform</label>
+                        <select id="platform" name="platform" class="form-control" required="">
+                            <option value="" disabled="" selected="">Select your main platform</option>
+                            <option value="youtube">YouTube</option>
+                            <option value="instagram">Instagram</option>
+                            <option value="tiktok">TikTok</option>
+                            <option value="spotify">Spotify</option>
+                            <option value="x">X / Twitter</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="followers">Current Audience Size</label>
+                        <input type="text" id="followers" name="followers" class="form-control" required="" placeholder="e.g., 5,000 followers">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="goal">Primary Monthly Goal</label>
+                        <input type="text" id="goal" name="goal" class="form-control" required="" placeholder="What are you trying to achieve?">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="budget">Monthly Budget Range</label>
+                        <select id="budget" name="budget" class="form-control" required="">
+                            <option value="" disabled="" selected="">Select a budget range</option>
+                            <option value="500-1k">$500 - $1,000</option>
+                            <option value="1k-3k">$1,000 - $3,000</option>
+                            <option value="3k-5k">$3,000 - $5,000</option>
+                            <option value="5k+">$5,000+</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary submit-btn">Submit Application</button>
+                    <p style="text-align: center; margin-top: 1.5rem; color: var(--text-muted); font-size: 0.85rem;">
+                        <i class="fas fa-lock" style="margin-right: 0.5rem;"></i> Your application is secure and
+                        confidential.
+                    </p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2026 ViralAuthority. Premium Authority Campaigns.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Simple reveal animation
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal();
+    </script>
+
+
+</body></html>

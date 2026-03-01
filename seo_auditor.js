@@ -74,8 +74,10 @@ allFiles.forEach(filePath => {
 
     if (descStr) {
         if (descStr.length < 150) {
-            let filler = isEn ? " Discover proven strategies to grow your audience and scale your online income." : " Descubre estrategias probadas para escalar tu audiencia y monetizar tu contenido.";
-            if ((descStr.length + filler.length) <= 160) {
+            let filler = isEn
+                ? " | Strategic social media growth agency. We provide elite campaigns, profile optimization, and monetization consulting."
+                : " | Agencia estratégica de crecimiento. Proveemos campañas de élite, optimización y consultoría de monetización.";
+            if ((descStr.length + filler.length) <= 180) {
                 descStr += filler;
             }
         }
@@ -88,6 +90,12 @@ allFiles.forEach(filePath => {
             metaDesc.attr('content', descStr);
         }
     }
+
+    $('meta[name="keywords"]').remove();
+    let keywords = isEn
+        ? "organic growth, social media strategy, algorithm optimization, monetization social media, content strategy 2026"
+        : "crecimiento orgánico, estrategia de redes sociales, optimización de algoritmos, monetización, estrategia de contenido 2026";
+    $('head').append(`\n    <meta name="keywords" content="${keywords}">`);
 
     // 3 & 4. H1 Structure (Only 1 H1)
     let h1s = $('h1');
@@ -126,23 +134,36 @@ allFiles.forEach(filePath => {
     <meta name="twitter:description" content="${descStr}">
     <meta name="twitter:image" content="${ogImage}">`);
 
-    // 9. Article Schema
-    if (isBlog && $('script[type="application/ld+json"]:contains("BlogPosting")').length === 0) {
-        let schema = {
+    // 9. Sitewide Agency Schema
+    $('script[type="application/ld+json"]').each((i, el) => {
+        if ($(el).html().includes('ViralAuthority')) {
+            $(el).remove();
+        }
+    });
+
+    let agencySchema = {
+        "@context": "https://schema.org",
+        "@type": ["Organization", "ProfessionalService"],
+        "name": "ViralAuthority",
+        "url": BASE_URL,
+        "logo": BASE_URL + "/assets/logo.png",
+        "description": descStr
+    };
+
+    if (isBlog) {
+        let articleSchema = {
             "@context": "https://schema.org",
             "@type": "BlogPosting",
             "headline": titleStr,
             "description": descStr,
             "image": ogImage,
-            "author": { "@type": "Organization", "name": "ViralAuthority", "url": BASE_URL },
-            "publisher": {
-                "@type": "Organization",
-                "name": "ViralAuthority",
-                "logo": { "@type": "ImageObject", "url": BASE_URL + "/assets/logo.png" }
-            },
+            "author": agencySchema,
+            "publisher": agencySchema,
             "mainEntityOfPage": { "@type": "WebPage", "@id": BASE_URL + cleanUrlPath }
         };
-        $('body').append(`\n    <script type="application/ld+json">\n${JSON.stringify(schema, null, 2)}\n    </script>\n`);
+        $('body').append(`\n    <script type="application/ld+json">\n${JSON.stringify(articleSchema, null, 2)}\n    </script>\n`);
+    } else {
+        $('body').append(`\n    <script type="application/ld+json">\n${JSON.stringify(agencySchema, null, 2)}\n    </script>\n`);
     }
 
     // 10. FAQ Schema
